@@ -1,0 +1,2 @@
+zBUILDS/crt0-for-sample-code.s.o: \
+ /usr/local/dev-arm/arm-dev-files/sources/crt0-for-sample-code.s

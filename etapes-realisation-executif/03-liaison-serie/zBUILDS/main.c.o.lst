@@ -1,0 +1,206 @@
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc2bJXue.s 			page 1
+
+
+   1              		.file	"main.c"
+   2              	@ GNU C (GCC) version 4.6.1 (arm-elf)
+   3              	@	compiled by GNU C version 4.0.1 (Apple Inc. build 5494), GMP version 5.0.2, MPFR version 3.0.1, M
+   4              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+   5              	@ options passed:  -I sources -I /usr/local/dev-arm/arm-dev-files/sources
+   6              	@ -I ../sources-communs
+   7              	@ -iprefix /usr/local/dev-arm/i386-Darwin-arm-gcc-4.6.1/bin/../lib/gcc/arm-elf/4.6.1/
+   8              	@ -MD zBUILDS/main.c.d -MF zBUILDS/main.c.o.dep -MP -MQ zBUILDS/main.c.o
+   9              	@ -D__USES_INITFINI__ -D XTR_CLASS=0 -D LPC22XX_CRYSTAL_FREQUENCY=14745600
+  10              	@ -D LPC22XX_PLL_FREQUENCY_MULTIPLIER=4 -D LPC22XX_APB_DIVIDER=1
+  11              	@ sources/main.c -mcpu=arm7tdmi-s -mcpu=arm7tdmi-s
+  12              	@ -auxbase-strip zBUILDS/main.c.o -O2 -Wall -Werror -Wreturn-type -Wformat
+  13              	@ -Wsign-compare -Wpointer-arith -Wparentheses -Wcast-align -Wcast-qual
+  14              	@ -Wwrite-strings -Wswitch -Wstrict-prototypes -Wbad-function-cast
+  15              	@ -Wmissing-declarations -Wimplicit-function-declaration
+  16              	@ -Wno-int-to-pointer-cast -Wno-pointer-to-int-cast -fverbose-asm
+  17              	@ -fomit-frame-pointer -foptimize-register-move
+  18              	@ options enabled:  -fauto-inc-dec -fbranch-count-reg -fcaller-saves
+  19              	@ -fcombine-stack-adjustments -fcommon -fcompare-elim -fcprop-registers
+  20              	@ -fcrossjumping -fcse-follow-jumps -fdefer-pop
+  21              	@ -fdelete-null-pointer-checks -fdevirtualize -fdwarf2-cfi-asm
+  22              	@ -fearly-inlining -feliminate-unused-debug-types -fexpensive-optimizations
+  23              	@ -fforward-propagate -ffunction-cse -fgcse -fgcse-lm
+  24              	@ -fguess-branch-probability -fident -fif-conversion -fif-conversion2
+  25              	@ -findirect-inlining -finline -finline-functions-called-once
+  26              	@ -finline-small-functions -fipa-cp -fipa-profile -fipa-pure-const
+  27              	@ -fipa-reference -fipa-sra -fira-share-save-slots -fira-share-spill-slots
+  28              	@ -fivopts -fkeep-static-consts -fleading-underscore -fmath-errno
+  29              	@ -fmerge-constants -fmerge-debug-strings -fmove-loop-invariants
+  30              	@ -fomit-frame-pointer -foptimize-register-move -foptimize-sibling-calls
+  31              	@ -fpartial-inlining -fpeephole -fpeephole2 -fprefetch-loop-arrays
+  32              	@ -freg-struct-return -fregmove -freorder-blocks -freorder-functions
+  33              	@ -frerun-cse-after-loop -fsched-critical-path-heuristic
+  34              	@ -fsched-dep-count-heuristic -fsched-group-heuristic -fsched-interblock
+  35              	@ -fsched-last-insn-heuristic -fsched-rank-heuristic -fsched-spec
+  36              	@ -fsched-spec-insn-heuristic -fsched-stalled-insns-dep -fschedule-insns
+  37              	@ -fschedule-insns2 -fsection-anchors -fshow-column -fsigned-zeros
+  38              	@ -fsplit-ivs-in-unroller -fsplit-wide-types -fstrict-aliasing
+  39              	@ -fstrict-overflow -fstrict-volatile-bitfields -fthread-jumps
+  40              	@ -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp -ftree-builtin-call-dce
+  41              	@ -ftree-ccp -ftree-ch -ftree-copy-prop -ftree-copyrename -ftree-cselim
+  42              	@ -ftree-dce -ftree-dominator-opts -ftree-dse -ftree-forwprop -ftree-fre
+  43              	@ -ftree-loop-if-convert -ftree-loop-im -ftree-loop-ivcanon
+  44              	@ -ftree-loop-optimize -ftree-parallelize-loops= -ftree-phiprop -ftree-pre
+  45              	@ -ftree-pta -ftree-reassoc -ftree-scev-cprop -ftree-sink
+  46              	@ -ftree-slp-vectorize -ftree-sra -ftree-switch-conversion -ftree-ter
+  47              	@ -ftree-vect-loop-version -ftree-vrp -funit-at-a-time -fverbose-asm
+  48              	@ -fzero-initialized-in-bss -mlittle-endian -msched-prolog
+  49              	
+  50              	@ Compiler executable checksum: de80e2dacb9f8abf918a9a189330559b
+  51              	
+  52              		.section	.text.startup,"ax",%progbits
+  53              		.align	2
+  54              		.global	main
+  55              		.type	main, %function
+  56              	main:
+  57              		@ args = 0, pretend = 0, frame = 4
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc2bJXue.s 			page 2
+
+
+  58              		@ frame_needed = 0, uses_anonymous_args = 0
+  59 0000 70402DE9 		stmfd	sp!, {r4, r5, r6, lr}	@,
+  60 0004 3C319FE5 		ldr	r3, .L17	@ tmp145,
+  61 0008 181093E5 		ldr	r1, [r3, #24]	@ D.1998, MEM[(volatile uint32 *)-536707048B]
+  62 000c 0225A0E3 		mov	r2, #8388608	@ tmp148,
+  63 0010 021081E1 		orr	r1, r1, r2	@ D.1999, D.1998,
+  64 0014 181083E5 		str	r1, [r3, #24]	@ D.1999, MEM[(volatile uint32 *)-536707048B]
+  65 0018 04D04DE2 		sub	sp, sp, #4	@,,
+  66 001c 142083E5 		str	r2, [r3, #20]	@ tmp148, MEM[(volatile uint32 *)-536707052B]
+  67 0020 1C2083E5 		str	r2, [r3, #28]	@ tmp148, MEM[(volatile uint32 *)-536707044B]
+  68 0024 FEFFFFEB 		bl	initialiser_sorties_s0_s3	@
+  69 0028 FEFFFFEB 		bl	programmer_uart1	@
+  70 002c FEFFFFEB 		bl	lcd_init	@
+  71 0030 14419FE5 		ldr	r4, .L17+4	@ tmp169,
+  72              	.L10:
+  73 0034 0000A0E3 		mov	r0, #0	@,
+  74 0038 0010A0E1 		mov	r1, r0	@,
+  75 003c FEFFFFEB 		bl	lcd_goto_line_column	@
+  76 0040 08019FE5 		ldr	r0, .L17+8	@,
+  77 0044 FEFFFFEB 		bl	lcd_print_string	@
+  78 0048 0460A0E3 		mov	r6, #4	@ ivtmp.8,
+  79 004c 0150A0E3 		mov	r5, #1	@ i,
+  80              	.L9:
+  81 0050 0F00A0E3 		mov	r0, #15	@,
+  82 0054 FEFFFFEB 		bl	eteindre_sorties_s0_s3	@
+  83 0058 0010A0E3 		mov	r1, #0	@,
+  84 005c 0F00A0E3 		mov	r0, #15	@,
+  85 0060 FEFFFFEB 		bl	lcd_goto_line_column	@
+  86 0064 0500A0E3 		mov	r0, #5	@,
+  87 0068 FEFFFFEB 		bl	lcd_print_spaces	@
+  88 006c 0200A0E3 		mov	r0, #2	@,
+  89 0070 0010A0E3 		mov	r1, #0	@,
+  90 0074 FEFFFFEB 		bl	lcd_goto_line_column	@
+  91 0078 D4009FE5 		ldr	r0, .L17+12	@,
+  92 007c FEFFFFEB 		bl	lcd_print_string	@
+  93 0080 080055E3 		cmp	r5, #8	@ i,
+  94 0084 2100000A 		beq	.L15	@,
+  95 0088 C8009FE5 		ldr	r0, .L17+16	@,
+  96 008c FEFFFFEB 		bl	lcd_print_string	@
+  97 0090 040055E3 		cmp	r5, #4	@ i,
+  98 0094 1800000A 		beq	.L16	@,
+  99 0098 B8009FE5 		ldr	r0, .L17+16	@,
+ 100 009c FEFFFFEB 		bl	lcd_print_string	@
+ 101 00a0 020055E3 		cmp	r5, #2	@ i,
+ 102 00a4 2000001A 		bne	.L5	@,
+ 103 00a8 0500A0E1 		mov	r0, r5	@, i
+ 104 00ac FEFFFFEB 		bl	lcd_print_unsigned	@
+ 105              	.L3:
+ 106 00b0 A0009FE5 		ldr	r0, .L17+16	@,
+ 107 00b4 FEFFFFEB 		bl	lcd_print_string	@
+ 108              	.L6:
+ 109 00b8 0500A0E1 		mov	r0, r5	@, i
+ 110 00bc FEFFFFEB 		bl	allumer_sorties_s0_s3	@
+ 111 00c0 0030A0E3 		mov	r3, #0	@ tmp160,
+ 112 00c4 00308DE5 		str	r3, [sp, #0]	@ tmp160, j
+ 113 00c8 00309DE5 		ldr	r3, [sp, #0]	@ j.3, j
+ 114 00cc 040053E1 		cmp	r3, r4	@ j.3, tmp169
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc2bJXue.s 			page 3
+
+
+ 115 00d0 050000CA 		bgt	.L7	@,
+ 116              	.L11:
+ 117 00d4 00309DE5 		ldr	r3, [sp, #0]	@ j.1, j
+ 118 00d8 013083E2 		add	r3, r3, #1	@ j.2, j.1,
+ 119 00dc 00308DE5 		str	r3, [sp, #0]	@ j.2, j
+ 120 00e0 00309DE5 		ldr	r3, [sp, #0]	@ j.3, j
+ 121 00e4 040053E1 		cmp	r3, r4	@ j.3, tmp169
+ 122 00e8 F9FFFFDA 		ble	.L11	@,
+ 123              	.L7:
+ 124 00ec 016056E2 		subs	r6, r6, #1	@ ivtmp.8, ivtmp.8,
+ 125 00f0 8550A0E1 		mov	r5, r5, asl #1	@ i, i,
+ 126 00f4 D5FFFF1A 		bne	.L9	@,
+ 127 00f8 CDFFFFEA 		b	.L10	@
+ 128              	.L16:
+ 129 00fc 0300A0E3 		mov	r0, #3	@,
+ 130 0100 FEFFFFEB 		bl	lcd_print_unsigned	@
+ 131 0104 4C009FE5 		ldr	r0, .L17+16	@,
+ 132 0108 FEFFFFEB 		bl	lcd_print_string	@
+ 133 010c E7FFFFEA 		b	.L3	@
+ 134              	.L15:
+ 135 0110 0400A0E3 		mov	r0, #4	@,
+ 136 0114 FEFFFFEB 		bl	lcd_print_unsigned	@
+ 137 0118 38009FE5 		ldr	r0, .L17+16	@,
+ 138 011c FEFFFFEB 		bl	lcd_print_string	@
+ 139 0120 30009FE5 		ldr	r0, .L17+16	@,
+ 140 0124 FEFFFFEB 		bl	lcd_print_string	@
+ 141 0128 E0FFFFEA 		b	.L3	@
+ 142              	.L5:
+ 143 012c 24009FE5 		ldr	r0, .L17+16	@,
+ 144 0130 FEFFFFEB 		bl	lcd_print_string	@
+ 145 0134 010055E3 		cmp	r5, #1	@ i,
+ 146 0138 DCFFFF1A 		bne	.L3	@,
+ 147 013c 0500A0E1 		mov	r0, r5	@, i
+ 148 0140 FEFFFFEB 		bl	lcd_print_unsigned	@
+ 149 0144 DBFFFFEA 		b	.L6	@
+ 150              	.L18:
+ 151              		.align	2
+ 152              	.L17:
+ 153 0148 008002E0 		.word	-536707072
+ 154 014c 3F4B4C00 		.word	4999999
+ 155 0150 00000000 		.word	.LC0
+ 156 0154 10000000 		.word	.LC1
+ 157 0158 20000000 		.word	.LC2
+ 158              		.size	main, .-main
+ 159              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 160              		.align	2
+ 161              	.LC0:
+ 162 0000 4D6F6E20 		.ascii	"Mon super TP!\000"
+ 162      73757065 
+ 162      72205450 
+ 162      2100
+ 163 000e 0000     		.space	2
+ 164              	.LC1:
+ 165 0010 416C6C75 		.ascii	"Allumage LED : \000"
+ 165      6D616765 
+ 165      204C4544 
+ 165      203A2000 
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc2bJXue.s 			page 4
+
+
+ 166              	.LC2:
+ 167 0020 2000     		.ascii	" \000"
+ 168 0022 0000     		.ident	"GCC: (GNU) 4.6.1"
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc2bJXue.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc2bJXue.s:53     .text.startup:00000000 $a
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc2bJXue.s:56     .text.startup:00000000 main
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc2bJXue.s:153    .text.startup:00000148 $d
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc2bJXue.s:160    .rodata.str1.4:00000000 $d
+
+UNDEFINED SYMBOLS
+initialiser_sorties_s0_s3
+programmer_uart1
+lcd_init
+lcd_goto_line_column
+lcd_print_string
+eteindre_sorties_s0_s3
+lcd_print_spaces
+lcd_print_unsigned
+allumer_sorties_s0_s3

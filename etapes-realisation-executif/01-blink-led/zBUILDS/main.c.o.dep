@@ -1,0 +1,7 @@
+zBUILDS/main.c.o: sources/main.c \
+ /usr/local/dev-arm/arm-dev-files/sources/lpc22xx.h \
+ /usr/local/dev-arm/arm-dev-files/sources/processor-defines.h
+
+/usr/local/dev-arm/arm-dev-files/sources/lpc22xx.h:
+
+/usr/local/dev-arm/arm-dev-files/sources/processor-defines.h:

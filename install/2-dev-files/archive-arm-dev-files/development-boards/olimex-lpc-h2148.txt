@@ -1,0 +1,45 @@
+#----------------------------------------------------------------------------*
+#                                                                            *
+#                     Define micro-controller                                *
+#                                                                            *
+#----------------------------------------------------------------------------*
+
+MICROCONTROLLER := lpc2148
+
+#----------------------------------------------------------------------------*
+#                                                                            *
+#                     Define external RAM                                    *
+#                                                                            *
+#----------------------------------------------------------------------------*
+
+EXTERNAL_RAM_SIZE := 0
+EXTERNAL_RAM_ADDRESS := 0 # Don't care, size is null
+
+#----------------------------------------------------------------------------*
+#                                                                            *
+# You should define the quartz frequency, the PLL frequency multiplier ,     *
+# factor and the peripherical clock divisor here.                            *
+#                                                                            *
+# Defining LPC22XX_CRYSTAL_FREQUENCY:                                        *
+#   - the value, expressed in Hz, should be the actual quartz frequency;     *
+#   - constraint: 10 MHz <= LPC22XX_CRYSTAL_FREQUENCY <= 15 MHz.             *
+#                                                                            *
+# Defining LPC22XX_PLL_FREQUENCY_MULTIPLIER:                                 *
+#   - the value defines the system clock CCLK, used by the ARM7 processor;   *
+#        CCLK = LPC22XX_CRYSTAL_FREQUENCY * LPC22XX_PLL_FREQUENCY_MULTIPLIER *
+#   - constraint: 10 MHz <= CCLK <= 60 MHz.                                  *
+#                                                                            *
+# Defining LPC22XX_APB_DIVIDER:                                              *
+#   - the value defines the peripherical clock PCLK, used by the all         *
+#     on chip peripheral devices;                                            *
+#        PCLK = CCLK / LPC22XX_APB_DIVIDER                                   *
+#   - constraint: LPC22XX_APB_DIVIDER should be 1, 2 or 4;                   *
+#   - using 1 provides best timing accuracy.                                 *
+#                                                                            *
+#----------------------------------------------------------------------------*
+
+LPC22XX_CRYSTAL_FREQUENCY := 12000000 # Quartz 12 MHz 
+LPC22XX_PLL_FREQUENCY_MULTIPLIER := 5 # So processor speed is 12 MHz * 5 = 60 MHz
+LPC22XX_APB_DIVIDER := 1 # So peripheral clock is 60 MHz
+
+#----------------------------------------------------------------------------*

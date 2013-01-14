@@ -1,0 +1,14 @@
+zBUILDS/initialize-lpc2200-pll.c.o: \
+ /usr/local/dev-arm/arm-dev-files/sources/initialize-lpc2200-pll.c \
+ /usr/local/dev-arm/i386-Darwin-arm-gcc-4.6.1/bin/../lib/gcc/arm-elf/4.6.1/include/stddef.h \
+ /usr/local/dev-arm/arm-dev-files/sources/check-lpc2200-timing-settings.h \
+ /usr/local/dev-arm/arm-dev-files/sources/lpc22xx.h \
+ /usr/local/dev-arm/arm-dev-files/sources/processor-defines.h
+
+/usr/local/dev-arm/i386-Darwin-arm-gcc-4.6.1/bin/../lib/gcc/arm-elf/4.6.1/include/stddef.h:
+
+/usr/local/dev-arm/arm-dev-files/sources/check-lpc2200-timing-settings.h:
+
+/usr/local/dev-arm/arm-dev-files/sources/lpc22xx.h:
+
+/usr/local/dev-arm/arm-dev-files/sources/processor-defines.h:

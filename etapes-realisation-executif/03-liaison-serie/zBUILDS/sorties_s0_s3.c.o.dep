@@ -1,0 +1,10 @@
+zBUILDS/sorties_s0_s3.c.o: ../sources-communs/sorties_s0_s3.c \
+ /usr/local/dev-arm/arm-dev-files/sources/lpc22xx.h \
+ /usr/local/dev-arm/arm-dev-files/sources/processor-defines.h \
+ ../sources-communs/sorties_s0_s3.h
+
+/usr/local/dev-arm/arm-dev-files/sources/lpc22xx.h:
+
+/usr/local/dev-arm/arm-dev-files/sources/processor-defines.h:
+
+../sources-communs/sorties_s0_s3.h:

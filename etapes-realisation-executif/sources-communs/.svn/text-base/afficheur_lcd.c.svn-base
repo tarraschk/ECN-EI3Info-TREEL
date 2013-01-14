@@ -1,0 +1,201 @@
+//-------------------------------------------------------------------------*
+
+#include "afficheur_lcd.h"
+#include "check-lpc2200-timing-settings.h"
+#include "lpc22xx.h"
+
+//-------------------------------------------------------------------------*
+
+void lcd_goto_line_column (const uint32 inLine, const uint32 inColumn) {
+  const uint32 line = (inLine < 3) ? inLine : 3 ;
+  const uint32 colonne = (inColumn < 19) ? inColumn : 19 ;
+  const uint32 commande = 0x80 + (line * 20) + colonne ;
+  envoyer_caractere_serie1 (commande) ;
+}
+
+//-------------------------------------------------------------------------*
+
+void lcd_backlight (const bool inBacklightOn) {
+  envoyer_caractere_serie1 (0xD0 + inBacklightOn) ;
+}
+
+//-------------------------------------------------------------------------*
+
+void lcd_print_char (const char inChar) {
+  envoyer_caractere_serie1 (inChar) ;
+}
+
+//-------------------------------------------------------------------------*
+
+void lcd_print_string (const char * inChaine) {
+  const char * p = inChaine ;
+  while ((* p) != '\0') {
+    envoyer_caractere_serie1 (* p) ;
+    p ++ ;
+  }
+}
+
+//-------------------------------------------------------------------------*
+
+void lcd_init (void) {
+  envoyer_caractere_serie1 (0xD2) ;
+  envoyer_caractere_serie1 (0xD1) ; // Backlight ON
+}
+
+//-------------------------------------------------------------------------*
+
+void lcd_print_hex1 (const uint8 inValue) {
+  const uint8 v = inValue & 0x0F ;
+  if (v <= 9) {
+    envoyer_caractere_serie1 (v + '0') ;
+  }else{
+    envoyer_caractere_serie1 (v + 'A' - 10) ;
+  }
+}
+
+//-------------------------------------------------------------------------*
+
+void lcd_print_unsigned (const uint32 inValue) {
+  if (inValue <= 9) {
+    envoyer_caractere_serie1 (inValue + '0') ;
+  }else{
+    lcd_print_unsigned (inValue / 10) ;
+    envoyer_caractere_serie1 ((inValue % 10) + '0') ;
+  }
+}
+
+//-------------------------------------------------------------------------*
+
+void lcd_print_unsigned_with_leading_spaces (const uint32 inValue,
+                                             const uint32 inDisplayWidth) {
+  uint32 v = inValue ;
+  uint32 digits = 1 ;
+  while (v > 9) {
+    v /= 10 ;
+    digits ++ ;
+  }
+  while (digits < inDisplayWidth) {
+    envoyer_caractere_serie1 (' ') ;
+    digits ++ ;
+  }
+  lcd_print_unsigned (inValue) ;
+}
+
+//-------------------------------------------------------------------------*
+
+void lcd_print_signed (const sint32 inValue) {
+  if (inValue >= 0) {
+    lcd_print_unsigned (inValue) ;
+  }else{
+    envoyer_caractere_serie1 ('-') ;
+    lcd_print_unsigned (- inValue) ;
+  }
+}
+
+//-------------------------------------------------------------------------*
+
+void lcd_print_signed_with_leading_spaces (const sint32 inValue,
+                                           const uint32 inDisplayWidth) {
+
+  sint32 v = inValue ;
+  uint32 digits = 1 ;
+  if (v < 0) {
+    v = - v ;
+    digits ++ ;
+  }
+  while (v > 9) {
+    v /= 10 ;
+    digits ++ ;
+  }
+  while (digits < inDisplayWidth) {
+    envoyer_caractere_serie1 (' ') ;
+    digits ++ ;
+  }
+  lcd_print_signed (inValue) ;
+}
+
+//-------------------------------------------------------------------------*
+
+void lcd_print_hex2 (const uint8 inValue) {
+  lcd_print_hex1 (inValue >> 4) ;
+  lcd_print_hex1 (inValue) ;
+}
+
+//-------------------------------------------------------------------------*
+
+void lcd_print_hex4 (const uint16 inValue) {
+  lcd_print_hex2 (inValue >> 8) ;
+  lcd_print_hex2 (inValue) ;
+}
+
+//-------------------------------------------------------------------------*
+
+void lcd_print_hex8 (const uint32 inValue) {
+  lcd_print_hex4 (inValue >> 16) ;
+  lcd_print_hex4 (inValue) ;
+}
+
+//-------------------------------------------------------------------------*
+
+void lcd_print_spaces (const uint32 inSpaceCount) {
+  uint32 spaceCount = inSpaceCount ;
+  while (spaceCount > 0) {
+    envoyer_caractere_serie1 (' ') ;
+    spaceCount -- ;
+  }
+}
+
+//-------------------------------------------------------------------------*
+//                                                                         *
+//   B A U D    R A T E S    C O M P U T A T I O N S                       *
+//                                                                         *
+//-------------------------------------------------------------------------*
+
+#define BAUD_RATE (19200)
+
+//-------------------------------------------------------------------------*
+//    For PCLK = 4 * 14.7456 MHz, if we want BAUD_RATE = 19200 bauds
+//    (256 * UART1_DLM + UART1_DLL) = PCLK / (16 * BAUD_RATE) = 192 (an integer value)
+//    So UART1_DLM = 0, and UART1_DLL = 192
+
+//    For PCLK = 6 * 10 MHz, if we want BAUD_RATE = 19200 bauds
+//    (256 * UART1_DLM + UART1_DLL) = PCLK / (16 * BAUD_RATE) = 195.3125
+//    So UART1_DLM = 0, and UART1_DLL = 195
+
+#define SETTING_VALUE (PCLK / (16 * BAUD_RATE))
+#define UART1_DLM_VALUE  ((SETTING_VALUE) >> 8)
+#define UART1_DLL_VALUE  ((SETTING_VALUE) & 255)
+
+//-------------------------------------------------------------------------*
+
+void programmer_uart1 (void) {
+//------------------- Init UART1 (see UM10114, chapter 10.4)
+//--- 1. Set DLAB=1 in UART1_LCR(for accessing to UART1_DLL)
+  U1LCR = 0x80 ;
+//--- 2. Set baud rate by writing values to registers UART0_DLL and UART0_DLM
+  U1DLM = UART1_DLM_VALUE ;
+  U1DLL = UART1_DLL_VALUE ;
+//--- 3. Program UART1_LCR
+// Bit 7 : 0 (Disable access to Divisor Latches)
+// Bit 6 : 0 (Disable break transmission)
+// Bits 5-4 : 00 (any value, parity is not enabled)
+// Bit 3 : 0 (Disable parity generation and checking)
+// Bit 2 : 0 (1 stop bit)
+// Bits 1-0 : 11 (8 bit character length)
+  U1LCR = 0x03 ;
+//--- 4. UART FIFO (UART1_FCR)
+// Bit 7-6 : 00 (1 received character triggers interrupt)
+// Bits 5-3 : 000 (reserved)
+// Bit 2 : 0 (no action on TX FIFO)
+// Bit 1 : 0 (no action on RX FIFO)
+// Bit 0 : 0->1 (clears TX and RX FIFO, and enables them)
+  U1FCR = 0 ;
+  U1FCR = 0x01 ;
+//--- 5. Select PIN for beeing TXB1 and RXB1
+//  Bits 17-16 : 01 (P0.8 is TxD for UART1)
+//  Bits 19-18 : 01 (P0.9 is RxD for UART1)
+  PINSEL0 &= ~ 0xF0000 ;
+  PINSEL0 |=   0x50000 ;
+}
+
+//---------------------------------------------------------------------------*
