@@ -1,0 +1,284 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+internal_ram     0x40000000         0x00004000
+external_ram     0x81000000         0x00100000
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD zBUILDS/main.c.o
+LOAD zBUILDS/crt0-undefined.s.o
+LOAD zBUILDS/initialize-lpc2200-pll.c.o
+LOAD zBUILDS/handler-for-IRQ.s.o
+LOAD zBUILDS/handler-stub-for-DAbort.s.o
+LOAD zBUILDS/handler-stub-for-FIRQ.s.o
+LOAD zBUILDS/handler-stub-for-PAbort.s.o
+LOAD zBUILDS/handler-stub-for-undef.s.o
+LOAD zBUILDS/sorties_s0_s3.c.o
+LOAD zBUILDS/afficheur_lcd.c.o
+LOAD zBUILDS/assembleur.s.o
+LOAD /usr/local/dev-arm/i386-Darwin-arm-gcc-4.6.1/arm-elf/lib/libc.a
+LOAD /usr/local/dev-arm/i386-Darwin-arm-gcc-4.6.1/lib/gcc/arm-elf/4.6.1/libgcc.a
+                0x00000100                FIQ_STACK_SIZE = 0x100
+                0x00000100                IRQ_STACK_SIZE = 0x100
+                0x00000100                ABT_STACK_SIZE = 0x100
+                0x00000100                UND_STACK_SIZE = 0x100
+                0x00000100                USR_STACK_SIZE = 0x100
+                0x00000400                SVC_STACK_SIZE = 0x400
+
+.vectors        0x40000000       0x40
+ *(.vectors)
+ .vectors       0x40000000       0x40 zBUILDS/crt0-undefined.s.o
+
+.text           0x81000000      0x754
+ *(.init)
+ .init          0x81000000       0xcc zBUILDS/crt0-undefined.s.o
+                0x81000000                ResetHandler
+                0x810000a4                ExitFunction
+                0x810000cc                . = ALIGN (0x4)
+ *(.text)
+ .text          0x810000cc       0x10 zBUILDS/main.c.o
+                0x810000cc                kernel_appel_swi_0
+                0x810000d4                kernel_appel_swi_1
+ .text          0x810000dc        0x0 zBUILDS/crt0-undefined.s.o
+ .text          0x810000dc       0x78 zBUILDS/initialize-lpc2200-pll.c.o
+                0x810000dc                initialize_lpc2200_pll
+ .text          0x81000154       0x28 zBUILDS/handler-for-IRQ.s.o
+                0x81000154                IRQHandler
+ .text          0x8100017c        0x4 zBUILDS/handler-stub-for-DAbort.s.o
+                0x8100017c                DAbortHandler
+ .text          0x81000180        0x4 zBUILDS/handler-stub-for-FIRQ.s.o
+                0x81000180                FIQHandler
+ .text          0x81000184        0x4 zBUILDS/handler-stub-for-PAbort.s.o
+                0x81000184                PAbortHandler
+ .text          0x81000188        0x4 zBUILDS/handler-stub-for-undef.s.o
+                0x81000188                UndefHandler
+ .text          0x8100018c       0x80 zBUILDS/sorties_s0_s3.c.o
+                0x8100018c                initialiser_sorties_s0_s3
+                0x810001ac                allumer_sorties_s0_s3
+                0x810001dc                eteindre_sorties_s0_s3
+ .text          0x8100020c      0x42c zBUILDS/afficheur_lcd.c.o
+                0x8100020c                lcd_goto_line_column
+                0x81000250                lcd_backlight
+                0x81000278                lcd_print_char
+                0x8100029c                lcd_print_string
+                0x810002d0                lcd_init
+                0x81000310                lcd_print_hex1
+                0x81000360                lcd_print_unsigned
+                0x810003dc                lcd_print_unsigned_with_leading_spaces
+                0x81000448                lcd_print_signed
+                0x81000478                lcd_print_signed_with_leading_spaces
+                0x810004f0                lcd_print_hex2
+                0x8100050c                lcd_print_hex4
+                0x8100052c                lcd_print_hex8
+                0x8100054c                lcd_print_spaces
+                0x8100057c                programmer_uart1
+                0x810005d4                recevoir_caractere_serie1
+                0x810005f4                attente_caractere_serie1
+                0x81000614                envoyer_caractere_serie1
+ .text          0x81000638       0x48 zBUILDS/assembleur.s.o
+                0x81000638                get_sp
+                0x81000640                get_mode
+                0x81000648                appel_swi_0
+                0x81000650                SWIHandler
+                0x81000674                appel_swi_1
+                0x81000680                . = ALIGN (0x4)
+ *(.rodata)
+                0x81000680                . = ALIGN (0x4)
+ *(.rodata*)
+ .rodata.str1.4
+                0x81000680       0x10 zBUILDS/main.c.o
+                0x81000690                . = ALIGN (0x4)
+ *(.glue_7t)
+ .glue_7t       0x00000000        0x0 linker stubs
+                0x81000690                . = ALIGN (0x4)
+ *(.glue_7)
+ .glue_7        0x00000000        0x0 linker stubs
+                0x81000690                . = ALIGN (0x4)
+ *(.comment)
+ .comment       0x81000690       0x11 zBUILDS/main.c.o
+                                 0x12 (size before relaxing)
+ .comment       0x00000000       0x12 zBUILDS/initialize-lpc2200-pll.c.o
+ .comment       0x00000000       0x12 zBUILDS/sorties_s0_s3.c.o
+ .comment       0x00000000       0x12 zBUILDS/afficheur_lcd.c.o
+                0x810006a4                . = ALIGN (0x4)
+ *fill*         0x810006a1        0x3 00
+ *(.ARM.*)
+ .ARM.attributes
+                0x810006a4       0x10 zBUILDS/main.c.o
+ .ARM.attributes
+                0x810006b4       0x10 zBUILDS/crt0-undefined.s.o
+ .ARM.attributes
+                0x810006c4       0x10 zBUILDS/initialize-lpc2200-pll.c.o
+ .ARM.attributes
+                0x810006d4       0x10 zBUILDS/handler-for-IRQ.s.o
+ .ARM.attributes
+                0x810006e4       0x10 zBUILDS/handler-stub-for-DAbort.s.o
+ .ARM.attributes
+                0x810006f4       0x10 zBUILDS/handler-stub-for-FIRQ.s.o
+ .ARM.attributes
+                0x81000704       0x10 zBUILDS/handler-stub-for-PAbort.s.o
+ .ARM.attributes
+                0x81000714       0x10 zBUILDS/handler-stub-for-undef.s.o
+ .ARM.attributes
+                0x81000724       0x10 zBUILDS/sorties_s0_s3.c.o
+ .ARM.attributes
+                0x81000734       0x10 zBUILDS/afficheur_lcd.c.o
+ .ARM.attributes
+                0x81000744       0x10 zBUILDS/assembleur.s.o
+                0x81000754                . = ALIGN (0x4)
+                0x81000754                etext = .
+
+.vfp11_veneer   0x81000754        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x81000754        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.text.startup   0x81000754       0xc4
+ .text.startup  0x81000754       0xc4 zBUILDS/main.c.o
+                0x81000754                main
+
+.data           0x81000818        0x0
+                0x81000818                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x81000818        0x0 zBUILDS/main.c.o
+ .data          0x81000818        0x0 zBUILDS/crt0-undefined.s.o
+ .data          0x81000818        0x0 zBUILDS/initialize-lpc2200-pll.c.o
+ .data          0x81000818        0x0 zBUILDS/handler-for-IRQ.s.o
+ .data          0x81000818        0x0 zBUILDS/handler-stub-for-DAbort.s.o
+ .data          0x81000818        0x0 zBUILDS/handler-stub-for-FIRQ.s.o
+ .data          0x81000818        0x0 zBUILDS/handler-stub-for-PAbort.s.o
+ .data          0x81000818        0x0 zBUILDS/handler-stub-for-undef.s.o
+ .data          0x81000818        0x0 zBUILDS/sorties_s0_s3.c.o
+ .data          0x81000818        0x0 zBUILDS/afficheur_lcd.c.o
+ .data          0x81000818        0x0 zBUILDS/assembleur.s.o
+                0x81000818                . = ALIGN (0x4)
+                0x81000818                edata = .
+                0x81000818                _edata = .
+                0x81000818                PROVIDE (__data_end, .)
+
+.bss            0x81000818      0x9e8
+                0x81000818                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x81000818        0x0 zBUILDS/main.c.o
+ .bss           0x81000818        0x0 zBUILDS/crt0-undefined.s.o
+ .bss           0x81000818        0x0 zBUILDS/initialize-lpc2200-pll.c.o
+ .bss           0x81000818        0x0 zBUILDS/handler-for-IRQ.s.o
+ .bss           0x81000818        0x0 zBUILDS/handler-stub-for-DAbort.s.o
+ .bss           0x81000818        0x0 zBUILDS/handler-stub-for-FIRQ.s.o
+ .bss           0x81000818        0x0 zBUILDS/handler-stub-for-PAbort.s.o
+ .bss           0x81000818        0x0 zBUILDS/handler-stub-for-undef.s.o
+ .bss           0x81000818        0x0 zBUILDS/sorties_s0_s3.c.o
+ .bss           0x81000818        0x0 zBUILDS/afficheur_lcd.c.o
+ .bss           0x81000818        0x0 zBUILDS/assembleur.s.o
+ *(COMMON)
+                0x81000818                . = ALIGN (0x4)
+                0x81000818                PROVIDE (__bss_end, .)
+                0x81000900                . = ALIGN (0x100)
+ *fill*         0x81000818       0xe8 00
+                0x81000900                PROVIDE (__stack_start, .)
+                0x81000900                PROVIDE (__stack_fiq_start, .)
+                0x81000a00                . = (. + FIQ_STACK_SIZE)
+ *fill*         0x81000900      0x100 00
+                0x81000a00                . = ALIGN (0x4)
+                0x81000a00                PROVIDE (__stack_fiq_end, .)
+                0x81000a00                PROVIDE (__stack_irq_start, .)
+                0x81000b00                . = (. + IRQ_STACK_SIZE)
+ *fill*         0x81000a00      0x100 00
+                0x81000b00                . = ALIGN (0x4)
+                0x81000b00                PROVIDE (__stack_irq_end, .)
+                0x81000b00                PROVIDE (__stack_abt_start, .)
+                0x81000c00                . = (. + ABT_STACK_SIZE)
+ *fill*         0x81000b00      0x100 00
+                0x81000c00                . = ALIGN (0x4)
+                0x81000c00                PROVIDE (__stack_abt_end, .)
+                0x81000c00                PROVIDE (__stack_und_start, .)
+                0x81000d00                . = (. + UND_STACK_SIZE)
+ *fill*         0x81000c00      0x100 00
+                0x81000d00                . = ALIGN (0x4)
+                0x81000d00                PROVIDE (__stack_und_end, .)
+                0x81000d00                PROVIDE (__stack_svc_start, .)
+                0x81001100                . = (. + SVC_STACK_SIZE)
+ *fill*         0x81000d00      0x400 00
+                0x81001100                . = ALIGN (0x4)
+                0x81001100                PROVIDE (__stack_svc_end, .)
+                0x81001100                PROVIDE (__stack_usr_start, .)
+                0x81001200                . = (. + USR_STACK_SIZE)
+ *fill*         0x81001100      0x100 00
+                0x81001200                . = ALIGN (0x4)
+                0x81001200                PROVIDE (__stack_usr_end, .)
+                0x81001200                PROVIDE (__stack_end, .)
+                0x81001200                PROVIDE (__heap_start, .)
+OUTPUT(zPRODUCTS/test-external-ram.elf elf32-littlearm)
+
+Cross Reference Table
+
+Symbol                                            File
+DAbortHandler                                     zBUILDS/handler-stub-for-DAbort.s.o
+                                                  zBUILDS/crt0-undefined.s.o
+ExitFunction                                      zBUILDS/crt0-undefined.s.o
+FIQHandler                                        zBUILDS/handler-stub-for-FIRQ.s.o
+                                                  zBUILDS/crt0-undefined.s.o
+IRQHandler                                        zBUILDS/handler-for-IRQ.s.o
+                                                  zBUILDS/crt0-undefined.s.o
+PAbortHandler                                     zBUILDS/handler-stub-for-PAbort.s.o
+                                                  zBUILDS/crt0-undefined.s.o
+ResetHandler                                      zBUILDS/crt0-undefined.s.o
+SWIHandler                                        zBUILDS/assembleur.s.o
+                                                  zBUILDS/crt0-undefined.s.o
+UndefHandler                                      zBUILDS/handler-stub-for-undef.s.o
+                                                  zBUILDS/crt0-undefined.s.o
+__bss_end                                         zBUILDS/crt0-undefined.s.o
+__bss_start                                       zBUILDS/crt0-undefined.s.o
+__stack_abt_end                                   zBUILDS/crt0-undefined.s.o
+__stack_fiq_end                                   zBUILDS/crt0-undefined.s.o
+__stack_irq_end                                   zBUILDS/crt0-undefined.s.o
+__stack_svc_end                                   zBUILDS/crt0-undefined.s.o
+__stack_und_end                                   zBUILDS/crt0-undefined.s.o
+allumer_sorties_s0_s3                             zBUILDS/sorties_s0_s3.c.o
+appel_swi_0                                       zBUILDS/assembleur.s.o
+                                                  zBUILDS/main.c.o
+appel_swi_1                                       zBUILDS/assembleur.s.o
+                                                  zBUILDS/main.c.o
+attente_caractere_serie1                          zBUILDS/afficheur_lcd.c.o
+envoyer_caractere_serie1                          zBUILDS/afficheur_lcd.c.o
+eteindre_sorties_s0_s3                            zBUILDS/sorties_s0_s3.c.o
+get_mode                                          zBUILDS/assembleur.s.o
+                                                  zBUILDS/main.c.o
+get_sp                                            zBUILDS/assembleur.s.o
+                                                  zBUILDS/main.c.o
+initialiser_sorties_s0_s3                         zBUILDS/sorties_s0_s3.c.o
+                                                  zBUILDS/main.c.o
+initialize_lpc2200_pll                            zBUILDS/initialize-lpc2200-pll.c.o
+                                                  zBUILDS/crt0-undefined.s.o
+kernel_appel_swi_0                                zBUILDS/main.c.o
+                                                  zBUILDS/assembleur.s.o
+kernel_appel_swi_1                                zBUILDS/main.c.o
+                                                  zBUILDS/assembleur.s.o
+lcd_backlight                                     zBUILDS/afficheur_lcd.c.o
+lcd_goto_line_column                              zBUILDS/afficheur_lcd.c.o
+                                                  zBUILDS/main.c.o
+lcd_init                                          zBUILDS/afficheur_lcd.c.o
+                                                  zBUILDS/main.c.o
+lcd_print_char                                    zBUILDS/afficheur_lcd.c.o
+lcd_print_hex1                                    zBUILDS/afficheur_lcd.c.o
+lcd_print_hex2                                    zBUILDS/afficheur_lcd.c.o
+lcd_print_hex4                                    zBUILDS/afficheur_lcd.c.o
+lcd_print_hex8                                    zBUILDS/afficheur_lcd.c.o
+                                                  zBUILDS/main.c.o
+lcd_print_signed                                  zBUILDS/afficheur_lcd.c.o
+lcd_print_signed_with_leading_spaces              zBUILDS/afficheur_lcd.c.o
+lcd_print_spaces                                  zBUILDS/afficheur_lcd.c.o
+lcd_print_string                                  zBUILDS/afficheur_lcd.c.o
+                                                  zBUILDS/main.c.o
+lcd_print_unsigned                                zBUILDS/afficheur_lcd.c.o
+                                                  zBUILDS/main.c.o
+lcd_print_unsigned_with_leading_spaces            zBUILDS/afficheur_lcd.c.o
+main                                              zBUILDS/main.c.o
+                                                  zBUILDS/crt0-undefined.s.o
+programmer_uart1                                  zBUILDS/afficheur_lcd.c.o
+                                                  zBUILDS/main.c.o
+recevoir_caractere_serie1                         zBUILDS/afficheur_lcd.c.o

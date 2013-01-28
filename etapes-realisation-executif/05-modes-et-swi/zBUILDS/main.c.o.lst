@@ -1,0 +1,180 @@
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccUFOF1l.s 			page 1
+
+
+   1              		.file	"main.c"
+   2              	@ GNU C (GCC) version 4.6.1 (arm-elf)
+   3              	@	compiled by GNU C version 4.0.1 (Apple Inc. build 5494), GMP version 5.0.2, MPFR version 3.0.1, M
+   4              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+   5              	@ options passed:  -I sources -I /usr/local/dev-arm/arm-dev-files/sources
+   6              	@ -I ../sources-communs
+   7              	@ -iprefix /usr/local/dev-arm/i386-Darwin-arm-gcc-4.6.1/bin/../lib/gcc/arm-elf/4.6.1/
+   8              	@ -MD zBUILDS/main.c.d -MF zBUILDS/main.c.o.dep -MP -MQ zBUILDS/main.c.o
+   9              	@ -D__USES_INITFINI__ -D XTR_CLASS=0 -D LPC22XX_CRYSTAL_FREQUENCY=14745600
+  10              	@ -D LPC22XX_PLL_FREQUENCY_MULTIPLIER=4 -D LPC22XX_APB_DIVIDER=1
+  11              	@ sources/main.c -mcpu=arm7tdmi-s -mcpu=arm7tdmi-s
+  12              	@ -auxbase-strip zBUILDS/main.c.o -O2 -Wall -Werror -Wreturn-type -Wformat
+  13              	@ -Wsign-compare -Wpointer-arith -Wparentheses -Wcast-align -Wcast-qual
+  14              	@ -Wwrite-strings -Wswitch -Wstrict-prototypes -Wbad-function-cast
+  15              	@ -Wmissing-declarations -Wimplicit-function-declaration
+  16              	@ -Wno-int-to-pointer-cast -Wno-pointer-to-int-cast -fverbose-asm
+  17              	@ -fomit-frame-pointer -foptimize-register-move
+  18              	@ options enabled:  -fauto-inc-dec -fbranch-count-reg -fcaller-saves
+  19              	@ -fcombine-stack-adjustments -fcommon -fcompare-elim -fcprop-registers
+  20              	@ -fcrossjumping -fcse-follow-jumps -fdefer-pop
+  21              	@ -fdelete-null-pointer-checks -fdevirtualize -fdwarf2-cfi-asm
+  22              	@ -fearly-inlining -feliminate-unused-debug-types -fexpensive-optimizations
+  23              	@ -fforward-propagate -ffunction-cse -fgcse -fgcse-lm
+  24              	@ -fguess-branch-probability -fident -fif-conversion -fif-conversion2
+  25              	@ -findirect-inlining -finline -finline-functions-called-once
+  26              	@ -finline-small-functions -fipa-cp -fipa-profile -fipa-pure-const
+  27              	@ -fipa-reference -fipa-sra -fira-share-save-slots -fira-share-spill-slots
+  28              	@ -fivopts -fkeep-static-consts -fleading-underscore -fmath-errno
+  29              	@ -fmerge-constants -fmerge-debug-strings -fmove-loop-invariants
+  30              	@ -fomit-frame-pointer -foptimize-register-move -foptimize-sibling-calls
+  31              	@ -fpartial-inlining -fpeephole -fpeephole2 -fprefetch-loop-arrays
+  32              	@ -freg-struct-return -fregmove -freorder-blocks -freorder-functions
+  33              	@ -frerun-cse-after-loop -fsched-critical-path-heuristic
+  34              	@ -fsched-dep-count-heuristic -fsched-group-heuristic -fsched-interblock
+  35              	@ -fsched-last-insn-heuristic -fsched-rank-heuristic -fsched-spec
+  36              	@ -fsched-spec-insn-heuristic -fsched-stalled-insns-dep -fschedule-insns
+  37              	@ -fschedule-insns2 -fsection-anchors -fshow-column -fsigned-zeros
+  38              	@ -fsplit-ivs-in-unroller -fsplit-wide-types -fstrict-aliasing
+  39              	@ -fstrict-overflow -fstrict-volatile-bitfields -fthread-jumps
+  40              	@ -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp -ftree-builtin-call-dce
+  41              	@ -ftree-ccp -ftree-ch -ftree-copy-prop -ftree-copyrename -ftree-cselim
+  42              	@ -ftree-dce -ftree-dominator-opts -ftree-dse -ftree-forwprop -ftree-fre
+  43              	@ -ftree-loop-if-convert -ftree-loop-im -ftree-loop-ivcanon
+  44              	@ -ftree-loop-optimize -ftree-parallelize-loops= -ftree-phiprop -ftree-pre
+  45              	@ -ftree-pta -ftree-reassoc -ftree-scev-cprop -ftree-sink
+  46              	@ -ftree-slp-vectorize -ftree-sra -ftree-switch-conversion -ftree-ter
+  47              	@ -ftree-vect-loop-version -ftree-vrp -funit-at-a-time -fverbose-asm
+  48              	@ -fzero-initialized-in-bss -mlittle-endian -msched-prolog
+  49              	
+  50              	@ Compiler executable checksum: de80e2dacb9f8abf918a9a189330559b
+  51              	
+  52              		.section	.text.startup,"ax",%progbits
+  53              		.align	2
+  54              		.global	main
+  55              		.type	main, %function
+  56              	main:
+  57              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccUFOF1l.s 			page 2
+
+
+  58              		@ frame_needed = 0, uses_anonymous_args = 0
+  59 0000 B0309FE5 		ldr	r3, .L11	@ tmp142,
+  60 0004 181093E5 		ldr	r1, [r3, #24]	@ D.2019, MEM[(volatile uint32 *)-536707048B]
+  61 0008 0225A0E3 		mov	r2, #8388608	@ tmp145,
+  62 000c 021081E1 		orr	r1, r1, r2	@ D.2020, D.2019,
+  63 0010 10402DE9 		stmfd	sp!, {r4, lr}	@,
+  64 0014 181083E5 		str	r1, [r3, #24]	@ D.2020, MEM[(volatile uint32 *)-536707048B]
+  65 0018 142083E5 		str	r2, [r3, #20]	@ tmp145, MEM[(volatile uint32 *)-536707052B]
+  66 001c 1C2083E5 		str	r2, [r3, #28]	@ tmp145, MEM[(volatile uint32 *)-536707044B]
+  67 0020 FEFFFFEB 		bl	initialiser_sorties_s0_s3	@
+  68 0024 FEFFFFEB 		bl	programmer_uart1	@
+  69 0028 FEFFFFEB 		bl	lcd_init	@
+  70              	.L5:
+  71 002c 0040A0E3 		mov	r4, #0	@ i,
+  72 0030 010000EA 		b	.L8	@
+  73              	.L3:
+  74 0034 FA0F54E3 		cmp	r4, #1000	@ i,
+  75 0038 1700000A 		beq	.L10	@,
+  76              	.L8:
+  77 003c 0000A0E3 		mov	r0, #0	@,
+  78 0040 0010A0E1 		mov	r1, r0	@,
+  79 0044 FEFFFFEB 		bl	lcd_goto_line_column	@
+  80 0048 6C009FE5 		ldr	r0, .L11+4	@,
+  81 004c FEFFFFEB 		bl	lcd_print_string	@
+  82 0050 FEFFFFEB 		bl	get_sp	@
+  83 0054 FEFFFFEB 		bl	lcd_print_hex8	@
+  84 0058 0010A0E3 		mov	r1, #0	@,
+  85 005c 0100A0E3 		mov	r0, #1	@,
+  86 0060 FEFFFFEB 		bl	lcd_goto_line_column	@
+  87 0064 54009FE5 		ldr	r0, .L11+8	@,
+  88 0068 FEFFFFEB 		bl	lcd_print_string	@
+  89 006c 014084E2 		add	r4, r4, #1	@ i, i,
+  90 0070 FEFFFFEB 		bl	get_mode	@
+  91 0074 FEFFFFEB 		bl	lcd_print_hex8	@
+  92 0078 7D0F54E3 		cmp	r4, #500	@ i,
+  93 007c ECFFFF1A 		bne	.L3	@,
+  94 0080 FEFFFFEB 		bl	lcd_init	@
+  95 0084 0010A0E3 		mov	r1, #0	@,
+  96 0088 0200A0E3 		mov	r0, #2	@,
+  97 008c FEFFFFEB 		bl	lcd_goto_line_column	@
+  98 0090 FEFFFFEB 		bl	appel_swi_0	@
+  99 0094 FEFFFFEB 		bl	lcd_print_unsigned	@
+ 100 0098 E7FFFFEA 		b	.L8	@
+ 101              	.L10:
+ 102 009c FEFFFFEB 		bl	lcd_init	@
+ 103 00a0 0010A0E3 		mov	r1, #0	@,
+ 104 00a4 0200A0E3 		mov	r0, #2	@,
+ 105 00a8 FEFFFFEB 		bl	lcd_goto_line_column	@
+ 106 00ac FEFFFFEB 		bl	appel_swi_1	@
+ 107 00b0 FEFFFFEB 		bl	lcd_print_unsigned	@
+ 108 00b4 DCFFFFEA 		b	.L5	@
+ 109              	.L12:
+ 110              		.align	2
+ 111              	.L11:
+ 112 00b8 008002E0 		.word	-536707072
+ 113 00bc 00000000 		.word	.LC0
+ 114 00c0 08000000 		.word	.LC1
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccUFOF1l.s 			page 3
+
+
+ 115              		.size	main, .-main
+ 116              		.text
+ 117              		.align	2
+ 118              		.global	kernel_appel_swi_0
+ 119              		.type	kernel_appel_swi_0, %function
+ 120              	kernel_appel_swi_0:
+ 121              		@ args = 0, pretend = 0, frame = 0
+ 122              		@ frame_needed = 0, uses_anonymous_args = 0
+ 123              		@ link register save eliminated.
+ 124 0000 1700A0E3 		mov	r0, #23	@,
+ 125 0004 1EFF2FE1 		bx	lr	@
+ 126              		.size	kernel_appel_swi_0, .-kernel_appel_swi_0
+ 127              		.align	2
+ 128              		.global	kernel_appel_swi_1
+ 129              		.type	kernel_appel_swi_1, %function
+ 130              	kernel_appel_swi_1:
+ 131              		@ args = 0, pretend = 0, frame = 0
+ 132              		@ frame_needed = 0, uses_anonymous_args = 0
+ 133              		@ link register save eliminated.
+ 134 0008 9100A0E3 		mov	r0, #145	@,
+ 135 000c 1EFF2FE1 		bx	lr	@
+ 136              		.size	kernel_appel_swi_1, .-kernel_appel_swi_1
+ 137              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 138              		.align	2
+ 139              	.LC0:
+ 140 0000 73703A20 		.ascii	"sp: \000"
+ 140      00
+ 141 0005 000000   		.space	3
+ 142              	.LC1:
+ 143 0008 6D6F6465 		.ascii	"mode: \000"
+ 143      3A2000
+ 144 000f 00       		.ident	"GCC: (GNU) 4.6.1"
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccUFOF1l.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccUFOF1l.s:53     .text.startup:00000000 $a
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccUFOF1l.s:56     .text.startup:00000000 main
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccUFOF1l.s:112    .text.startup:000000b8 $d
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccUFOF1l.s:117    .text:00000000 $a
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccUFOF1l.s:120    .text:00000000 kernel_appel_swi_0
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccUFOF1l.s:130    .text:00000008 kernel_appel_swi_1
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccUFOF1l.s:138    .rodata.str1.4:00000000 $d
+
+UNDEFINED SYMBOLS
+initialiser_sorties_s0_s3
+programmer_uart1
+lcd_init
+lcd_goto_line_column
+lcd_print_string
+get_sp
+lcd_print_hex8
+get_mode
+appel_swi_0
+lcd_print_unsigned
+appel_swi_1

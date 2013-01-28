@@ -1,0 +1,18 @@
+zBUILDS/main.c.o: sources/main.c \
+ /usr/local/dev-arm/arm-dev-files/sources/lpc22xx.h \
+ /usr/local/dev-arm/arm-dev-files/sources/processor-defines.h \
+ ../sources-communs/sorties_s0_s3.h ../sources-communs/afficheur_lcd.h \
+ /usr/local/dev-arm/arm-dev-files/sources/processor-defines.h \
+ sources/assembleur.h
+
+/usr/local/dev-arm/arm-dev-files/sources/lpc22xx.h:
+
+/usr/local/dev-arm/arm-dev-files/sources/processor-defines.h:
+
+../sources-communs/sorties_s0_s3.h:
+
+../sources-communs/afficheur_lcd.h:
+
+/usr/local/dev-arm/arm-dev-files/sources/processor-defines.h:
+
+sources/assembleur.h:
