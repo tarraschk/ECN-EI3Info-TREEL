@@ -1,0 +1,14 @@
+zBUILDS/initialiser-compteur-0-it.c.o: \
+ ../sources-communs/initialiser-compteur-0-it.c \
+ /usr/local/dev-arm/arm-dev-files/sources/lpc22xx.h \
+ /usr/local/dev-arm/arm-dev-files/sources/processor-defines.h \
+ /usr/local/dev-arm/arm-dev-files/sources/check-lpc2200-timing-settings.h \
+ ../sources-communs/initialiser-compteur-0-it.h
+
+/usr/local/dev-arm/arm-dev-files/sources/lpc22xx.h:
+
+/usr/local/dev-arm/arm-dev-files/sources/processor-defines.h:
+
+/usr/local/dev-arm/arm-dev-files/sources/check-lpc2200-timing-settings.h:
+
+../sources-communs/initialiser-compteur-0-it.h:

@@ -1,0 +1,16 @@
+zBUILDS/afficheur_lcd.c.o: ../sources-communs/afficheur_lcd.c \
+ ../sources-communs/afficheur_lcd.h \
+ /usr/local/dev-arm/arm-dev-files/sources/processor-defines.h \
+ /usr/local/dev-arm/arm-dev-files/sources/check-lpc2200-timing-settings.h \
+ /usr/local/dev-arm/arm-dev-files/sources/lpc22xx.h \
+ /usr/local/dev-arm/arm-dev-files/sources/processor-defines.h
+
+../sources-communs/afficheur_lcd.h:
+
+/usr/local/dev-arm/arm-dev-files/sources/processor-defines.h:
+
+/usr/local/dev-arm/arm-dev-files/sources/check-lpc2200-timing-settings.h:
+
+/usr/local/dev-arm/arm-dev-files/sources/lpc22xx.h:
+
+/usr/local/dev-arm/arm-dev-files/sources/processor-defines.h:

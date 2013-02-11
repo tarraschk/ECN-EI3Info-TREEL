@@ -1,0 +1,191 @@
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccWe5ArZ.s 			page 1
+
+
+   1              		.file	"task-list-by-date.c"
+   2              	@ GNU C (GCC) version 4.6.1 (arm-elf)
+   3              	@	compiled by GNU C version 4.0.1 (Apple Inc. build 5494), GMP version 5.0.2, MPFR version 3.0.1, M
+   4              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+   5              	@ options passed:  -I sources -I /usr/local/dev-arm/arm-dev-files/sources
+   6              	@ -I ../sources-communs
+   7              	@ -iprefix /usr/local/dev-arm/i386-Darwin-arm-gcc-4.6.1/bin/../lib/gcc/arm-elf/4.6.1/
+   8              	@ -MD zBUILDS/task-list-by-date.c.d -MF zBUILDS/task-list-by-date.c.o.dep
+   9              	@ -MP -MQ zBUILDS/task-list-by-date.c.o -D__USES_INITFINI__ -D XTR_CLASS=0
+  10              	@ -D LPC22XX_CRYSTAL_FREQUENCY=14745600
+  11              	@ -D LPC22XX_PLL_FREQUENCY_MULTIPLIER=4 -D LPC22XX_APB_DIVIDER=1
+  12              	@ ../sources-communs/task-list-by-date.c -mcpu=arm7tdmi-s -mcpu=arm7tdmi-s
+  13              	@ -auxbase-strip zBUILDS/task-list-by-date.c.o -O2 -Wall -Werror
+  14              	@ -Wreturn-type -Wformat -Wsign-compare -Wpointer-arith -Wparentheses
+  15              	@ -Wcast-align -Wcast-qual -Wwrite-strings -Wswitch -Wstrict-prototypes
+  16              	@ -Wbad-function-cast -Wmissing-declarations
+  17              	@ -Wimplicit-function-declaration -Wno-int-to-pointer-cast
+  18              	@ -Wno-pointer-to-int-cast -fverbose-asm -fomit-frame-pointer
+  19              	@ -foptimize-register-move
+  20              	@ options enabled:  -fauto-inc-dec -fbranch-count-reg -fcaller-saves
+  21              	@ -fcombine-stack-adjustments -fcommon -fcompare-elim -fcprop-registers
+  22              	@ -fcrossjumping -fcse-follow-jumps -fdefer-pop
+  23              	@ -fdelete-null-pointer-checks -fdevirtualize -fdwarf2-cfi-asm
+  24              	@ -fearly-inlining -feliminate-unused-debug-types -fexpensive-optimizations
+  25              	@ -fforward-propagate -ffunction-cse -fgcse -fgcse-lm
+  26              	@ -fguess-branch-probability -fident -fif-conversion -fif-conversion2
+  27              	@ -findirect-inlining -finline -finline-functions-called-once
+  28              	@ -finline-small-functions -fipa-cp -fipa-profile -fipa-pure-const
+  29              	@ -fipa-reference -fipa-sra -fira-share-save-slots -fira-share-spill-slots
+  30              	@ -fivopts -fkeep-static-consts -fleading-underscore -fmath-errno
+  31              	@ -fmerge-constants -fmerge-debug-strings -fmove-loop-invariants
+  32              	@ -fomit-frame-pointer -foptimize-register-move -foptimize-sibling-calls
+  33              	@ -fpartial-inlining -fpeephole -fpeephole2 -fprefetch-loop-arrays
+  34              	@ -freg-struct-return -fregmove -freorder-blocks -freorder-functions
+  35              	@ -frerun-cse-after-loop -fsched-critical-path-heuristic
+  36              	@ -fsched-dep-count-heuristic -fsched-group-heuristic -fsched-interblock
+  37              	@ -fsched-last-insn-heuristic -fsched-rank-heuristic -fsched-spec
+  38              	@ -fsched-spec-insn-heuristic -fsched-stalled-insns-dep -fschedule-insns
+  39              	@ -fschedule-insns2 -fsection-anchors -fshow-column -fsigned-zeros
+  40              	@ -fsplit-ivs-in-unroller -fsplit-wide-types -fstrict-aliasing
+  41              	@ -fstrict-overflow -fstrict-volatile-bitfields -fthread-jumps
+  42              	@ -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp -ftree-builtin-call-dce
+  43              	@ -ftree-ccp -ftree-ch -ftree-copy-prop -ftree-copyrename -ftree-cselim
+  44              	@ -ftree-dce -ftree-dominator-opts -ftree-dse -ftree-forwprop -ftree-fre
+  45              	@ -ftree-loop-if-convert -ftree-loop-im -ftree-loop-ivcanon
+  46              	@ -ftree-loop-optimize -ftree-parallelize-loops= -ftree-phiprop -ftree-pre
+  47              	@ -ftree-pta -ftree-reassoc -ftree-scev-cprop -ftree-sink
+  48              	@ -ftree-slp-vectorize -ftree-sra -ftree-switch-conversion -ftree-ter
+  49              	@ -ftree-vect-loop-version -ftree-vrp -funit-at-a-time -fverbose-asm
+  50              	@ -fzero-initialized-in-bss -mlittle-endian -msched-prolog
+  51              	
+  52              	@ Compiler executable checksum: de80e2dacb9f8abf918a9a189330559b
+  53              	
+  54              		.text
+  55              		.align	2
+  56              		.global	initTaskListByDate
+  57              		.type	initTaskListByDate, %function
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccWe5ArZ.s 			page 2
+
+
+  58              	initTaskListByDate:
+  59              		@ args = 0, pretend = 0, frame = 0
+  60              		@ frame_needed = 0, uses_anonymous_args = 0
+  61              		@ link register save eliminated.
+  62 0000 0030A0E3 		mov	r3, #0	@ tmp135,
+  63 0004 003080E5 		str	r3, [r0, #0]	@ tmp135, inTaskList_1(D)->mFirstTask
+  64 0008 043080E5 		str	r3, [r0, #4]	@ tmp135, inTaskList_1(D)->mLastTask
+  65 000c 1EFF2FE1 		bx	lr	@
+  66              		.size	initTaskListByDate, .-initTaskListByDate
+  67              		.align	2
+  68              		.global	insertTaskWithDate
+  69              		.type	insertTaskWithDate, %function
+  70              	insertTaskWithDate:
+  71              		@ args = 0, pretend = 0, frame = 0
+  72              		@ frame_needed = 0, uses_anonymous_args = 0
+  73              		@ link register save eliminated.
+  74 0010 000051E3 		cmp	r1, #0	@ inTaskDescriptor
+  75 0014 04402DE5 		str	r4, [sp, #-4]!	@,
+  76 0018 1F00000A 		beq	.L2	@,
+  77 001c 003090E5 		ldr	r3, [r0, #0]	@ D.2041, inTaskList_3(D)->mFirstTask
+  78 0020 00C0A0E3 		mov	ip, #0	@ tmp147,
+  79 0024 0C0053E1 		cmp	r3, ip	@ D.2041,
+  80 0028 1C0081E5 		str	r0, [r1, #28]	@ inTaskList, inTaskDescriptor_2(D)->mMyTaskListByDate
+  81 002c 202081E5 		str	r2, [r1, #32]	@ inDate, inTaskDescriptor_2(D)->mDate
+  82 0030 14C081E5 		str	ip, [r1, #20]	@ tmp147, inTaskDescriptor_2(D)->mNextTaskInListByDate
+  83 0034 18C081E5 		str	ip, [r1, #24]	@ tmp147, inTaskDescriptor_2(D)->mPreviousTaskInListByDate
+  84 0038 04108005 		streq	r1, [r0, #4]	@ inTaskDescriptor, inTaskList_3(D)->mLastTask
+  85 003c 00108005 		streq	r1, [r0, #0]	@ inTaskDescriptor, inTaskList_3(D)->mFirstTask
+  86 0040 1500000A 		beq	.L2	@,
+  87 0044 20C093E5 		ldr	ip, [r3, #32]	@ D.2041_5->mDate, D.2041_5->mDate
+  88 0048 0C0052E1 		cmp	r2, ip	@ inDate, D.2041_5->mDate
+  89 004c 14308195 		strls	r3, [r1, #20]	@ D.2041, inTaskDescriptor_2(D)->mNextTaskInListByDate
+  90 0050 18108395 		strls	r1, [r3, #24]	@ inTaskDescriptor, D.2041_5->mPreviousTaskInListByDate
+  91 0054 00108095 		strls	r1, [r0, #0]	@ inTaskDescriptor, inTaskList_3(D)->mFirstTask
+  92 0058 0F00009A 		bls	.L2	@,
+  93 005c 04C090E5 		ldr	ip, [r0, #4]	@ D.2049, inTaskList_3(D)->mLastTask
+  94 0060 20409CE5 		ldr	r4, [ip, #32]	@ D.2049_10->mDate, D.2049_10->mDate
+  95 0064 040052E1 		cmp	r2, r4	@ inDate, D.2049_10->mDate
+  96 0068 18C08125 		strcs	ip, [r1, #24]	@ D.2049, inTaskDescriptor_2(D)->mPreviousTaskInListByDate
+  97 006c 14108C25 		strcs	r1, [ip, #20]	@ inTaskDescriptor, D.2049_10->mNextTaskInListByDate
+  98 0070 04108025 		strcs	r1, [r0, #4]	@ inTaskDescriptor, inTaskList_3(D)->mLastTask
+  99 0074 0800002A 		bcs	.L2	@,
+ 100              	.L6:
+ 101 0078 143093E5 		ldr	r3, [r3, #20]	@ t,
+ 102 007c 200093E5 		ldr	r0, [r3, #32]	@ t_15->mDate,
+ 103 0080 000052E1 		cmp	r2, r0	@ inDate, t_15->mDate
+ 104 0084 FBFFFF8A 		bhi	.L6	@,
+ 105 0088 182093E5 		ldr	r2, [r3, #24]	@ taskBefore, t_14->mPreviousTaskInListByDate
+ 106 008c 181083E5 		str	r1, [r3, #24]	@ inTaskDescriptor, t_14->mPreviousTaskInListByDate
+ 107 0090 141082E5 		str	r1, [r2, #20]	@ inTaskDescriptor, taskBefore_18->mNextTaskInListByDate
+ 108 0094 182081E5 		str	r2, [r1, #24]	@ taskBefore, inTaskDescriptor_2(D)->mPreviousTaskInListByDate
+ 109 0098 143081E5 		str	r3, [r1, #20]	@ t, inTaskDescriptor_2(D)->mNextTaskInListByDate
+ 110              	.L2:
+ 111 009c 1000BDE8 		ldmfd	sp!, {r4}
+ 112 00a0 1EFF2FE1 		bx	lr
+ 113              		.size	insertTaskWithDate, .-insertTaskWithDate
+ 114              		.align	2
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccWe5ArZ.s 			page 3
+
+
+ 115              		.global	removeTaskIfDateReached
+ 116              		.type	removeTaskIfDateReached, %function
+ 117              	removeTaskIfDateReached:
+ 118              		@ args = 0, pretend = 0, frame = 0
+ 119              		@ frame_needed = 0, uses_anonymous_args = 0
+ 120              		@ link register save eliminated.
+ 121 00a4 003090E5 		ldr	r3, [r0, #0]	@ t, inTaskList_2(D)->mFirstTask
+ 122 00a8 000053E3 		cmp	r3, #0	@ t,
+ 123 00ac 0E00000A 		beq	.L13	@,
+ 124 00b0 202093E5 		ldr	r2, [r3, #32]	@ t_3->mDate, t_3->mDate
+ 125 00b4 010052E1 		cmp	r2, r1	@ t_3->mDate, inReferenceDate
+ 126 00b8 0030A083 		movhi	r3, #0	@ t,
+ 127 00bc 0A00008A 		bhi	.L13	@,
+ 128 00c0 142093E5 		ldr	r2, [r3, #20]	@ D.2032, t_3->mNextTaskInListByDate
+ 129 00c4 000052E3 		cmp	r2, #0	@ D.2032,
+ 130 00c8 0010A013 		movne	r1, #0	@ tmp143,
+ 131 00cc 00208015 		strne	r2, [r0, #0]	@ D.2032, inTaskList_2(D)->mFirstTask
+ 132 00d0 04208005 		streq	r2, [r0, #4]	@ D.2032, inTaskList_2(D)->mLastTask
+ 133 00d4 00208005 		streq	r2, [r0, #0]	@ D.2032, inTaskList_2(D)->mFirstTask
+ 134 00d8 18108215 		strne	r1, [r2, #24]	@ tmp143, D.2032_6->mPreviousTaskInListByDate
+ 135 00dc 0020A0E3 		mov	r2, #0	@ tmp144,
+ 136 00e0 1C2083E5 		str	r2, [r3, #28]	@ tmp144, t_3->mMyTaskListByDate
+ 137 00e4 142083E5 		str	r2, [r3, #20]	@ tmp144, t_3->mNextTaskInListByDate
+ 138 00e8 182083E5 		str	r2, [r3, #24]	@ tmp144, t_3->mPreviousTaskInListByDate
+ 139              	.L13:
+ 140 00ec 0300A0E1 		mov	r0, r3	@, t
+ 141 00f0 1EFF2FE1 		bx	lr	@
+ 142              		.size	removeTaskIfDateReached, .-removeTaskIfDateReached
+ 143              		.align	2
+ 144              		.global	removeFromCurrentTaskListByDate
+ 145              		.type	removeFromCurrentTaskListByDate, %function
+ 146              	removeFromCurrentTaskListByDate:
+ 147              		@ args = 0, pretend = 0, frame = 0
+ 148              		@ frame_needed = 0, uses_anonymous_args = 0
+ 149              		@ link register save eliminated.
+ 150 00f4 000050E3 		cmp	r0, #0	@ inTaskDescriptor
+ 151 00f8 1EFF2F01 		bxeq	lr	@
+ 152 00fc 1C1090E5 		ldr	r1, [r0, #28]	@ D.2016, inTaskDescriptor_1(D)->mMyTaskListByDate
+ 153 0100 000051E3 		cmp	r1, #0	@ D.2016,
+ 154 0104 1EFF2F01 		bxeq	lr	@
+ 155 0108 143090E5 		ldr	r3, [r0, #20]	@ D.2019, inTaskDescriptor_1(D)->mNextTaskInListByDate
+ 156 010c 182090E5 		ldr	r2, [r0, #24]	@ D.2022, inTaskDescriptor_1(D)->mPreviousTaskInListByDate
+ 157 0110 000053E3 		cmp	r3, #0	@ D.2019,
+ 158 0114 18208315 		strne	r2, [r3, #24]	@ D.2022, D.2019_4->mPreviousTaskInListByDate
+ 159 0118 18209015 		ldrne	r2, [r0, #24]	@ D.2022, inTaskDescriptor_1(D)->mPreviousTaskInListByDate
+ 160 011c 04208105 		streq	r2, [r1, #4]	@ D.2022, MEM[(struct task_list_by_date *)D.2016_2].mLastTask
+ 161 0120 000052E3 		cmp	r2, #0	@ D.2022,
+ 162 0124 00308105 		streq	r3, [r1, #0]	@ D.2019, MEM[(struct task_list_by_date *)D.2016_2].mFirstTask
+ 163 0128 14308215 		strne	r3, [r2, #20]	@ D.2019, D.2022_8->mNextTaskInListByDate
+ 164 012c 0030A0E3 		mov	r3, #0	@ tmp141,
+ 165 0130 183080E5 		str	r3, [r0, #24]	@ tmp141, inTaskDescriptor_1(D)->mPreviousTaskInListByDate
+ 166 0134 143080E5 		str	r3, [r0, #20]	@ tmp141, inTaskDescriptor_1(D)->mNextTaskInListByDate
+ 167 0138 1C3080E5 		str	r3, [r0, #28]	@ tmp141, inTaskDescriptor_1(D)->mMyTaskListByDate
+ 168 013c 1EFF2FE1 		bx	lr	@
+ 169              		.size	removeFromCurrentTaskListByDate, .-removeFromCurrentTaskListByDate
+ 170              		.ident	"GCC: (GNU) 4.6.1"
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccWe5ArZ.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 task-list-by-date.c
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccWe5ArZ.s:55     .text:00000000 $a
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccWe5ArZ.s:58     .text:00000000 initTaskListByDate
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccWe5ArZ.s:70     .text:00000010 insertTaskWithDate
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccWe5ArZ.s:117    .text:000000a4 removeTaskIfDateReached
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccWe5ArZ.s:146    .text:000000f4 removeFromCurrentTaskListByDate
+
+NO UNDEFINED SYMBOLS

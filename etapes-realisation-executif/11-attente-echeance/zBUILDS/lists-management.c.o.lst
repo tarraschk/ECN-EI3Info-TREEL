@@ -1,0 +1,235 @@
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccSCyLfi.s 			page 1
+
+
+   1              		.file	"lists-management.c"
+   2              	@ GNU C (GCC) version 4.6.1 (arm-elf)
+   3              	@	compiled by GNU C version 4.0.1 (Apple Inc. build 5494), GMP version 5.0.2, MPFR version 3.0.1, M
+   4              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+   5              	@ options passed:  -I sources -I /usr/local/dev-arm/arm-dev-files/sources
+   6              	@ -I ../sources-communs
+   7              	@ -iprefix /usr/local/dev-arm/i386-Darwin-arm-gcc-4.6.1/bin/../lib/gcc/arm-elf/4.6.1/
+   8              	@ -MD zBUILDS/lists-management.c.d -MF zBUILDS/lists-management.c.o.dep -MP
+   9              	@ -MQ zBUILDS/lists-management.c.o -D__USES_INITFINI__ -D XTR_CLASS=0
+  10              	@ -D LPC22XX_CRYSTAL_FREQUENCY=14745600
+  11              	@ -D LPC22XX_PLL_FREQUENCY_MULTIPLIER=4 -D LPC22XX_APB_DIVIDER=1
+  12              	@ ../sources-communs/lists-management.c -mcpu=arm7tdmi-s -mcpu=arm7tdmi-s
+  13              	@ -auxbase-strip zBUILDS/lists-management.c.o -O2 -Wall -Werror
+  14              	@ -Wreturn-type -Wformat -Wsign-compare -Wpointer-arith -Wparentheses
+  15              	@ -Wcast-align -Wcast-qual -Wwrite-strings -Wswitch -Wstrict-prototypes
+  16              	@ -Wbad-function-cast -Wmissing-declarations
+  17              	@ -Wimplicit-function-declaration -Wno-int-to-pointer-cast
+  18              	@ -Wno-pointer-to-int-cast -fverbose-asm -fomit-frame-pointer
+  19              	@ -foptimize-register-move
+  20              	@ options enabled:  -fauto-inc-dec -fbranch-count-reg -fcaller-saves
+  21              	@ -fcombine-stack-adjustments -fcommon -fcompare-elim -fcprop-registers
+  22              	@ -fcrossjumping -fcse-follow-jumps -fdefer-pop
+  23              	@ -fdelete-null-pointer-checks -fdevirtualize -fdwarf2-cfi-asm
+  24              	@ -fearly-inlining -feliminate-unused-debug-types -fexpensive-optimizations
+  25              	@ -fforward-propagate -ffunction-cse -fgcse -fgcse-lm
+  26              	@ -fguess-branch-probability -fident -fif-conversion -fif-conversion2
+  27              	@ -findirect-inlining -finline -finline-functions-called-once
+  28              	@ -finline-small-functions -fipa-cp -fipa-profile -fipa-pure-const
+  29              	@ -fipa-reference -fipa-sra -fira-share-save-slots -fira-share-spill-slots
+  30              	@ -fivopts -fkeep-static-consts -fleading-underscore -fmath-errno
+  31              	@ -fmerge-constants -fmerge-debug-strings -fmove-loop-invariants
+  32              	@ -fomit-frame-pointer -foptimize-register-move -foptimize-sibling-calls
+  33              	@ -fpartial-inlining -fpeephole -fpeephole2 -fprefetch-loop-arrays
+  34              	@ -freg-struct-return -fregmove -freorder-blocks -freorder-functions
+  35              	@ -frerun-cse-after-loop -fsched-critical-path-heuristic
+  36              	@ -fsched-dep-count-heuristic -fsched-group-heuristic -fsched-interblock
+  37              	@ -fsched-last-insn-heuristic -fsched-rank-heuristic -fsched-spec
+  38              	@ -fsched-spec-insn-heuristic -fsched-stalled-insns-dep -fschedule-insns
+  39              	@ -fschedule-insns2 -fsection-anchors -fshow-column -fsigned-zeros
+  40              	@ -fsplit-ivs-in-unroller -fsplit-wide-types -fstrict-aliasing
+  41              	@ -fstrict-overflow -fstrict-volatile-bitfields -fthread-jumps
+  42              	@ -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp -ftree-builtin-call-dce
+  43              	@ -ftree-ccp -ftree-ch -ftree-copy-prop -ftree-copyrename -ftree-cselim
+  44              	@ -ftree-dce -ftree-dominator-opts -ftree-dse -ftree-forwprop -ftree-fre
+  45              	@ -ftree-loop-if-convert -ftree-loop-im -ftree-loop-ivcanon
+  46              	@ -ftree-loop-optimize -ftree-parallelize-loops= -ftree-phiprop -ftree-pre
+  47              	@ -ftree-pta -ftree-reassoc -ftree-scev-cprop -ftree-sink
+  48              	@ -ftree-slp-vectorize -ftree-sra -ftree-switch-conversion -ftree-ter
+  49              	@ -ftree-vect-loop-version -ftree-vrp -funit-at-a-time -fverbose-asm
+  50              	@ -fzero-initialized-in-bss -mlittle-endian -msched-prolog
+  51              	
+  52              	@ Compiler executable checksum: de80e2dacb9f8abf918a9a189330559b
+  53              	
+  54              		.text
+  55              		.align	2
+  56              		.global	kernel_runningTaskWaitsOnFIFOList
+  57              		.type	kernel_runningTaskWaitsOnFIFOList, %function
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccSCyLfi.s 			page 2
+
+
+  58              	kernel_runningTaskWaitsOnFIFOList:
+  59              		@ args = 0, pretend = 0, frame = 0
+  60              		@ frame_needed = 0, uses_anonymous_args = 0
+  61 0000 30402DE9 		stmfd	sp!, {r4, r5, lr}	@,
+  62 0004 0050A0E1 		mov	r5, r0	@ inList, inList
+  63 0008 FEFFFFEB 		bl	kernel_runningTask	@
+  64 000c 0040A0E1 		mov	r4, r0	@ t,
+  65 0010 FEFFFFEB 		bl	kernel_makeNoTaskRunning	@
+  66 0014 0330A0E3 		mov	r3, #3	@ tmp136,
+  67 0018 000055E3 		cmp	r5, #0	@ inList,
+  68 001c 003084E5 		str	r3, [r4, #0]	@ tmp136, t_1->mState
+  69 0020 3080BD08 		ldmeqfd	sp!, {r4, r5, pc}	@
+  70 0024 0500A0E1 		mov	r0, r5	@, inList
+  71 0028 0410A0E1 		mov	r1, r4	@, t
+  72 002c 3040BDE8 		ldmfd	sp!, {r4, r5, lr}	@
+  73 0030 FEFFFFEA 		b	insertTaskAtTail	@
+  74              		.size	kernel_runningTaskWaitsOnFIFOList, .-kernel_runningTaskWaitsOnFIFOList
+  75              		.align	2
+  76              		.global	kernel_runningTaskWaitsOnListOrderedByPriority
+  77              		.type	kernel_runningTaskWaitsOnListOrderedByPriority, %function
+  78              	kernel_runningTaskWaitsOnListOrderedByPriority:
+  79              		@ args = 0, pretend = 0, frame = 0
+  80              		@ frame_needed = 0, uses_anonymous_args = 0
+  81 0034 30402DE9 		stmfd	sp!, {r4, r5, lr}	@,
+  82 0038 0050A0E1 		mov	r5, r0	@ inList, inList
+  83 003c FEFFFFEB 		bl	kernel_runningTask	@
+  84 0040 0040A0E1 		mov	r4, r0	@ t,
+  85 0044 FEFFFFEB 		bl	kernel_makeNoTaskRunning	@
+  86 0048 0330A0E3 		mov	r3, #3	@ tmp136,
+  87 004c 000055E3 		cmp	r5, #0	@ inList,
+  88 0050 003084E5 		str	r3, [r4, #0]	@ tmp136, t_1->mState
+  89 0054 3080BD08 		ldmeqfd	sp!, {r4, r5, pc}	@
+  90 0058 0500A0E1 		mov	r0, r5	@, inList
+  91 005c 0410A0E1 		mov	r1, r4	@, t
+  92 0060 3040BDE8 		ldmfd	sp!, {r4, r5, lr}	@
+  93 0064 FEFFFFEA 		b	insertTaskFollowingPriority	@
+  94              		.size	kernel_runningTaskWaitsOnListOrderedByPriority, .-kernel_runningTaskWaitsOnListOrderedByPrio
+  95              		.align	2
+  96              		.global	kernel_runningTaskWaitsOnLists
+  97              		.type	kernel_runningTaskWaitsOnLists, %function
+  98              	kernel_runningTaskWaitsOnLists:
+  99              		@ args = 0, pretend = 0, frame = 0
+ 100              		@ frame_needed = 0, uses_anonymous_args = 0
+ 101 0068 F0402DE9 		stmfd	sp!, {r4, r5, r6, r7, lr}	@,
+ 102 006c 0050A0E1 		mov	r5, r0	@ inList, inList
+ 103 0070 0260A0E1 		mov	r6, r2	@ inDate, inDate
+ 104 0074 FF7001E2 		and	r7, r1, #255	@ inListIsOrderedByPriority, inListIsOrderedByPriority,
+ 105 0078 FEFFFFEB 		bl	kernel_runningTask	@
+ 106 007c 0040A0E1 		mov	r4, r0	@ t,
+ 107 0080 FEFFFFEB 		bl	kernel_makeNoTaskRunning	@
+ 108 0084 0330A0E3 		mov	r3, #3	@ tmp139,
+ 109 0088 000055E3 		cmp	r5, #0	@ inList,
+ 110 008c 003084E5 		str	r3, [r4, #0]	@ tmp139, t_1->mState
+ 111 0090 0400000A 		beq	.L7	@,
+ 112 0094 000057E3 		cmp	r7, #0	@ inListIsOrderedByPriority,
+ 113 0098 0500A0E1 		mov	r0, r5	@, inList
+ 114 009c 0410A0E1 		mov	r1, r4	@, t
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccSCyLfi.s 			page 3
+
+
+ 115 00a0 0500001A 		bne	.L9	@,
+ 116 00a4 FEFFFFEB 		bl	insertTaskAtTail	@
+ 117              	.L7:
+ 118 00a8 14009FE5 		ldr	r0, .L10	@,
+ 119 00ac 0410A0E1 		mov	r1, r4	@, t
+ 120 00b0 0620A0E1 		mov	r2, r6	@, inDate
+ 121 00b4 F040BDE8 		ldmfd	sp!, {r4, r5, r6, r7, lr}	@
+ 122 00b8 FEFFFFEA 		b	insertTaskWithDate	@
+ 123              	.L9:
+ 124 00bc FEFFFFEB 		bl	insertTaskFollowingPriority	@
+ 125 00c0 F8FFFFEA 		b	.L7	@
+ 126              	.L11:
+ 127              		.align	2
+ 128              	.L10:
+ 129 00c4 00000000 		.word	.LANCHOR0
+ 130              		.size	kernel_runningTaskWaitsOnLists, .-kernel_runningTaskWaitsOnLists
+ 131              		.align	2
+ 132              		.global	kernel_firstWaitingTaskBecomesReady
+ 133              		.type	kernel_firstWaitingTaskBecomesReady, %function
+ 134              	kernel_firstWaitingTaskBecomesReady:
+ 135              		@ args = 0, pretend = 0, frame = 0
+ 136              		@ frame_needed = 0, uses_anonymous_args = 0
+ 137 00c8 30402DE9 		stmfd	sp!, {r4, r5, lr}	@,
+ 138 00cc 0150A0E1 		mov	r5, r1	@ inReturnCode, inReturnCode
+ 139 00d0 FEFFFFEB 		bl	removeTaskAtHead	@
+ 140 00d4 004050E2 		subs	r4, r0, #0	@ t,
+ 141 00d8 0500000A 		beq	.L13	@,
+ 142 00dc FEFFFFEB 		bl	removeFromCurrentTaskListByDate	@
+ 143 00e0 0400A0E1 		mov	r0, r4	@, t
+ 144 00e4 FEFFFFEB 		bl	kernel_makeTaskReady	@
+ 145 00e8 2C0084E2 		add	r0, r4, #44	@, t,
+ 146 00ec 0510A0E1 		mov	r1, r5	@, inReturnCode
+ 147 00f0 FEFFFFEB 		bl	kernel_set_return_code	@
+ 148              	.L13:
+ 149 00f4 000094E2 		adds	r0, r4, #0	@, t,
+ 150 00f8 0100A013 		movne	r0, #1	@,
+ 151 00fc 3080BDE8 		ldmfd	sp!, {r4, r5, pc}	@
+ 152              		.size	kernel_firstWaitingTaskBecomesReady, .-kernel_firstWaitingTaskBecomesReady
+ 153              		.align	2
+ 154              		.global	kernel_tasksWithEarlierDateBecomeReady
+ 155              		.type	kernel_tasksWithEarlierDateBecomeReady, %function
+ 156              	kernel_tasksWithEarlierDateBecomeReady:
+ 157              		@ args = 0, pretend = 0, frame = 0
+ 158              		@ frame_needed = 0, uses_anonymous_args = 0
+ 159 0100 48309FE5 		ldr	r3, .L19	@ tmp139,
+ 160 0104 003093E5 		ldr	r3, [r3, #0]	@ gTaskListOrderedByDate.mFirstTask, gTaskListOrderedByDate.mFirstTask
+ 161 0108 000053E3 		cmp	r3, #0	@ gTaskListOrderedByDate.mFirstTask,
+ 162 010c 70402DE9 		stmfd	sp!, {r4, r5, r6, lr}	@,
+ 163 0110 0040A0E1 		mov	r4, r0	@ inDate, inDate
+ 164 0114 0150A0E1 		mov	r5, r1	@ inReturnCode, inReturnCode
+ 165 0118 0600001A 		bne	.L18	@,
+ 166 011c 7080BDE8 		ldmfd	sp!, {r4, r5, r6, pc}	@
+ 167              	.L17:
+ 168 0120 FEFFFFEB 		bl	removeFromCurrentTaskList	@
+ 169 0124 0600A0E1 		mov	r0, r6	@, t
+ 170 0128 FEFFFFEB 		bl	kernel_makeTaskReady	@
+ 171 012c 2C0086E2 		add	r0, r6, #44	@, t,
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccSCyLfi.s 			page 4
+
+
+ 172 0130 0510A0E1 		mov	r1, r5	@, inReturnCode
+ 173 0134 FEFFFFEB 		bl	kernel_set_return_code	@
+ 174              	.L18:
+ 175 0138 0410A0E1 		mov	r1, r4	@, inDate
+ 176 013c 0C009FE5 		ldr	r0, .L19	@,
+ 177 0140 FEFFFFEB 		bl	removeTaskIfDateReached	@
+ 178 0144 006050E2 		subs	r6, r0, #0	@ t,
+ 179 0148 F4FFFF1A 		bne	.L17	@,
+ 180 014c 7080BDE8 		ldmfd	sp!, {r4, r5, r6, pc}	@
+ 181              	.L20:
+ 182              		.align	2
+ 183              	.L19:
+ 184 0150 00000000 		.word	.LANCHOR0
+ 185              		.size	kernel_tasksWithEarlierDateBecomeReady, .-kernel_tasksWithEarlierDateBecomeReady
+ 186              		.bss
+ 187              		.align	2
+ 188              		.set	.LANCHOR0,. + 0
+ 189              		.type	gTaskListOrderedByDate, %object
+ 190              		.size	gTaskListOrderedByDate, 8
+ 191              	gTaskListOrderedByDate:
+ 192 0000 00000000 		.space	8
+ 192      00000000 
+ 193              		.ident	"GCC: (GNU) 4.6.1"
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccSCyLfi.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 lists-management.c
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccSCyLfi.s:55     .text:00000000 $a
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccSCyLfi.s:58     .text:00000000 kernel_runningTaskWaitsOnFIFOList
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccSCyLfi.s:78     .text:00000034 kernel_runningTaskWaitsOnListOrderedByPriority
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccSCyLfi.s:98     .text:00000068 kernel_runningTaskWaitsOnLists
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccSCyLfi.s:129    .text:000000c4 $d
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccSCyLfi.s:131    .text:000000c8 $a
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccSCyLfi.s:134    .text:000000c8 kernel_firstWaitingTaskBecomesReady
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccSCyLfi.s:156    .text:00000100 kernel_tasksWithEarlierDateBecomeReady
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccSCyLfi.s:184    .text:00000150 $d
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccSCyLfi.s:187    .bss:00000000 $d
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccSCyLfi.s:191    .bss:00000000 gTaskListOrderedByDate
+
+UNDEFINED SYMBOLS
+kernel_runningTask
+kernel_makeNoTaskRunning
+insertTaskAtTail
+insertTaskFollowingPriority
+insertTaskWithDate
+removeTaskAtHead
+removeFromCurrentTaskListByDate
+kernel_makeTaskReady
+kernel_set_return_code
+removeFromCurrentTaskList
+removeTaskIfDateReached

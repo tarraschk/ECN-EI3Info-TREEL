@@ -1,0 +1,29 @@
+zBUILDS/application.c.o: sources/application.c \
+ /usr/local/dev-arm/arm-dev-files/sources/lpc22xx.h \
+ /usr/local/dev-arm/arm-dev-files/sources/processor-defines.h \
+ ../sources-communs/sorties_s0_s3.h ../sources-communs/afficheur_lcd.h \
+ /usr/local/dev-arm/arm-dev-files/sources/processor-defines.h \
+ ../sources-communs/services.h ../sources-communs/task-descriptor.h \
+ ../sources-communs/task-context.h \
+ /usr/local/dev-arm/i386-Darwin-arm-gcc-4.6.1/bin/../lib/gcc/arm-elf/4.6.1/include/stddef.h \
+ ../sources-communs/initialiser-compteur-0-it.h
+
+/usr/local/dev-arm/arm-dev-files/sources/lpc22xx.h:
+
+/usr/local/dev-arm/arm-dev-files/sources/processor-defines.h:
+
+../sources-communs/sorties_s0_s3.h:
+
+../sources-communs/afficheur_lcd.h:
+
+/usr/local/dev-arm/arm-dev-files/sources/processor-defines.h:
+
+../sources-communs/services.h:
+
+../sources-communs/task-descriptor.h:
+
+../sources-communs/task-context.h:
+
+/usr/local/dev-arm/i386-Darwin-arm-gcc-4.6.1/bin/../lib/gcc/arm-elf/4.6.1/include/stddef.h:
+
+../sources-communs/initialiser-compteur-0-it.h:

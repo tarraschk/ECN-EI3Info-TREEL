@@ -1,0 +1,115 @@
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc0zySXF.s 			page 1
+
+
+   1              		.file	"initialize-lpc2200-pll.c"
+   2              	@ GNU C (GCC) version 4.6.1 (arm-elf)
+   3              	@	compiled by GNU C version 4.0.1 (Apple Inc. build 5494), GMP version 5.0.2, MPFR version 3.0.1, M
+   4              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+   5              	@ options passed:  -I sources -I /usr/local/dev-arm/arm-dev-files/sources
+   6              	@ -I ../sources-communs
+   7              	@ -iprefix /usr/local/dev-arm/i386-Darwin-arm-gcc-4.6.1/bin/../lib/gcc/arm-elf/4.6.1/
+   8              	@ -MD zBUILDS/initialize-lpc2200-pll.c.d
+   9              	@ -MF zBUILDS/initialize-lpc2200-pll.c.o.dep -MP
+  10              	@ -MQ zBUILDS/initialize-lpc2200-pll.c.o -D__USES_INITFINI__ -D XTR_CLASS=0
+  11              	@ -D LPC22XX_CRYSTAL_FREQUENCY=14745600
+  12              	@ -D LPC22XX_PLL_FREQUENCY_MULTIPLIER=4 -D LPC22XX_APB_DIVIDER=1
+  13              	@ /usr/local/dev-arm/arm-dev-files/sources/initialize-lpc2200-pll.c
+  14              	@ -mcpu=arm7tdmi-s -mcpu=arm7tdmi-s
+  15              	@ -auxbase-strip zBUILDS/initialize-lpc2200-pll.c.o -O2 -Wall -Werror
+  16              	@ -Wreturn-type -Wformat -Wsign-compare -Wpointer-arith -Wparentheses
+  17              	@ -Wcast-align -Wcast-qual -Wwrite-strings -Wswitch -Wstrict-prototypes
+  18              	@ -Wbad-function-cast -Wmissing-declarations
+  19              	@ -Wimplicit-function-declaration -Wno-int-to-pointer-cast
+  20              	@ -Wno-pointer-to-int-cast -fverbose-asm -fomit-frame-pointer
+  21              	@ -foptimize-register-move
+  22              	@ options enabled:  -fauto-inc-dec -fbranch-count-reg -fcaller-saves
+  23              	@ -fcombine-stack-adjustments -fcommon -fcompare-elim -fcprop-registers
+  24              	@ -fcrossjumping -fcse-follow-jumps -fdefer-pop
+  25              	@ -fdelete-null-pointer-checks -fdevirtualize -fdwarf2-cfi-asm
+  26              	@ -fearly-inlining -feliminate-unused-debug-types -fexpensive-optimizations
+  27              	@ -fforward-propagate -ffunction-cse -fgcse -fgcse-lm
+  28              	@ -fguess-branch-probability -fident -fif-conversion -fif-conversion2
+  29              	@ -findirect-inlining -finline -finline-functions-called-once
+  30              	@ -finline-small-functions -fipa-cp -fipa-profile -fipa-pure-const
+  31              	@ -fipa-reference -fipa-sra -fira-share-save-slots -fira-share-spill-slots
+  32              	@ -fivopts -fkeep-static-consts -fleading-underscore -fmath-errno
+  33              	@ -fmerge-constants -fmerge-debug-strings -fmove-loop-invariants
+  34              	@ -fomit-frame-pointer -foptimize-register-move -foptimize-sibling-calls
+  35              	@ -fpartial-inlining -fpeephole -fpeephole2 -fprefetch-loop-arrays
+  36              	@ -freg-struct-return -fregmove -freorder-blocks -freorder-functions
+  37              	@ -frerun-cse-after-loop -fsched-critical-path-heuristic
+  38              	@ -fsched-dep-count-heuristic -fsched-group-heuristic -fsched-interblock
+  39              	@ -fsched-last-insn-heuristic -fsched-rank-heuristic -fsched-spec
+  40              	@ -fsched-spec-insn-heuristic -fsched-stalled-insns-dep -fschedule-insns
+  41              	@ -fschedule-insns2 -fsection-anchors -fshow-column -fsigned-zeros
+  42              	@ -fsplit-ivs-in-unroller -fsplit-wide-types -fstrict-aliasing
+  43              	@ -fstrict-overflow -fstrict-volatile-bitfields -fthread-jumps
+  44              	@ -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp -ftree-builtin-call-dce
+  45              	@ -ftree-ccp -ftree-ch -ftree-copy-prop -ftree-copyrename -ftree-cselim
+  46              	@ -ftree-dce -ftree-dominator-opts -ftree-dse -ftree-forwprop -ftree-fre
+  47              	@ -ftree-loop-if-convert -ftree-loop-im -ftree-loop-ivcanon
+  48              	@ -ftree-loop-optimize -ftree-parallelize-loops= -ftree-phiprop -ftree-pre
+  49              	@ -ftree-pta -ftree-reassoc -ftree-scev-cprop -ftree-sink
+  50              	@ -ftree-slp-vectorize -ftree-sra -ftree-switch-conversion -ftree-ter
+  51              	@ -ftree-vect-loop-version -ftree-vrp -funit-at-a-time -fverbose-asm
+  52              	@ -fzero-initialized-in-bss -mlittle-endian -msched-prolog
+  53              	
+  54              	@ Compiler executable checksum: de80e2dacb9f8abf918a9a189330559b
+  55              	
+  56              		.text
+  57              		.align	2
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc0zySXF.s 			page 2
+
+
+  58              		.global	initialize_lpc2200_pll
+  59              		.type	initialize_lpc2200_pll, %function
+  60              	initialize_lpc2200_pll:
+  61              		@ args = 0, pretend = 0, frame = 0
+  62              		@ frame_needed = 0, uses_anonymous_args = 0
+  63              		@ link register save eliminated.
+  64 0000 6C209FE5 		ldr	r2, .L5	@ tmp137,
+  65 0004 2300A0E3 		mov	r0, #35	@ tmp138,
+  66 0008 8400C2E5 		strb	r0, [r2, #132]	@ tmp138, MEM[(volatile uint8 *)-534790012B]
+  67 000c 5510E0E3 		mvn	r1, #85	@ tmp141,
+  68 0010 5530A0E3 		mov	r3, #85	@ tmp144,
+  69 0014 0100A0E3 		mov	r0, #1	@ tmp147,
+  70 0018 8C10C2E5 		strb	r1, [r2, #140]	@ tmp141, MEM[(volatile uint8 *)-534790004B]
+  71 001c 8C30C2E5 		strb	r3, [r2, #140]	@ tmp144, MEM[(volatile uint8 *)-534790004B]
+  72 0020 8000C2E5 		strb	r0, [r2, #128]	@ tmp147, MEM[(volatile uint8 *)-534790016B]
+  73 0024 8C10C2E5 		strb	r1, [r2, #140]	@ tmp141, MEM[(volatile uint8 *)-534790004B]
+  74 0028 8C30C2E5 		strb	r3, [r2, #140]	@ tmp144, MEM[(volatile uint8 *)-534790004B]
+  75              	.L2:
+  76 002c B838D2E1 		ldrh	r3, [r2, #136]	@ MEM[(volatile uint16 *)-534790008B], MEM[(volatile uint16 *)-534790008B]
+  77 0030 010B13E3 		tst	r3, #1024	@ MEM[(volatile uint16 *)-534790008B],
+  78 0034 38309FE5 		ldr	r3, .L5	@ tmp155,
+  79 0038 FBFFFF0A 		beq	.L2	@,
+  80 003c 0320A0E3 		mov	r2, #3	@ tmp161,
+  81 0040 5510E0E3 		mvn	r1, #85	@ tmp164,
+  82 0044 8020C3E5 		strb	r2, [r3, #128]	@ tmp161, MEM[(volatile uint8 *)-534790016B]
+  83 0048 8C10C3E5 		strb	r1, [r3, #140]	@ tmp164, MEM[(volatile uint8 *)-534790004B]
+  84 004c 5510A0E3 		mov	r1, #85	@ tmp167,
+  85 0050 8C10C3E5 		strb	r1, [r3, #140]	@ tmp167, MEM[(volatile uint8 *)-534790004B]
+  86 0054 0010A0E3 		mov	r1, #0	@ tmp170,
+  87 0058 0010C3E5 		strb	r1, [r3, #0]	@ tmp170, MEM[(volatile uint8 *)-534790144B]
+  88 005c 0420C3E5 		strb	r2, [r3, #4]	@ tmp161, MEM[(volatile uint8 *)-534790140B]
+  89 0060 0220A0E3 		mov	r2, #2	@ tmp176,
+  90 0064 0020C3E5 		strb	r2, [r3, #0]	@ tmp176, MEM[(volatile uint8 *)-534790144B]
+  91 0068 0120A0E3 		mov	r2, #1	@ tmp179,
+  92 006c 0021C3E5 		strb	r2, [r3, #256]	@ tmp179, MEM[(volatile uint8 *)-534789888B]
+  93 0070 1EFF2FE1 		bx	lr	@
+  94              	.L6:
+  95              		.align	2
+  96              	.L5:
+  97 0074 00C01FE0 		.word	-534790144
+  98              		.size	initialize_lpc2200_pll, .-initialize_lpc2200_pll
+  99              		.ident	"GCC: (GNU) 4.6.1"
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc0zySXF.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 initialize-lpc2200-pll.c
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc0zySXF.s:57     .text:00000000 $a
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc0zySXF.s:60     .text:00000000 initialize_lpc2200_pll
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc0zySXF.s:97     .text:00000074 $d
+
+NO UNDEFINED SYMBOLS

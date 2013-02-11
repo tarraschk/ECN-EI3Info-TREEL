@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/40/carte-cours-treel/etapes-realisation-executif/07-serie-it
+END
+clean.command
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/31/carte-cours-treel/etapes-realisation-executif/07-serie-it/clean.command
+END
+makefile.mak
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/32/carte-cours-treel/etapes-realisation-executif/07-serie-it/makefile.mak
+END
+1-build.command
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/31/carte-cours-treel/etapes-realisation-executif/07-serie-it/1-build.command
+END
+1-verbose-build.command
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/31/carte-cours-treel/etapes-realisation-executif/07-serie-it/1-verbose-build.command
+END

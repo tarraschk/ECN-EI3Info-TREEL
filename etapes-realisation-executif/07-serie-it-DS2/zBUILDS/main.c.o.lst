@@ -1,0 +1,491 @@
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s 			page 1
+
+
+   1              		.file	"main.c"
+   2              	@ GNU C (GCC) version 4.6.1 (arm-elf)
+   3              	@	compiled by GNU C version 4.0.1 (Apple Inc. build 5494), GMP version 5.0.2, MPFR version 3.0.1, M
+   4              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+   5              	@ options passed:  -I sources -I ../sources-communs
+   6              	@ -I /usr/local/dev-arm/arm-dev-files/sources
+   7              	@ -iprefix /usr/local/dev-arm/i386-Darwin-arm-gcc-4.6.1/bin/../lib/gcc/arm-elf/4.6.1/
+   8              	@ -MD zBUILDS/main.c.d -MF zBUILDS/main.c.o.dep -MP -MQ zBUILDS/main.c.o
+   9              	@ -D__USES_INITFINI__ -D XTR_CLASS=0 -D LPC22XX_CRYSTAL_FREQUENCY=14745600
+  10              	@ -D LPC22XX_PLL_FREQUENCY_MULTIPLIER=4 -D LPC22XX_APB_DIVIDER=1
+  11              	@ sources/main.c -mcpu=arm7tdmi-s -mcpu=arm7tdmi-s
+  12              	@ -auxbase-strip zBUILDS/main.c.o -O2 -Wall -Werror -Wreturn-type -Wformat
+  13              	@ -Wsign-compare -Wpointer-arith -Wparentheses -Wcast-align -Wcast-qual
+  14              	@ -Wwrite-strings -Wswitch -Wstrict-prototypes -Wbad-function-cast
+  15              	@ -Wmissing-declarations -Wimplicit-function-declaration
+  16              	@ -Wno-int-to-pointer-cast -Wno-pointer-to-int-cast -fverbose-asm
+  17              	@ -fomit-frame-pointer -foptimize-register-move
+  18              	@ options enabled:  -fauto-inc-dec -fbranch-count-reg -fcaller-saves
+  19              	@ -fcombine-stack-adjustments -fcommon -fcompare-elim -fcprop-registers
+  20              	@ -fcrossjumping -fcse-follow-jumps -fdefer-pop
+  21              	@ -fdelete-null-pointer-checks -fdevirtualize -fdwarf2-cfi-asm
+  22              	@ -fearly-inlining -feliminate-unused-debug-types -fexpensive-optimizations
+  23              	@ -fforward-propagate -ffunction-cse -fgcse -fgcse-lm
+  24              	@ -fguess-branch-probability -fident -fif-conversion -fif-conversion2
+  25              	@ -findirect-inlining -finline -finline-functions-called-once
+  26              	@ -finline-small-functions -fipa-cp -fipa-profile -fipa-pure-const
+  27              	@ -fipa-reference -fipa-sra -fira-share-save-slots -fira-share-spill-slots
+  28              	@ -fivopts -fkeep-static-consts -fleading-underscore -fmath-errno
+  29              	@ -fmerge-constants -fmerge-debug-strings -fmove-loop-invariants
+  30              	@ -fomit-frame-pointer -foptimize-register-move -foptimize-sibling-calls
+  31              	@ -fpartial-inlining -fpeephole -fpeephole2 -fprefetch-loop-arrays
+  32              	@ -freg-struct-return -fregmove -freorder-blocks -freorder-functions
+  33              	@ -frerun-cse-after-loop -fsched-critical-path-heuristic
+  34              	@ -fsched-dep-count-heuristic -fsched-group-heuristic -fsched-interblock
+  35              	@ -fsched-last-insn-heuristic -fsched-rank-heuristic -fsched-spec
+  36              	@ -fsched-spec-insn-heuristic -fsched-stalled-insns-dep -fschedule-insns
+  37              	@ -fschedule-insns2 -fsection-anchors -fshow-column -fsigned-zeros
+  38              	@ -fsplit-ivs-in-unroller -fsplit-wide-types -fstrict-aliasing
+  39              	@ -fstrict-overflow -fstrict-volatile-bitfields -fthread-jumps
+  40              	@ -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp -ftree-builtin-call-dce
+  41              	@ -ftree-ccp -ftree-ch -ftree-copy-prop -ftree-copyrename -ftree-cselim
+  42              	@ -ftree-dce -ftree-dominator-opts -ftree-dse -ftree-forwprop -ftree-fre
+  43              	@ -ftree-loop-if-convert -ftree-loop-im -ftree-loop-ivcanon
+  44              	@ -ftree-loop-optimize -ftree-parallelize-loops= -ftree-phiprop -ftree-pre
+  45              	@ -ftree-pta -ftree-reassoc -ftree-scev-cprop -ftree-sink
+  46              	@ -ftree-slp-vectorize -ftree-sra -ftree-switch-conversion -ftree-ter
+  47              	@ -ftree-vect-loop-version -ftree-vrp -funit-at-a-time -fverbose-asm
+  48              	@ -fzero-initialized-in-bss -mlittle-endian -msched-prolog
+  49              	
+  50              	@ Compiler executable checksum: de80e2dacb9f8abf918a9a189330559b
+  51              	
+  52              		.text
+  53              		.align	2
+  54              		.type	spit_serie1, %function
+  55              	spit_serie1:
+  56              		@ args = 0, pretend = 0, frame = 0
+  57              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s 			page 2
+
+
+  58              		@ link register save eliminated.
+  59 0000 CC109FE5 		ldr	r1, .L9	@ tmp156,
+  60 0004 082091E5 		ldr	r2, [r1, #8]	@ D.2076, MEM[(volatile uint32 *)-536805368B]
+  61 0008 0E2002E2 		and	r2, r2, #14	@ tmp158, D.2076,
+  62 000c 040052E3 		cmp	r2, #4	@ tmp158,
+  63 0010 1B00000A 		beq	.L8	@,
+  64 0014 020052E3 		cmp	r2, #2	@ tmp158,
+  65 0018 1EFF2F11 		bxne	lr	@
+  66 001c B4309FE5 		ldr	r3, .L9+4	@ tmp196,
+  67 0020 1C2093E5 		ldr	r2, [r3, #28]	@ gEmissionCount.24, gEmissionCount
+  68 0024 000052E3 		cmp	r2, #0	@ gEmissionCount.24,
+  69 0028 0E00000A 		beq	.L5	@,
+  70 002c 202093E5 		ldr	r2, [r3, #32]	@ gEmissionReadIndex.25, gEmissionReadIndex
+  71 0030 022083E0 		add	r2, r3, r2	@ tmp180, tmp196, gEmissionReadIndex.25
+  72 0034 2420D2E5 		ldrb	r2, [r2, #36]	@ zero_extendqisi2	@ tmp183, gEmissionBuffer
+  73 0038 FF2002E2 		and	r2, r2, #255	@ D.2100, tmp183,
+  74 003c 0020C1E5 		strb	r2, [r1, #0]	@ D.2100, MEM[(volatile uint8 *)-536805376B]
+  75 0040 202093E5 		ldr	r2, [r3, #32]	@ gEmissionReadIndex.26, gEmissionReadIndex
+  76 0044 012082E2 		add	r2, r2, #1	@ gEmissionReadIndex.27, gEmissionReadIndex.26,
+  77 0048 202083E5 		str	r2, [r3, #32]	@ gEmissionReadIndex.27, gEmissionReadIndex
+  78 004c 202093E5 		ldr	r2, [r3, #32]	@ gEmissionReadIndex.28, gEmissionReadIndex
+  79 0050 0A0052E3 		cmp	r2, #10	@ gEmissionReadIndex.28,
+  80 0054 0020A003 		moveq	r2, #0	@ tmp190,
+  81 0058 20208305 		streq	r2, [r3, #32]	@ tmp190, gEmissionReadIndex
+  82 005c 1C2093E5 		ldr	r2, [r3, #28]	@ gEmissionCount.29, gEmissionCount
+  83 0060 012042E2 		sub	r2, r2, #1	@ gEmissionCount.30, gEmissionCount.29,
+  84 0064 1C2083E5 		str	r2, [r3, #28]	@ gEmissionCount.30, gEmissionCount
+  85              	.L5:
+  86 0068 1C3093E5 		ldr	r3, [r3, #28]	@ gEmissionCount.31, gEmissionCount
+  87 006c 000053E3 		cmp	r3, #0	@ gEmissionCount.31,
+  88 0070 5C309F05 		ldreq	r3, .L9	@ tmp194,
+  89 0074 04209305 		ldreq	r2, [r3, #4]	@ D.2112, MEM[(volatile uint32 *)-536805372B]
+  90 0078 FD200202 		andeq	r2, r2, #253	@ D.2113, D.2112,
+  91 007c 04208305 		streq	r2, [r3, #4]	@ D.2113, MEM[(volatile uint32 *)-536805372B]
+  92 0080 1EFF2FE1 		bx	lr	@
+  93              	.L8:
+  94 0084 4C309FE5 		ldr	r3, .L9+4	@ tmp196,
+  95 0088 00C093E5 		ldr	ip, [r3, #0]	@ gReceptionWriteIndex.17, gReceptionWriteIndex
+  96 008c 0000D1E5 		ldrb	r0, [r1, #0]	@ zero_extendqisi2	@ MEM[(volatile uint8 *)-536805376B], MEM[(volatile uint8 *)-
+  97 0090 0C1083E0 		add	r1, r3, ip	@ tmp165, tmp196, gReceptionWriteIndex.17
+  98 0094 FF0000E2 		and	r0, r0, #255	@ D.2082, MEM[(volatile uint8 *)-536805376B],
+  99 0098 0200C1E7 		strb	r0, [r1, r2]	@ D.2082, gReceptionBuffer
+ 100 009c 182093E5 		ldr	r2, [r3, #24]	@ gReceptionCount.18, gReceptionCount
+ 101 00a0 130052E3 		cmp	r2, #19	@ gReceptionCount.18,
+ 102 00a4 1EFF2F81 		bxhi	lr	@
+ 103 00a8 002093E5 		ldr	r2, [r3, #0]	@ gReceptionWriteIndex.19, gReceptionWriteIndex
+ 104 00ac 012082E2 		add	r2, r2, #1	@ gReceptionWriteIndex.20, gReceptionWriteIndex.19,
+ 105 00b0 002083E5 		str	r2, [r3, #0]	@ gReceptionWriteIndex.20, gReceptionWriteIndex
+ 106 00b4 002093E5 		ldr	r2, [r3, #0]	@ gReceptionWriteIndex.21, gReceptionWriteIndex
+ 107 00b8 140052E3 		cmp	r2, #20	@ gReceptionWriteIndex.21,
+ 108 00bc 0020A003 		moveq	r2, #0	@ tmp173,
+ 109 00c0 00208305 		streq	r2, [r3, #0]	@ tmp173, gReceptionWriteIndex
+ 110 00c4 182093E5 		ldr	r2, [r3, #24]	@ gReceptionCount.22, gReceptionCount
+ 111 00c8 012082E2 		add	r2, r2, #1	@ gReceptionCount.23, gReceptionCount.22,
+ 112 00cc 182083E5 		str	r2, [r3, #24]	@ gReceptionCount.23, gReceptionCount
+ 113 00d0 1EFF2FE1 		bx	lr	@
+ 114              	.L10:
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s 			page 3
+
+
+ 115              		.align	2
+ 116              	.L9:
+ 117 00d4 000001E0 		.word	-536805376
+ 118 00d8 00000000 		.word	.LANCHOR0
+ 119              		.size	spit_serie1, .-spit_serie1
+ 120              		.align	2
+ 121              		.global	envoyer_caractere_serie1
+ 122              		.type	envoyer_caractere_serie1, %function
+ 123              	envoyer_caractere_serie1:
+ 124              		@ args = 0, pretend = 0, frame = 0
+ 125              		@ frame_needed = 0, uses_anonymous_args = 0
+ 126              		@ link register save eliminated.
+ 127 00dc 7C209FE5 		ldr	r2, .L17	@ tmp172,
+ 128 00e0 FF0000E2 		and	r0, r0, #255	@ inCaractere, inCaractere,
+ 129              	.L12:
+ 130 00e4 1C3092E5 		ldr	r3, [r2, #28]	@ gEmissionCount.39, gEmissionCount
+ 131 00e8 0A0053E3 		cmp	r3, #10	@ gEmissionCount.39,
+ 132 00ec FCFFFF0A 		beq	.L12	@,
+ 133 00f0 68309FE5 		ldr	r3, .L17	@ tmp149,
+ 134 00f4 1C3093E5 		ldr	r3, [r3, #28]	@ gEmissionCount.40, gEmissionCount
+ 135 00f8 000053E3 		cmp	r3, #0	@ gEmissionCount.40,
+ 136 00fc 0400001A 		bne	.L13	@,
+ 137 0100 5C309FE5 		ldr	r3, .L17+4	@ tmp151,
+ 138 0104 1410D3E5 		ldrb	r1, [r3, #20]	@ zero_extendqisi2	@ MEM[(volatile uint8 *)-536805356B], MEM[(volatile uint8 *)
+ 139 0108 200011E3 		tst	r1, #32	@ MEM[(volatile uint8 *)-536805356B],
+ 140 010c 0000C315 		strneb	r0, [r3, #0]	@ inCaractere, MEM[(volatile uint8 *)-536805376B]
+ 141 0110 1EFF2F11 		bxne	lr	@
+ 142              	.L13:
+ 143 0114 303092E5 		ldr	r3, [r2, #48]	@ gEmissionWriteIndex.41, gEmissionWriteIndex
+ 144 0118 033082E0 		add	r3, r2, r3	@ tmp160, tmp172, gEmissionWriteIndex.41
+ 145 011c 2400C3E5 		strb	r0, [r3, #36]	@ inCaractere, gEmissionBuffer
+ 146 0120 303092E5 		ldr	r3, [r2, #48]	@ gEmissionWriteIndex.42, gEmissionWriteIndex
+ 147 0124 013083E2 		add	r3, r3, #1	@ gEmissionWriteIndex.43, gEmissionWriteIndex.42,
+ 148 0128 303082E5 		str	r3, [r2, #48]	@ gEmissionWriteIndex.43, gEmissionWriteIndex
+ 149 012c 303092E5 		ldr	r3, [r2, #48]	@ gEmissionWriteIndex.44, gEmissionWriteIndex
+ 150 0130 0A0053E3 		cmp	r3, #10	@ gEmissionWriteIndex.44,
+ 151 0134 24309F05 		ldreq	r3, .L17	@ tmp157,
+ 152 0138 0010A003 		moveq	r1, #0	@ tmp167,
+ 153 013c 30108305 		streq	r1, [r3, #48]	@ tmp167, gEmissionWriteIndex
+ 154 0140 1C3092E5 		ldr	r3, [r2, #28]	@ gEmissionCount.45, gEmissionCount
+ 155 0144 013083E2 		add	r3, r3, #1	@ gEmissionCount.46, gEmissionCount.45,
+ 156 0148 1C3082E5 		str	r3, [r2, #28]	@ gEmissionCount.46, gEmissionCount
+ 157 014c 10309FE5 		ldr	r3, .L17+4	@ tmp170,
+ 158 0150 042093E5 		ldr	r2, [r3, #4]	@ D.2148, MEM[(volatile uint32 *)-536805372B]
+ 159 0154 022082E3 		orr	r2, r2, #2	@ D.2149, D.2148,
+ 160 0158 042083E5 		str	r2, [r3, #4]	@ D.2149, MEM[(volatile uint32 *)-536805372B]
+ 161 015c 1EFF2FE1 		bx	lr	@
+ 162              	.L18:
+ 163              		.align	2
+ 164              	.L17:
+ 165 0160 00000000 		.word	.LANCHOR0
+ 166 0164 000001E0 		.word	-536805376
+ 167              		.size	envoyer_caractere_serie1, .-envoyer_caractere_serie1
+ 168              		.align	2
+ 169              		.global	recevoir_caractere_serie1
+ 170              		.type	recevoir_caractere_serie1, %function
+ 171              	recevoir_caractere_serie1:
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s 			page 4
+
+
+ 172              		@ args = 0, pretend = 0, frame = 0
+ 173              		@ frame_needed = 0, uses_anonymous_args = 0
+ 174              		@ link register save eliminated.
+ 175 0168 50309FE5 		ldr	r3, .L22	@ tmp164,
+ 176 016c 182093E5 		ldr	r2, [r3, #24]	@ gReceptionCount.32, gReceptionCount
+ 177 0170 002092E2 		adds	r2, r2, #0	@ recu, gReceptionCount.32,
+ 178 0174 0120A013 		movne	r2, #1	@ recu,
+ 179 0178 000052E3 		cmp	r2, #0	@ recu,
+ 180 017c 0D00000A 		beq	.L20	@,
+ 181 0180 341093E5 		ldr	r1, [r3, #52]	@ gReceptionReadIndex.33, gReceptionReadIndex
+ 182 0184 011083E0 		add	r1, r3, r1	@ tmp151, tmp164, gReceptionReadIndex.33
+ 183 0188 0410D1E5 		ldrb	r1, [r1, #4]	@ zero_extendqisi2	@ tmp154, gReceptionBuffer
+ 184 018c 34C093E5 		ldr	ip, [r3, #52]	@ gReceptionReadIndex.34, gReceptionReadIndex
+ 185 0190 01C08CE2 		add	ip, ip, #1	@ gReceptionReadIndex.35, gReceptionReadIndex.34,
+ 186 0194 34C083E5 		str	ip, [r3, #52]	@ gReceptionReadIndex.35, gReceptionReadIndex
+ 187 0198 34C093E5 		ldr	ip, [r3, #52]	@ gReceptionReadIndex.36, gReceptionReadIndex
+ 188 019c 14005CE3 		cmp	ip, #20	@ gReceptionReadIndex.36,
+ 189 01a0 0010C0E5 		strb	r1, [r0, #0]	@ tmp154, *outCaractere_5(D)
+ 190 01a4 0010A003 		moveq	r1, #0	@ tmp160,
+ 191 01a8 34108305 		streq	r1, [r3, #52]	@ tmp160, gReceptionReadIndex
+ 192 01ac 181093E5 		ldr	r1, [r3, #24]	@ gReceptionCount.37, gReceptionCount
+ 193 01b0 011041E2 		sub	r1, r1, #1	@ gReceptionCount.38, gReceptionCount.37,
+ 194 01b4 181083E5 		str	r1, [r3, #24]	@ gReceptionCount.38, gReceptionCount
+ 195              	.L20:
+ 196 01b8 0200A0E1 		mov	r0, r2	@, recu
+ 197 01bc 1EFF2FE1 		bx	lr	@
+ 198              	.L23:
+ 199              		.align	2
+ 200              	.L22:
+ 201 01c0 00000000 		.word	.LANCHOR0
+ 202              		.size	recevoir_caractere_serie1, .-recevoir_caractere_serie1
+ 203              		.align	2
+ 204              		.type	reporter_entrees, %function
+ 205              	reporter_entrees:
+ 206              		@ args = 0, pretend = 0, frame = 8
+ 207              		@ frame_needed = 0, uses_anonymous_args = 0
+ 208 01c4 10402DE9 		stmfd	sp!, {r4, lr}	@,
+ 209 01c8 08D04DE2 		sub	sp, sp, #8	@,,
+ 210 01cc 08008DE2 		add	r0, sp, #8	@ tmp163,,
+ 211 01d0 0040A0E3 		mov	r4, #0	@ tmp161,
+ 212 01d4 014060E5 		strb	r4, [r0, #-1]!	@ tmp161, nouvellesEntrees
+ 213 01d8 FEFFFFEB 		bl	recevoir_caractere_serie1	@
+ 214 01dc 040050E1 		cmp	r0, r4	@,
+ 215 01e0 0100001A 		bne	.L37	@,
+ 216              	.L24:
+ 217 01e4 08D08DE2 		add	sp, sp, #8	@,,
+ 218 01e8 1080BDE8 		ldmfd	sp!, {r4, pc}
+ 219              	.L37:
+ 220 01ec 0200A0E3 		mov	r0, #2	@,
+ 221 01f0 0410A0E1 		mov	r1, r4	@, tmp161
+ 222 01f4 FEFFFFEB 		bl	lcd_goto_line_column	@
+ 223 01f8 B4009FE5 		ldr	r0, .L38	@,
+ 224 01fc FEFFFFEB 		bl	lcd_print_string	@
+ 225 0200 0830A0E3 		mov	r3, #8	@ tmp166,
+ 226 0204 00308DE5 		str	r3, [sp, #0]	@ tmp166, i
+ 227 0208 00309DE5 		ldr	r3, [sp, #0]	@ i.11, i
+ 228 020c 040053E1 		cmp	r3, r4	@ i.11,
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s 			page 5
+
+
+ 229 0210 0D0000DA 		ble	.L26	@,
+ 230              	.L34:
+ 231 0214 00209DE5 		ldr	r2, [sp, #0]	@ i.7, i
+ 232 0218 0710DDE5 		ldrb	r1, [sp, #7]	@ zero_extendqisi2	@ nouvellesEntrees, nouvellesEntrees
+ 233 021c 00309DE5 		ldr	r3, [sp, #0]	@ i.8, i
+ 234 0220 212202E0 		and	r2, r2, r1, lsr #4	@, tmp170, i.7, nouvellesEntrees,
+ 235 0224 030052E1 		cmp	r2, r3	@ tmp170, i.8
+ 236 0228 0000A0E3 		mov	r0, #0	@,
+ 237 022c 0100A003 		moveq	r0, #1	@,
+ 238 0230 FEFFFFEB 		bl	lcd_print_unsigned	@
+ 239 0234 00309DE5 		ldr	r3, [sp, #0]	@ i.9, i
+ 240 0238 C330A0E1 		mov	r3, r3, asr #1	@ i.10, i.9,
+ 241 023c 00308DE5 		str	r3, [sp, #0]	@ i.10, i
+ 242 0240 00309DE5 		ldr	r3, [sp, #0]	@ i.11, i
+ 243 0244 000053E3 		cmp	r3, #0	@ i.11,
+ 244 0248 F1FFFFCA 		bgt	.L34	@,
+ 245              	.L26:
+ 246 024c 0300A0E3 		mov	r0, #3	@,
+ 247 0250 0010A0E3 		mov	r1, #0	@,
+ 248 0254 FEFFFFEB 		bl	lcd_goto_line_column	@
+ 249 0258 58009FE5 		ldr	r0, .L38+4	@,
+ 250 025c FEFFFFEB 		bl	lcd_print_string	@
+ 251 0260 0830A0E3 		mov	r3, #8	@ tmp172,
+ 252 0264 00308DE5 		str	r3, [sp, #0]	@ tmp172, i
+ 253 0268 00309DE5 		ldr	r3, [sp, #0]	@ i.16, i
+ 254 026c 000053E3 		cmp	r3, #0	@ i.16,
+ 255 0270 DBFFFFDA 		ble	.L24	@,
+ 256              	.L33:
+ 257 0274 00209DE5 		ldr	r2, [sp, #0]	@ i.12, i
+ 258 0278 0710DDE5 		ldrb	r1, [sp, #7]	@ zero_extendqisi2	@ nouvellesEntrees, nouvellesEntrees
+ 259 027c 00309DE5 		ldr	r3, [sp, #0]	@ i.13, i
+ 260 0280 0F2002E2 		and	r2, r2, #15	@ tmp173, i.12,
+ 261 0284 012002E0 		and	r2, r2, r1	@ tmp175, tmp173, nouvellesEntrees
+ 262 0288 030052E1 		cmp	r2, r3	@ tmp175, i.13
+ 263 028c 0000A0E3 		mov	r0, #0	@,
+ 264 0290 0100A003 		moveq	r0, #1	@,
+ 265 0294 FEFFFFEB 		bl	lcd_print_unsigned	@
+ 266 0298 00309DE5 		ldr	r3, [sp, #0]	@ i.14, i
+ 267 029c C330A0E1 		mov	r3, r3, asr #1	@ i.15, i.14,
+ 268 02a0 00308DE5 		str	r3, [sp, #0]	@ i.15, i
+ 269 02a4 00309DE5 		ldr	r3, [sp, #0]	@ i.16, i
+ 270 02a8 000053E3 		cmp	r3, #0	@ i.16,
+ 271 02ac F0FFFFCA 		bgt	.L33	@,
+ 272 02b0 CBFFFFEA 		b	.L24	@
+ 273              	.L39:
+ 274              		.align	2
+ 275              	.L38:
+ 276 02b4 00000000 		.word	.LC0
+ 277 02b8 0C000000 		.word	.LC1
+ 278              		.size	reporter_entrees, .-reporter_entrees
+ 279              		.section	.text.startup,"ax",%progbits
+ 280              		.align	2
+ 281              		.global	main
+ 282              		.type	main, %function
+ 283              	main:
+ 284              		@ args = 0, pretend = 0, frame = 4
+ 285              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s 			page 6
+
+
+ 286 0000 F0402DE9 		stmfd	sp!, {r4, r5, r6, r7, lr}	@,
+ 287 0004 04D04DE2 		sub	sp, sp, #4	@,,
+ 288 0008 FEFFFFEB 		bl	initialiser_sorties_s0_s3	@
+ 289 000c 04119FE5 		ldr	r1, .L53	@,
+ 290 0010 0900A0E3 		mov	r0, #9	@,
+ 291 0014 FEFFFFEB 		bl	initialiser_serie_1_it	@
+ 292 0018 FEFFFFEB 		bl	lcd_init	@
+ 293 001c F8009FE5 		ldr	r0, .L53+4	@,
+ 294 0020 FEFFFFEB 		bl	lcd_print_string	@
+ 295 0024 F4309FE5 		ldr	r3, .L53+8	@ tmp149,
+ 296 0028 181093E5 		ldr	r1, [r3, #24]	@ D.2037, MEM[(volatile uint32 *)-536707048B]
+ 297 002c 0225A0E3 		mov	r2, #8388608	@ tmp152,
+ 298 0030 021081E1 		orr	r1, r1, r2	@ D.2038, D.2037,
+ 299 0034 181083E5 		str	r1, [r3, #24]	@ D.2038, MEM[(volatile uint32 *)-536707048B]
+ 300 0038 0800A0E3 		mov	r0, #8	@,
+ 301 003c 142083E5 		str	r2, [r3, #20]	@ tmp152, MEM[(volatile uint32 *)-536707052B]
+ 302 0040 1C2083E5 		str	r2, [r3, #28]	@ tmp152, MEM[(volatile uint32 *)-536707044B]
+ 303 0044 1C2083E5 		str	r2, [r3, #28]	@ tmp152, MEM[(volatile uint32 *)-536707044B]
+ 304 0048 0070A0E3 		mov	r7, #0	@ compteur,
+ 305 004c 0460A0E3 		mov	r6, #4	@ valeur,
+ 306 0050 CC509FE5 		ldr	r5, .L53+12	@ tmp169,
+ 307 0054 CC409FE5 		ldr	r4, .L53+16	@ tmp171,
+ 308 0058 FEFFFFEB 		bl	allumer_sorties_s0_s3	@
+ 309              	.L52:
+ 310 005c FEFFFFEB 		bl	reporter_entrees	@
+ 311 0060 0030A0E3 		mov	r3, #0	@ tmp157,
+ 312 0064 00308DE5 		str	r3, [sp, #0]	@ tmp157, j
+ 313 0068 00309DE5 		ldr	r3, [sp, #0]	@ j.2, j
+ 314 006c 050053E1 		cmp	r3, r5	@ j.2, tmp169
+ 315 0070 050000CA 		bgt	.L42	@,
+ 316              	.L49:
+ 317 0074 00309DE5 		ldr	r3, [sp, #0]	@ j.0, j
+ 318 0078 013083E2 		add	r3, r3, #1	@ j.1, j.0,
+ 319 007c 00308DE5 		str	r3, [sp, #0]	@ j.1, j
+ 320 0080 00309DE5 		ldr	r3, [sp, #0]	@ j.2, j
+ 321 0084 050053E1 		cmp	r3, r5	@ j.2, tmp169
+ 322 0088 F9FFFFDA 		ble	.L49	@,
+ 323              	.L42:
+ 324 008c 8C309FE5 		ldr	r3, .L53+8	@ tmp160,
+ 325 0090 0225A0E3 		mov	r2, #8388608	@ tmp161,
+ 326 0094 142083E5 		str	r2, [r3, #20]	@ tmp161, MEM[(volatile uint32 *)-536707052B]
+ 327 0098 0F00A0E3 		mov	r0, #15	@,
+ 328 009c FEFFFFEB 		bl	eteindre_sorties_s0_s3	@
+ 329 00a0 FEFFFFEB 		bl	reporter_entrees	@
+ 330 00a4 0030A0E3 		mov	r3, #0	@ tmp162,
+ 331 00a8 00308DE5 		str	r3, [sp, #0]	@ tmp162, j
+ 332 00ac 00309DE5 		ldr	r3, [sp, #0]	@ j.5, j
+ 333 00b0 040053E1 		cmp	r3, r4	@ j.5, tmp171
+ 334 00b4 050000CA 		bgt	.L44	@,
+ 335              	.L48:
+ 336 00b8 00309DE5 		ldr	r3, [sp, #0]	@ j.3, j
+ 337 00bc 013083E2 		add	r3, r3, #1	@ j.4, j.3,
+ 338 00c0 00308DE5 		str	r3, [sp, #0]	@ j.4, j
+ 339 00c4 00309DE5 		ldr	r3, [sp, #0]	@ j.5, j
+ 340 00c8 040053E1 		cmp	r3, r4	@ j.5, tmp171
+ 341 00cc F9FFFFDA 		ble	.L48	@,
+ 342              	.L44:
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s 			page 7
+
+
+ 343 00d0 0000A0E3 		mov	r0, #0	@,
+ 344 00d4 0010A0E1 		mov	r1, r0	@,
+ 345 00d8 FEFFFFEB 		bl	lcd_goto_line_column	@
+ 346 00dc 3C309FE5 		ldr	r3, .L53+8	@ tmp165,
+ 347 00e0 0225A0E3 		mov	r2, #8388608	@ tmp166,
+ 348 00e4 0600A0E1 		mov	r0, r6	@, valeur
+ 349 00e8 1C2083E5 		str	r2, [r3, #28]	@ tmp166, MEM[(volatile uint32 *)-536707044B]
+ 350 00ec FEFFFFEB 		bl	allumer_sorties_s0_s3	@
+ 351 00f0 A660B0E1 		movs	r6, r6, lsr #1	@ valeur, valeur,
+ 352 00f4 D8FFFF1A 		bne	.L52	@,
+ 353 00f8 0610A0E1 		mov	r1, r6	@, valeur
+ 354 00fc 0100A0E3 		mov	r0, #1	@,
+ 355 0100 FEFFFFEB 		bl	lcd_goto_line_column	@
+ 356 0104 0700A0E1 		mov	r0, r7	@, compteur
+ 357 0108 FEFFFFEB 		bl	lcd_print_unsigned	@
+ 358 010c 017087E2 		add	r7, r7, #1	@ compteur, compteur,
+ 359 0110 0860A0E3 		mov	r6, #8	@ valeur,
+ 360 0114 D0FFFFEA 		b	.L52	@
+ 361              	.L54:
+ 362              		.align	2
+ 363              	.L53:
+ 364 0118 00000000 		.word	spit_serie1
+ 365 011c 18000000 		.word	.LC2
+ 366 0120 008002E0 		.word	-536707072
+ 367 0124 1FA10700 		.word	499999
+ 368 0128 7F841E00 		.word	1999999
+ 369              		.size	main, .-main
+ 370              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 371              		.align	2
+ 372              	.LC0:
+ 373 0000 45302D45 		.ascii	"E0-E3 : \000"
+ 373      33203A20 
+ 373      00
+ 374 0009 000000   		.space	3
+ 375              	.LC1:
+ 376 000c 46302D46 		.ascii	"F0-F3 : \000"
+ 376      33203A20 
+ 376      00
+ 377 0015 000000   		.space	3
+ 378              	.LC2:
+ 379 0018 48656C6C 		.ascii	"Hello !\000"
+ 379      6F202100 
+ 380              		.bss
+ 381              		.align	2
+ 382              		.set	.LANCHOR0,. + 0
+ 383              		.type	gReceptionWriteIndex, %object
+ 384              		.size	gReceptionWriteIndex, 4
+ 385              	gReceptionWriteIndex:
+ 386 0000 00000000 		.space	4
+ 387              		.type	gReceptionBuffer, %object
+ 388              		.size	gReceptionBuffer, 20
+ 389              	gReceptionBuffer:
+ 390 0004 00000000 		.space	20
+ 390      00000000 
+ 390      00000000 
+ 390      00000000 
+ 390      00000000 
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s 			page 8
+
+
+ 391              		.type	gReceptionCount, %object
+ 392              		.size	gReceptionCount, 4
+ 393              	gReceptionCount:
+ 394 0018 00000000 		.space	4
+ 395              		.type	gEmissionCount, %object
+ 396              		.size	gEmissionCount, 4
+ 397              	gEmissionCount:
+ 398 001c 00000000 		.space	4
+ 399              		.type	gEmissionReadIndex, %object
+ 400              		.size	gEmissionReadIndex, 4
+ 401              	gEmissionReadIndex:
+ 402 0020 00000000 		.space	4
+ 403              		.type	gEmissionBuffer, %object
+ 404              		.size	gEmissionBuffer, 10
+ 405              	gEmissionBuffer:
+ 406 0024 00000000 		.space	10
+ 406      00000000 
+ 406      0000
+ 407 002e 0000     		.space	2
+ 408              		.type	gEmissionWriteIndex, %object
+ 409              		.size	gEmissionWriteIndex, 4
+ 410              	gEmissionWriteIndex:
+ 411 0030 00000000 		.space	4
+ 412              		.type	gReceptionReadIndex, %object
+ 413              		.size	gReceptionReadIndex, 4
+ 414              	gReceptionReadIndex:
+ 415 0034 00000000 		.space	4
+ 416              		.ident	"GCC: (GNU) 4.6.1"
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s 			page 9
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s:53     .text:00000000 $a
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s:55     .text:00000000 spit_serie1
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s:117    .text:000000d4 $d
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s:120    .text:000000dc $a
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s:123    .text:000000dc envoyer_caractere_serie1
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s:165    .text:00000160 $d
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s:168    .text:00000168 $a
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s:171    .text:00000168 recevoir_caractere_serie1
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s:201    .text:000001c0 $d
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s:203    .text:000001c4 $a
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s:205    .text:000001c4 reporter_entrees
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s:276    .text:000002b4 $d
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s:280    .text.startup:00000000 $a
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s:283    .text.startup:00000000 main
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s:364    .text.startup:00000118 $d
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s:371    .rodata.str1.4:00000000 $d
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s:381    .bss:00000000 $d
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s:385    .bss:00000000 gReceptionWriteIndex
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s:389    .bss:00000004 gReceptionBuffer
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s:393    .bss:00000018 gReceptionCount
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s:397    .bss:0000001c gEmissionCount
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s:401    .bss:00000020 gEmissionReadIndex
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s:405    .bss:00000024 gEmissionBuffer
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s:410    .bss:00000030 gEmissionWriteIndex
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cclKY5zD.s:414    .bss:00000034 gReceptionReadIndex
+
+UNDEFINED SYMBOLS
+lcd_goto_line_column
+lcd_print_string
+lcd_print_unsigned
+initialiser_sorties_s0_s3
+initialiser_serie_1_it
+lcd_init
+allumer_sorties_s0_s3
+eteindre_sorties_s0_s3

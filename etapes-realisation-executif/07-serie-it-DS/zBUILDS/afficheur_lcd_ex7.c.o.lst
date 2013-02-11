@@ -1,0 +1,409 @@
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccpWrDWN.s 			page 1
+
+
+   1              		.file	"afficheur_lcd_ex7.c"
+   2              	@ GNU C (GCC) version 4.6.1 (arm-elf)
+   3              	@	compiled by GNU C version 4.0.1 (Apple Inc. build 5494), GMP version 5.0.2, MPFR version 3.0.1, M
+   4              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+   5              	@ options passed:  -I sources -I ../sources-communs
+   6              	@ -I /usr/local/dev-arm/arm-dev-files/sources
+   7              	@ -iprefix /usr/local/dev-arm/i386-Darwin-arm-gcc-4.6.1/bin/../lib/gcc/arm-elf/4.6.1/
+   8              	@ -MD zBUILDS/afficheur_lcd_ex7.c.d -MF zBUILDS/afficheur_lcd_ex7.c.o.dep
+   9              	@ -MP -MQ zBUILDS/afficheur_lcd_ex7.c.o -D__USES_INITFINI__ -D XTR_CLASS=0
+  10              	@ -D LPC22XX_CRYSTAL_FREQUENCY=14745600
+  11              	@ -D LPC22XX_PLL_FREQUENCY_MULTIPLIER=4 -D LPC22XX_APB_DIVIDER=1
+  12              	@ ../sources-communs/afficheur_lcd_ex7.c -mcpu=arm7tdmi-s -mcpu=arm7tdmi-s
+  13              	@ -auxbase-strip zBUILDS/afficheur_lcd_ex7.c.o -O2 -Wall -Werror
+  14              	@ -Wreturn-type -Wformat -Wsign-compare -Wpointer-arith -Wparentheses
+  15              	@ -Wcast-align -Wcast-qual -Wwrite-strings -Wswitch -Wstrict-prototypes
+  16              	@ -Wbad-function-cast -Wmissing-declarations
+  17              	@ -Wimplicit-function-declaration -Wno-int-to-pointer-cast
+  18              	@ -Wno-pointer-to-int-cast -fverbose-asm -fomit-frame-pointer
+  19              	@ -foptimize-register-move
+  20              	@ options enabled:  -fauto-inc-dec -fbranch-count-reg -fcaller-saves
+  21              	@ -fcombine-stack-adjustments -fcommon -fcompare-elim -fcprop-registers
+  22              	@ -fcrossjumping -fcse-follow-jumps -fdefer-pop
+  23              	@ -fdelete-null-pointer-checks -fdevirtualize -fdwarf2-cfi-asm
+  24              	@ -fearly-inlining -feliminate-unused-debug-types -fexpensive-optimizations
+  25              	@ -fforward-propagate -ffunction-cse -fgcse -fgcse-lm
+  26              	@ -fguess-branch-probability -fident -fif-conversion -fif-conversion2
+  27              	@ -findirect-inlining -finline -finline-functions-called-once
+  28              	@ -finline-small-functions -fipa-cp -fipa-profile -fipa-pure-const
+  29              	@ -fipa-reference -fipa-sra -fira-share-save-slots -fira-share-spill-slots
+  30              	@ -fivopts -fkeep-static-consts -fleading-underscore -fmath-errno
+  31              	@ -fmerge-constants -fmerge-debug-strings -fmove-loop-invariants
+  32              	@ -fomit-frame-pointer -foptimize-register-move -foptimize-sibling-calls
+  33              	@ -fpartial-inlining -fpeephole -fpeephole2 -fprefetch-loop-arrays
+  34              	@ -freg-struct-return -fregmove -freorder-blocks -freorder-functions
+  35              	@ -frerun-cse-after-loop -fsched-critical-path-heuristic
+  36              	@ -fsched-dep-count-heuristic -fsched-group-heuristic -fsched-interblock
+  37              	@ -fsched-last-insn-heuristic -fsched-rank-heuristic -fsched-spec
+  38              	@ -fsched-spec-insn-heuristic -fsched-stalled-insns-dep -fschedule-insns
+  39              	@ -fschedule-insns2 -fsection-anchors -fshow-column -fsigned-zeros
+  40              	@ -fsplit-ivs-in-unroller -fsplit-wide-types -fstrict-aliasing
+  41              	@ -fstrict-overflow -fstrict-volatile-bitfields -fthread-jumps
+  42              	@ -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp -ftree-builtin-call-dce
+  43              	@ -ftree-ccp -ftree-ch -ftree-copy-prop -ftree-copyrename -ftree-cselim
+  44              	@ -ftree-dce -ftree-dominator-opts -ftree-dse -ftree-forwprop -ftree-fre
+  45              	@ -ftree-loop-if-convert -ftree-loop-im -ftree-loop-ivcanon
+  46              	@ -ftree-loop-optimize -ftree-parallelize-loops= -ftree-phiprop -ftree-pre
+  47              	@ -ftree-pta -ftree-reassoc -ftree-scev-cprop -ftree-sink
+  48              	@ -ftree-slp-vectorize -ftree-sra -ftree-switch-conversion -ftree-ter
+  49              	@ -ftree-vect-loop-version -ftree-vrp -funit-at-a-time -fverbose-asm
+  50              	@ -fzero-initialized-in-bss -mlittle-endian -msched-prolog
+  51              	
+  52              	@ Compiler executable checksum: de80e2dacb9f8abf918a9a189330559b
+  53              	
+  54              		.text
+  55              		.align	2
+  56              		.global	lcd_goto_line_column
+  57              		.type	lcd_goto_line_column, %function
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccpWrDWN.s 			page 2
+
+
+  58              	lcd_goto_line_column:
+  59              		@ args = 0, pretend = 0, frame = 0
+  60              		@ frame_needed = 0, uses_anonymous_args = 0
+  61              		@ link register save eliminated.
+  62 0000 030050E3 		cmp	r0, #3	@ inLine,
+  63 0004 0300A023 		movcs	r0, #3	@ tmp144,
+  64 0008 000180E0 		add	r0, r0, r0, asl #2	@, tmp147, tmp144, tmp144,
+  65 000c 0001A0E1 		mov	r0, r0, asl #2	@ tmp148, tmp147,
+  66 0010 130051E3 		cmp	r1, #19	@ inColumn,
+  67 0014 01008090 		addls	r0, r0, r1	@,, tmp149, tmp148, inColumn
+  68 0018 13008082 		addhi	r0, r0, #19	@,, tmp149, tmp148,
+  69 001c 800080E2 		add	r0, r0, #128	@ tmp150, tmp149,
+  70 0020 FF0000E2 		and	r0, r0, #255	@ tmp151, tmp150,
+  71 0024 FEFFFFEA 		b	envoyer_caractere_serie1	@
+  72              		.size	lcd_goto_line_column, .-lcd_goto_line_column
+  73              		.align	2
+  74              		.global	lcd_backlight
+  75              		.type	lcd_backlight, %function
+  76              	lcd_backlight:
+  77              		@ args = 0, pretend = 0, frame = 0
+  78              		@ frame_needed = 0, uses_anonymous_args = 0
+  79              		@ link register save eliminated.
+  80 0028 300040E2 		sub	r0, r0, #48	@ tmp139, inBacklightOn,
+  81 002c FF0000E2 		and	r0, r0, #255	@, tmp139,
+  82 0030 FEFFFFEA 		b	envoyer_caractere_serie1	@
+  83              		.size	lcd_backlight, .-lcd_backlight
+  84              		.align	2
+  85              		.global	lcd_print_char
+  86              		.type	lcd_print_char, %function
+  87              	lcd_print_char:
+  88              		@ args = 0, pretend = 0, frame = 0
+  89              		@ frame_needed = 0, uses_anonymous_args = 0
+  90              		@ link register save eliminated.
+  91 0034 FF0000E2 		and	r0, r0, #255	@, inChar,
+  92 0038 FEFFFFEA 		b	envoyer_caractere_serie1	@
+  93              		.size	lcd_print_char, .-lcd_print_char
+  94              		.align	2
+  95              		.global	lcd_print_string
+  96              		.type	lcd_print_string, %function
+  97              	lcd_print_string:
+  98              		@ args = 0, pretend = 0, frame = 0
+  99              		@ frame_needed = 0, uses_anonymous_args = 0
+ 100 003c 10402DE9 		stmfd	sp!, {r4, lr}	@,
+ 101 0040 0040A0E1 		mov	r4, r0	@ inChaine, inChaine
+ 102 0044 0000D0E5 		ldrb	r0, [r0, #0]	@ zero_extendqisi2	@ D.2099, *inChaine_2(D)
+ 103 0048 000050E3 		cmp	r0, #0	@ D.2099,
+ 104 004c 1080BD08 		ldmeqfd	sp!, {r4, pc}	@
+ 105              	.L6:
+ 106 0050 FEFFFFEB 		bl	envoyer_caractere_serie1	@
+ 107 0054 0100F4E5 		ldrb	r0, [r4, #1]!	@ zero_extendqisi2	@ D.2099, MEM[base: D.2156_17, offset: 0B]
+ 108 0058 000050E3 		cmp	r0, #0	@ D.2099,
+ 109 005c FBFFFF1A 		bne	.L6	@,
+ 110 0060 1080BDE8 		ldmfd	sp!, {r4, pc}	@
+ 111              		.size	lcd_print_string, .-lcd_print_string
+ 112              		.align	2
+ 113              		.global	lcd_init
+ 114              		.type	lcd_init, %function
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccpWrDWN.s 			page 3
+
+
+ 115              	lcd_init:
+ 116              		@ args = 0, pretend = 0, frame = 0
+ 117              		@ frame_needed = 0, uses_anonymous_args = 0
+ 118 0064 04E02DE5 		str	lr, [sp, #-4]!	@,
+ 119 0068 D200A0E3 		mov	r0, #210	@,
+ 120 006c FEFFFFEB 		bl	envoyer_caractere_serie1	@
+ 121 0070 D100A0E3 		mov	r0, #209	@,
+ 122 0074 04E09DE4 		ldr	lr, [sp], #4	@
+ 123 0078 FEFFFFEA 		b	envoyer_caractere_serie1	@
+ 124              		.size	lcd_init, .-lcd_init
+ 125              		.align	2
+ 126              		.global	lcd_print_hex1
+ 127              		.type	lcd_print_hex1, %function
+ 128              	lcd_print_hex1:
+ 129              		@ args = 0, pretend = 0, frame = 0
+ 130              		@ frame_needed = 0, uses_anonymous_args = 0
+ 131              		@ link register save eliminated.
+ 132 007c 0F0000E2 		and	r0, r0, #15	@ tmp141, inValue,
+ 133 0080 090050E3 		cmp	r0, #9	@ tmp141,
+ 134 0084 0100009A 		bls	.L12	@,
+ 135 0088 370080E2 		add	r0, r0, #55	@, tmp141,
+ 136 008c FEFFFFEA 		b	envoyer_caractere_serie1	@
+ 137              	.L12:
+ 138 0090 300080E2 		add	r0, r0, #48	@, tmp141,
+ 139 0094 FEFFFFEA 		b	envoyer_caractere_serie1	@
+ 140              		.size	lcd_print_hex1, .-lcd_print_hex1
+ 141              		.align	2
+ 142              		.global	lcd_print_unsigned
+ 143              		.type	lcd_print_unsigned, %function
+ 144              	lcd_print_unsigned:
+ 145              		@ args = 0, pretend = 0, frame = 0
+ 146              		@ frame_needed = 0, uses_anonymous_args = 0
+ 147 0098 090050E3 		cmp	r0, #9	@ inValue,
+ 148 009c 30402DE9 		stmfd	sp!, {r4, r5, lr}	@,
+ 149 00a0 0040A0E1 		mov	r4, r0	@ inValue, inValue
+ 150 00a4 0600009A 		bls	.L15	@,
+ 151 00a8 24509FE5 		ldr	r5, .L16	@ tmp148,
+ 152 00ac 903585E0 		umull	r3, r5, r0, r5	@, tmp147, inValue, tmp148
+ 153 00b0 A551A0E1 		mov	r5, r5, lsr #3	@ tmp146, tmp147,
+ 154 00b4 0500A0E1 		mov	r0, r5	@, tmp146
+ 155 00b8 FEFFFFEB 		bl	lcd_print_unsigned	@
+ 156 00bc 055185E0 		add	r5, r5, r5, asl #2	@, tmp154, tmp146, tmp146,
+ 157 00c0 854044E0 		sub	r4, r4, r5, asl #1	@ tmp156, inValue, tmp154,
+ 158              	.L15:
+ 159 00c4 300084E2 		add	r0, r4, #48	@ tmp159, tmp156,
+ 160 00c8 FF0000E2 		and	r0, r0, #255	@, tmp159,
+ 161 00cc 3040BDE8 		ldmfd	sp!, {r4, r5, lr}	@
+ 162 00d0 FEFFFFEA 		b	envoyer_caractere_serie1	@
+ 163              	.L17:
+ 164              		.align	2
+ 165              	.L16:
+ 166 00d4 CDCCCCCC 		.word	-858993459
+ 167              		.size	lcd_print_unsigned, .-lcd_print_unsigned
+ 168              		.align	2
+ 169              		.global	lcd_print_unsigned_with_leading_spaces
+ 170              		.type	lcd_print_unsigned_with_leading_spaces, %function
+ 171              	lcd_print_unsigned_with_leading_spaces:
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccpWrDWN.s 			page 4
+
+
+ 172              		@ args = 0, pretend = 0, frame = 0
+ 173              		@ frame_needed = 0, uses_anonymous_args = 0
+ 174 00d8 090050E3 		cmp	r0, #9	@ inValue,
+ 175 00dc 70402DE9 		stmfd	sp!, {r4, r5, r6, lr}	@,
+ 176 00e0 0040A0E1 		mov	r4, r0	@ inValue, inValue
+ 177 00e4 0160A0E1 		mov	r6, r1	@ inDisplayWidth, inDisplayWidth
+ 178 00e8 0150A093 		movls	r5, #1	@ digits,
+ 179 00ec 0700009A 		bls	.L19	@,
+ 180 00f0 40209FE5 		ldr	r2, .L27	@ tmp142,
+ 181 00f4 0030A0E1 		mov	r3, r0	@ v, inValue
+ 182 00f8 0150A0E3 		mov	r5, #1	@ digits,
+ 183              	.L20:
+ 184 00fc 921383E0 		umull	r1, r3, r2, r3	@, tmp139, tmp142, v
+ 185 0100 A331A0E1 		mov	r3, r3, lsr #3	@ v, tmp139,
+ 186 0104 090053E3 		cmp	r3, #9	@ v,
+ 187 0108 015085E2 		add	r5, r5, #1	@ digits, digits,
+ 188 010c FAFFFF8A 		bhi	.L20	@,
+ 189              	.L19:
+ 190 0110 060055E1 		cmp	r5, r6	@ digits, inDisplayWidth
+ 191 0114 0400002A 		bcs	.L21	@,
+ 192              	.L24:
+ 193 0118 2000A0E3 		mov	r0, #32	@,
+ 194 011c 015085E2 		add	r5, r5, #1	@ digits, digits,
+ 195 0120 FEFFFFEB 		bl	envoyer_caractere_serie1	@
+ 196 0124 050056E1 		cmp	r6, r5	@ inDisplayWidth, digits
+ 197 0128 FAFFFF8A 		bhi	.L24	@,
+ 198              	.L21:
+ 199 012c 0400A0E1 		mov	r0, r4	@, inValue
+ 200 0130 7040BDE8 		ldmfd	sp!, {r4, r5, r6, lr}	@
+ 201 0134 FEFFFFEA 		b	lcd_print_unsigned	@
+ 202              	.L28:
+ 203              		.align	2
+ 204              	.L27:
+ 205 0138 CDCCCCCC 		.word	-858993459
+ 206              		.size	lcd_print_unsigned_with_leading_spaces, .-lcd_print_unsigned_with_leading_spaces
+ 207              		.align	2
+ 208              		.global	lcd_print_signed
+ 209              		.type	lcd_print_signed, %function
+ 210              	lcd_print_signed:
+ 211              		@ args = 0, pretend = 0, frame = 0
+ 212              		@ frame_needed = 0, uses_anonymous_args = 0
+ 213 013c 10402DE9 		stmfd	sp!, {r4, lr}	@,
+ 214 0140 004050E2 		subs	r4, r0, #0	@ inValue, inValue
+ 215 0144 020000AA 		bge	.L31	@,
+ 216 0148 2D00A0E3 		mov	r0, #45	@,
+ 217 014c FEFFFFEB 		bl	envoyer_caractere_serie1	@
+ 218 0150 000064E2 		rsb	r0, r4, #0	@, inValue
+ 219              	.L31:
+ 220 0154 1040BDE8 		ldmfd	sp!, {r4, lr}	@
+ 221 0158 FEFFFFEA 		b	lcd_print_unsigned	@
+ 222              		.size	lcd_print_signed, .-lcd_print_signed
+ 223              		.align	2
+ 224              		.global	lcd_print_signed_with_leading_spaces
+ 225              		.type	lcd_print_signed_with_leading_spaces, %function
+ 226              	lcd_print_signed_with_leading_spaces:
+ 227              		@ args = 0, pretend = 0, frame = 0
+ 228              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccpWrDWN.s 			page 5
+
+
+ 229 015c 70402DE9 		stmfd	sp!, {r4, r5, r6, lr}	@,
+ 230 0160 004050E2 		subs	r4, r0, #0	@ inValue, inValue
+ 231 0164 003064B2 		rsblt	r3, r4, #0	@ v, inValue
+ 232 0168 0430A0A1 		movge	r3, r4	@ v, inValue
+ 233 016c 0250A0B3 		movlt	r5, #2	@ digits,
+ 234 0170 0150A0A3 		movge	r5, #1	@ digits,
+ 235 0174 090053E3 		cmp	r3, #9	@ v,
+ 236 0178 0160A0E1 		mov	r6, r1	@ inDisplayWidth, inDisplayWidth
+ 237 017c 0B0000DA 		ble	.L43	@,
+ 238 0180 3C109FE5 		ldr	r1, .L45	@ tmp144,
+ 239              	.L40:
+ 240 0184 9103C2E0 		smull	r0, r2, r1, r3	@, tmp139, tmp144, v
+ 241 0188 C33FA0E1 		mov	r3, r3, asr #31	@ tmp142, v,
+ 242 018c 423163E0 		rsb	r3, r3, r2, asr #2	@, v, tmp142, tmp139,
+ 243 0190 090053E3 		cmp	r3, #9	@ v,
+ 244 0194 015085E2 		add	r5, r5, #1	@ digits, digits,
+ 245 0198 F9FFFFCA 		bgt	.L40	@,
+ 246 019c 050056E1 		cmp	r6, r5	@ inDisplayWidth, digits
+ 247 01a0 0400009A 		bls	.L44	@,
+ 248              	.L39:
+ 249 01a4 2000A0E3 		mov	r0, #32	@,
+ 250 01a8 015085E2 		add	r5, r5, #1	@ digits, digits,
+ 251 01ac FEFFFFEB 		bl	envoyer_caractere_serie1	@
+ 252              	.L43:
+ 253 01b0 050056E1 		cmp	r6, r5	@ inDisplayWidth, digits
+ 254 01b4 FAFFFF8A 		bhi	.L39	@,
+ 255              	.L44:
+ 256 01b8 0400A0E1 		mov	r0, r4	@, inValue
+ 257 01bc 7040BDE8 		ldmfd	sp!, {r4, r5, r6, lr}	@
+ 258 01c0 FEFFFFEA 		b	lcd_print_signed	@
+ 259              	.L46:
+ 260              		.align	2
+ 261              	.L45:
+ 262 01c4 67666666 		.word	1717986919
+ 263              		.size	lcd_print_signed_with_leading_spaces, .-lcd_print_signed_with_leading_spaces
+ 264              		.align	2
+ 265              		.global	lcd_print_hex2
+ 266              		.type	lcd_print_hex2, %function
+ 267              	lcd_print_hex2:
+ 268              		@ args = 0, pretend = 0, frame = 0
+ 269              		@ frame_needed = 0, uses_anonymous_args = 0
+ 270 01c8 10402DE9 		stmfd	sp!, {r4, lr}	@,
+ 271 01cc FF4000E2 		and	r4, r0, #255	@ inValue, inValue,
+ 272 01d0 2402A0E1 		mov	r0, r4, lsr #4	@, inValue,
+ 273 01d4 FEFFFFEB 		bl	lcd_print_hex1	@
+ 274 01d8 0400A0E1 		mov	r0, r4	@, inValue
+ 275 01dc 1040BDE8 		ldmfd	sp!, {r4, lr}	@
+ 276 01e0 FEFFFFEA 		b	lcd_print_hex1	@
+ 277              		.size	lcd_print_hex2, .-lcd_print_hex2
+ 278              		.align	2
+ 279              		.global	lcd_print_hex4
+ 280              		.type	lcd_print_hex4, %function
+ 281              	lcd_print_hex4:
+ 282              		@ args = 0, pretend = 0, frame = 0
+ 283              		@ frame_needed = 0, uses_anonymous_args = 0
+ 284 01e4 0008A0E1 		mov	r0, r0, asl #16	@ tmp141, inValue,
+ 285 01e8 10402DE9 		stmfd	sp!, {r4, lr}	@,
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccpWrDWN.s 			page 6
+
+
+ 286 01ec 2048A0E1 		mov	r4, r0, lsr #16	@ inValue, tmp141,
+ 287 01f0 200CA0E1 		mov	r0, r0, lsr #24	@, tmp141,
+ 288 01f4 FEFFFFEB 		bl	lcd_print_hex2	@
+ 289 01f8 FF0004E2 		and	r0, r4, #255	@ tmp145, inValue,
+ 290 01fc 1040BDE8 		ldmfd	sp!, {r4, lr}	@
+ 291 0200 FEFFFFEA 		b	lcd_print_hex2	@
+ 292              		.size	lcd_print_hex4, .-lcd_print_hex4
+ 293              		.align	2
+ 294              		.global	lcd_print_hex8
+ 295              		.type	lcd_print_hex8, %function
+ 296              	lcd_print_hex8:
+ 297              		@ args = 0, pretend = 0, frame = 0
+ 298              		@ frame_needed = 0, uses_anonymous_args = 0
+ 299 0204 10402DE9 		stmfd	sp!, {r4, lr}	@,
+ 300 0208 0040A0E1 		mov	r4, r0	@ inValue, inValue
+ 301 020c 2008A0E1 		mov	r0, r0, lsr #16	@, inValue,
+ 302 0210 FEFFFFEB 		bl	lcd_print_hex4	@
+ 303 0214 0408A0E1 		mov	r0, r4, asl #16	@ tmp144, inValue,
+ 304 0218 2008A0E1 		mov	r0, r0, lsr #16	@, tmp144,
+ 305 021c 1040BDE8 		ldmfd	sp!, {r4, lr}	@
+ 306 0220 FEFFFFEA 		b	lcd_print_hex4	@
+ 307              		.size	lcd_print_hex8, .-lcd_print_hex8
+ 308              		.align	2
+ 309              		.global	lcd_print_spaces
+ 310              		.type	lcd_print_spaces, %function
+ 311              	lcd_print_spaces:
+ 312              		@ args = 0, pretend = 0, frame = 0
+ 313              		@ frame_needed = 0, uses_anonymous_args = 0
+ 314 0224 10402DE9 		stmfd	sp!, {r4, lr}	@,
+ 315 0228 004050E2 		subs	r4, r0, #0	@ inSpaceCount, inSpaceCount
+ 316 022c 1080BD08 		ldmeqfd	sp!, {r4, pc}	@
+ 317              	.L52:
+ 318 0230 2000A0E3 		mov	r0, #32	@,
+ 319 0234 FEFFFFEB 		bl	envoyer_caractere_serie1	@
+ 320 0238 014054E2 		subs	r4, r4, #1	@ spaceCount, spaceCount,
+ 321 023c FBFFFF1A 		bne	.L52	@,
+ 322 0240 1080BDE8 		ldmfd	sp!, {r4, pc}	@
+ 323              		.size	lcd_print_spaces, .-lcd_print_spaces
+ 324              		.align	2
+ 325              		.global	programmer_uart1
+ 326              		.type	programmer_uart1, %function
+ 327              	programmer_uart1:
+ 328              		@ args = 0, pretend = 0, frame = 0
+ 329              		@ frame_needed = 0, uses_anonymous_args = 0
+ 330              		@ link register save eliminated.
+ 331 0244 48309FE5 		ldr	r3, .L55	@ tmp138,
+ 332 0248 0010A0E3 		mov	r1, #0	@ tmp142,
+ 333 024c 7F20E0E3 		mvn	r2, #127	@ tmp139,
+ 334 0250 3F00E0E3 		mvn	r0, #63	@ tmp145,
+ 335 0254 0C20C3E5 		strb	r2, [r3, #12]	@ tmp139, MEM[(volatile uint8 *)-536805364B]
+ 336 0258 0410C3E5 		strb	r1, [r3, #4]	@ tmp142, MEM[(volatile uint8 *)-536805372B]
+ 337 025c 0000C3E5 		strb	r0, [r3, #0]	@ tmp145, MEM[(volatile uint8 *)-536805376B]
+ 338 0260 0300A0E3 		mov	r0, #3	@ tmp148,
+ 339 0264 0C00C3E5 		strb	r0, [r3, #12]	@ tmp148, MEM[(volatile uint8 *)-536805364B]
+ 340 0268 0810C3E5 		strb	r1, [r3, #8]	@ tmp142, MEM[(volatile uint8 *)-536805368B]
+ 341 026c 0110A0E3 		mov	r1, #1	@ tmp154,
+ 342 0270 20209FE5 		ldr	r2, .L55+4	@ tmp156,
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccpWrDWN.s 			page 7
+
+
+ 343 0274 0810C3E5 		strb	r1, [r3, #8]	@ tmp154, MEM[(volatile uint8 *)-536805368B]
+ 344 0278 003092E5 		ldr	r3, [r2, #0]	@ D.2056, MEM[(volatile uint32 *)-536690688B]
+ 345 027c 0F38C3E3 		bic	r3, r3, #983040	@ D.2057, D.2056,
+ 346 0280 003082E5 		str	r3, [r2, #0]	@ D.2057, MEM[(volatile uint32 *)-536690688B]
+ 347 0284 003092E5 		ldr	r3, [r2, #0]	@ D.2058, MEM[(volatile uint32 *)-536690688B]
+ 348 0288 053883E3 		orr	r3, r3, #327680	@ D.2059, D.2058,
+ 349 028c 003082E5 		str	r3, [r2, #0]	@ D.2059, MEM[(volatile uint32 *)-536690688B]
+ 350 0290 1EFF2FE1 		bx	lr	@
+ 351              	.L56:
+ 352              		.align	2
+ 353              	.L55:
+ 354 0294 000001E0 		.word	-536805376
+ 355 0298 00C002E0 		.word	-536690688
+ 356              		.size	programmer_uart1, .-programmer_uart1
+ 357              		.ident	"GCC: (GNU) 4.6.1"
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccpWrDWN.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 afficheur_lcd_ex7.c
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccpWrDWN.s:55     .text:00000000 $a
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccpWrDWN.s:58     .text:00000000 lcd_goto_line_column
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccpWrDWN.s:76     .text:00000028 lcd_backlight
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccpWrDWN.s:87     .text:00000034 lcd_print_char
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccpWrDWN.s:97     .text:0000003c lcd_print_string
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccpWrDWN.s:115    .text:00000064 lcd_init
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccpWrDWN.s:128    .text:0000007c lcd_print_hex1
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccpWrDWN.s:144    .text:00000098 lcd_print_unsigned
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccpWrDWN.s:166    .text:000000d4 $d
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccpWrDWN.s:168    .text:000000d8 $a
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccpWrDWN.s:171    .text:000000d8 lcd_print_unsigned_with_leading_spaces
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccpWrDWN.s:205    .text:00000138 $d
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccpWrDWN.s:207    .text:0000013c $a
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccpWrDWN.s:210    .text:0000013c lcd_print_signed
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccpWrDWN.s:226    .text:0000015c lcd_print_signed_with_leading_spaces
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccpWrDWN.s:262    .text:000001c4 $d
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccpWrDWN.s:264    .text:000001c8 $a
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccpWrDWN.s:267    .text:000001c8 lcd_print_hex2
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccpWrDWN.s:281    .text:000001e4 lcd_print_hex4
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccpWrDWN.s:296    .text:00000204 lcd_print_hex8
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccpWrDWN.s:311    .text:00000224 lcd_print_spaces
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccpWrDWN.s:327    .text:00000244 programmer_uart1
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccpWrDWN.s:354    .text:00000294 $d
+
+UNDEFINED SYMBOLS
+envoyer_caractere_serie1

@@ -1,0 +1,181 @@
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccc0zAoq.s 			page 1
+
+
+   1              		.file	"scheduler-no-priority.c"
+   2              	@ GNU C (GCC) version 4.6.1 (arm-elf)
+   3              	@	compiled by GNU C version 4.0.1 (Apple Inc. build 5494), GMP version 5.0.2, MPFR version 3.0.1, M
+   4              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+   5              	@ options passed:  -I sources -I /usr/local/dev-arm/arm-dev-files/sources
+   6              	@ -I ../sources-communs
+   7              	@ -iprefix /usr/local/dev-arm/i386-Darwin-arm-gcc-4.6.1/bin/../lib/gcc/arm-elf/4.6.1/
+   8              	@ -MD zBUILDS/scheduler-no-priority.c.d
+   9              	@ -MF zBUILDS/scheduler-no-priority.c.o.dep -MP
+  10              	@ -MQ zBUILDS/scheduler-no-priority.c.o -D__USES_INITFINI__ -D XTR_CLASS=0
+  11              	@ -D LPC22XX_CRYSTAL_FREQUENCY=14745600
+  12              	@ -D LPC22XX_PLL_FREQUENCY_MULTIPLIER=4 -D LPC22XX_APB_DIVIDER=1
+  13              	@ ../sources-communs/scheduler-no-priority.c -mcpu=arm7tdmi-s
+  14              	@ -mcpu=arm7tdmi-s -auxbase-strip zBUILDS/scheduler-no-priority.c.o -O2
+  15              	@ -Wall -Werror -Wreturn-type -Wformat -Wsign-compare -Wpointer-arith
+  16              	@ -Wparentheses -Wcast-align -Wcast-qual -Wwrite-strings -Wswitch
+  17              	@ -Wstrict-prototypes -Wbad-function-cast -Wmissing-declarations
+  18              	@ -Wimplicit-function-declaration -Wno-int-to-pointer-cast
+  19              	@ -Wno-pointer-to-int-cast -fverbose-asm -fomit-frame-pointer
+  20              	@ -foptimize-register-move
+  21              	@ options enabled:  -fauto-inc-dec -fbranch-count-reg -fcaller-saves
+  22              	@ -fcombine-stack-adjustments -fcommon -fcompare-elim -fcprop-registers
+  23              	@ -fcrossjumping -fcse-follow-jumps -fdefer-pop
+  24              	@ -fdelete-null-pointer-checks -fdevirtualize -fdwarf2-cfi-asm
+  25              	@ -fearly-inlining -feliminate-unused-debug-types -fexpensive-optimizations
+  26              	@ -fforward-propagate -ffunction-cse -fgcse -fgcse-lm
+  27              	@ -fguess-branch-probability -fident -fif-conversion -fif-conversion2
+  28              	@ -findirect-inlining -finline -finline-functions-called-once
+  29              	@ -finline-small-functions -fipa-cp -fipa-profile -fipa-pure-const
+  30              	@ -fipa-reference -fipa-sra -fira-share-save-slots -fira-share-spill-slots
+  31              	@ -fivopts -fkeep-static-consts -fleading-underscore -fmath-errno
+  32              	@ -fmerge-constants -fmerge-debug-strings -fmove-loop-invariants
+  33              	@ -fomit-frame-pointer -foptimize-register-move -foptimize-sibling-calls
+  34              	@ -fpartial-inlining -fpeephole -fpeephole2 -fprefetch-loop-arrays
+  35              	@ -freg-struct-return -fregmove -freorder-blocks -freorder-functions
+  36              	@ -frerun-cse-after-loop -fsched-critical-path-heuristic
+  37              	@ -fsched-dep-count-heuristic -fsched-group-heuristic -fsched-interblock
+  38              	@ -fsched-last-insn-heuristic -fsched-rank-heuristic -fsched-spec
+  39              	@ -fsched-spec-insn-heuristic -fsched-stalled-insns-dep -fschedule-insns
+  40              	@ -fschedule-insns2 -fsection-anchors -fshow-column -fsigned-zeros
+  41              	@ -fsplit-ivs-in-unroller -fsplit-wide-types -fstrict-aliasing
+  42              	@ -fstrict-overflow -fstrict-volatile-bitfields -fthread-jumps
+  43              	@ -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp -ftree-builtin-call-dce
+  44              	@ -ftree-ccp -ftree-ch -ftree-copy-prop -ftree-copyrename -ftree-cselim
+  45              	@ -ftree-dce -ftree-dominator-opts -ftree-dse -ftree-forwprop -ftree-fre
+  46              	@ -ftree-loop-if-convert -ftree-loop-im -ftree-loop-ivcanon
+  47              	@ -ftree-loop-optimize -ftree-parallelize-loops= -ftree-phiprop -ftree-pre
+  48              	@ -ftree-pta -ftree-reassoc -ftree-scev-cprop -ftree-sink
+  49              	@ -ftree-slp-vectorize -ftree-sra -ftree-switch-conversion -ftree-ter
+  50              	@ -ftree-vect-loop-version -ftree-vrp -funit-at-a-time -fverbose-asm
+  51              	@ -fzero-initialized-in-bss -mlittle-endian -msched-prolog
+  52              	
+  53              	@ Compiler executable checksum: de80e2dacb9f8abf918a9a189330559b
+  54              	
+  55              		.text
+  56              		.align	2
+  57              		.global	kernel_runningTask
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccc0zAoq.s 			page 2
+
+
+  58              		.type	kernel_runningTask, %function
+  59              	kernel_runningTask:
+  60              		@ args = 0, pretend = 0, frame = 0
+  61              		@ frame_needed = 0, uses_anonymous_args = 0
+  62              		@ link register save eliminated.
+  63 0000 04309FE5 		ldr	r3, .L2	@ tmp137,
+  64 0004 000093E5 		ldr	r0, [r3, #0]	@, gRunningTask
+  65 0008 1EFF2FE1 		bx	lr	@
+  66              	.L3:
+  67              		.align	2
+  68              	.L2:
+  69 000c 00000000 		.word	.LANCHOR0
+  70              		.size	kernel_runningTask, .-kernel_runningTask
+  71              		.align	2
+  72              		.global	kernel_makeTaskReady
+  73              		.type	kernel_makeTaskReady, %function
+  74              	kernel_makeTaskReady:
+  75              		@ args = 0, pretend = 0, frame = 0
+  76              		@ frame_needed = 0, uses_anonymous_args = 0
+  77              		@ link register save eliminated.
+  78 0010 001050E2 		subs	r1, r0, #0	@ inTaskDescriptor, inTaskDescriptor
+  79 0014 1EFF2F01 		bxeq	lr	@
+  80 0018 08009FE5 		ldr	r0, .L7	@,
+  81 001c 0130A0E3 		mov	r3, #1	@ tmp135,
+  82 0020 003081E5 		str	r3, [r1, #0]	@ tmp135, inTaskDescriptor_1(D)->mState
+  83 0024 FEFFFFEA 		b	insertTaskAtTail	@
+  84              	.L8:
+  85              		.align	2
+  86              	.L7:
+  87 0028 04000000 		.word	.LANCHOR0+4
+  88              		.size	kernel_makeTaskReady, .-kernel_makeTaskReady
+  89              		.align	2
+  90              		.global	kernel_makeNoTaskRunning
+  91              		.type	kernel_makeNoTaskRunning, %function
+  92              	kernel_makeNoTaskRunning:
+  93              		@ args = 0, pretend = 0, frame = 0
+  94              		@ frame_needed = 0, uses_anonymous_args = 0
+  95              		@ link register save eliminated.
+  96 002c 10209FE5 		ldr	r2, .L10	@ tmp134,
+  97 0030 0030A0E3 		mov	r3, #0	@ tmp135,
+  98 0034 003082E5 		str	r3, [r2, #0]	@ tmp135, gRunningTask
+  99 0038 08209FE5 		ldr	r2, .L10+4	@ tmp136,
+ 100 003c 003082E5 		str	r3, [r2, #0]	@ tmp135, gRunningTaskContextSaveAddress
+ 101 0040 1EFF2FE1 		bx	lr	@
+ 102              	.L11:
+ 103              		.align	2
+ 104              	.L10:
+ 105 0044 00000000 		.word	.LANCHOR0
+ 106 0048 00000000 		.word	gRunningTaskContextSaveAddress
+ 107              		.size	kernel_makeNoTaskRunning, .-kernel_makeNoTaskRunning
+ 108              		.align	2
+ 109              		.global	kernel_selectTaskToRun
+ 110              		.type	kernel_selectTaskToRun, %function
+ 111              	kernel_selectTaskToRun:
+ 112              		@ args = 0, pretend = 0, frame = 0
+ 113              		@ frame_needed = 0, uses_anonymous_args = 0
+ 114 004c 10402DE9 		stmfd	sp!, {r4, lr}	@,
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccc0zAoq.s 			page 3
+
+
+ 115 0050 2C409FE5 		ldr	r4, .L14	@ tmp137,
+ 116 0054 003094E5 		ldr	r3, [r4, #0]	@ gRunningTask, gRunningTask
+ 117 0058 000053E3 		cmp	r3, #0	@ gRunningTask,
+ 118 005c 1080BD18 		ldmnefd	sp!, {r4, pc}	@
+ 119 0060 040084E2 		add	r0, r4, #4	@, tmp137,
+ 120 0064 FEFFFFEB 		bl	removeTaskAtHead	@
+ 121 0068 000050E3 		cmp	r0, #0	@ gRunningTask.1,
+ 122 006c 0230A013 		movne	r3, #2	@ tmp142,
+ 123 0070 000084E5 		str	r0, [r4, #0]	@ gRunningTask.1, gRunningTask
+ 124 0074 28308014 		strne	r3, [r0], #40	@ tmp142, MEM[(struct task_descriptor *)gRunningTask.1_2].mState
+ 125 0078 08309F15 		ldrne	r3, .L14+4	@ tmp143,
+ 126 007c 00008315 		strne	r0, [r3, #0]	@ tmp144, gRunningTaskContextSaveAddress
+ 127 0080 1080BDE8 		ldmfd	sp!, {r4, pc}	@
+ 128              	.L15:
+ 129              		.align	2
+ 130              	.L14:
+ 131 0084 00000000 		.word	.LANCHOR0
+ 132 0088 00000000 		.word	gRunningTaskContextSaveAddress
+ 133              		.size	kernel_selectTaskToRun, .-kernel_selectTaskToRun
+ 134              		.comm	gRunningTaskContextSaveAddress,4,4
+ 135              		.bss
+ 136              		.align	2
+ 137              		.set	.LANCHOR0,. + 0
+ 138              		.type	gRunningTask, %object
+ 139              		.size	gRunningTask, 4
+ 140              	gRunningTask:
+ 141 0000 00000000 		.space	4
+ 142              		.type	gReadyTaskList, %object
+ 143              		.size	gReadyTaskList, 8
+ 144              	gReadyTaskList:
+ 145 0004 00000000 		.space	8
+ 145      00000000 
+ 146              		.ident	"GCC: (GNU) 4.6.1"
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccc0zAoq.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 scheduler-no-priority.c
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccc0zAoq.s:56     .text:00000000 $a
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccc0zAoq.s:59     .text:00000000 kernel_runningTask
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccc0zAoq.s:69     .text:0000000c $d
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccc0zAoq.s:71     .text:00000010 $a
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccc0zAoq.s:74     .text:00000010 kernel_makeTaskReady
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccc0zAoq.s:87     .text:00000028 $d
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccc0zAoq.s:89     .text:0000002c $a
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccc0zAoq.s:92     .text:0000002c kernel_makeNoTaskRunning
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccc0zAoq.s:105    .text:00000044 $d
+                            *COM*:00000004 gRunningTaskContextSaveAddress
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccc0zAoq.s:108    .text:0000004c $a
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccc0zAoq.s:111    .text:0000004c kernel_selectTaskToRun
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccc0zAoq.s:131    .text:00000084 $d
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccc0zAoq.s:136    .bss:00000000 $d
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccc0zAoq.s:140    .bss:00000000 gRunningTask
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccc0zAoq.s:144    .bss:00000004 gReadyTaskList
+
+UNDEFINED SYMBOLS
+insertTaskAtTail
+removeTaskAtHead

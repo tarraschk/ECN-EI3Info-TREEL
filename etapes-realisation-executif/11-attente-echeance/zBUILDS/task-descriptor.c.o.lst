@@ -1,0 +1,274 @@
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc6Dold8.s 			page 1
+
+
+   1              		.file	"task-descriptor.c"
+   2              	@ GNU C (GCC) version 4.6.1 (arm-elf)
+   3              	@	compiled by GNU C version 4.0.1 (Apple Inc. build 5494), GMP version 5.0.2, MPFR version 3.0.1, M
+   4              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+   5              	@ options passed:  -I sources -I /usr/local/dev-arm/arm-dev-files/sources
+   6              	@ -I ../sources-communs
+   7              	@ -iprefix /usr/local/dev-arm/i386-Darwin-arm-gcc-4.6.1/bin/../lib/gcc/arm-elf/4.6.1/
+   8              	@ -MD zBUILDS/task-descriptor.c.d -MF zBUILDS/task-descriptor.c.o.dep -MP
+   9              	@ -MQ zBUILDS/task-descriptor.c.o -D__USES_INITFINI__ -D XTR_CLASS=0
+  10              	@ -D LPC22XX_CRYSTAL_FREQUENCY=14745600
+  11              	@ -D LPC22XX_PLL_FREQUENCY_MULTIPLIER=4 -D LPC22XX_APB_DIVIDER=1
+  12              	@ ../sources-communs/task-descriptor.c -mcpu=arm7tdmi-s -mcpu=arm7tdmi-s
+  13              	@ -auxbase-strip zBUILDS/task-descriptor.c.o -O2 -Wall -Werror
+  14              	@ -Wreturn-type -Wformat -Wsign-compare -Wpointer-arith -Wparentheses
+  15              	@ -Wcast-align -Wcast-qual -Wwrite-strings -Wswitch -Wstrict-prototypes
+  16              	@ -Wbad-function-cast -Wmissing-declarations
+  17              	@ -Wimplicit-function-declaration -Wno-int-to-pointer-cast
+  18              	@ -Wno-pointer-to-int-cast -fverbose-asm -fomit-frame-pointer
+  19              	@ -foptimize-register-move
+  20              	@ options enabled:  -fauto-inc-dec -fbranch-count-reg -fcaller-saves
+  21              	@ -fcombine-stack-adjustments -fcommon -fcompare-elim -fcprop-registers
+  22              	@ -fcrossjumping -fcse-follow-jumps -fdefer-pop
+  23              	@ -fdelete-null-pointer-checks -fdevirtualize -fdwarf2-cfi-asm
+  24              	@ -fearly-inlining -feliminate-unused-debug-types -fexpensive-optimizations
+  25              	@ -fforward-propagate -ffunction-cse -fgcse -fgcse-lm
+  26              	@ -fguess-branch-probability -fident -fif-conversion -fif-conversion2
+  27              	@ -findirect-inlining -finline -finline-functions-called-once
+  28              	@ -finline-small-functions -fipa-cp -fipa-profile -fipa-pure-const
+  29              	@ -fipa-reference -fipa-sra -fira-share-save-slots -fira-share-spill-slots
+  30              	@ -fivopts -fkeep-static-consts -fleading-underscore -fmath-errno
+  31              	@ -fmerge-constants -fmerge-debug-strings -fmove-loop-invariants
+  32              	@ -fomit-frame-pointer -foptimize-register-move -foptimize-sibling-calls
+  33              	@ -fpartial-inlining -fpeephole -fpeephole2 -fprefetch-loop-arrays
+  34              	@ -freg-struct-return -fregmove -freorder-blocks -freorder-functions
+  35              	@ -frerun-cse-after-loop -fsched-critical-path-heuristic
+  36              	@ -fsched-dep-count-heuristic -fsched-group-heuristic -fsched-interblock
+  37              	@ -fsched-last-insn-heuristic -fsched-rank-heuristic -fsched-spec
+  38              	@ -fsched-spec-insn-heuristic -fsched-stalled-insns-dep -fschedule-insns
+  39              	@ -fschedule-insns2 -fsection-anchors -fshow-column -fsigned-zeros
+  40              	@ -fsplit-ivs-in-unroller -fsplit-wide-types -fstrict-aliasing
+  41              	@ -fstrict-overflow -fstrict-volatile-bitfields -fthread-jumps
+  42              	@ -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp -ftree-builtin-call-dce
+  43              	@ -ftree-ccp -ftree-ch -ftree-copy-prop -ftree-copyrename -ftree-cselim
+  44              	@ -ftree-dce -ftree-dominator-opts -ftree-dse -ftree-forwprop -ftree-fre
+  45              	@ -ftree-loop-if-convert -ftree-loop-im -ftree-loop-ivcanon
+  46              	@ -ftree-loop-optimize -ftree-parallelize-loops= -ftree-phiprop -ftree-pre
+  47              	@ -ftree-pta -ftree-reassoc -ftree-scev-cprop -ftree-sink
+  48              	@ -ftree-slp-vectorize -ftree-sra -ftree-switch-conversion -ftree-ter
+  49              	@ -ftree-vect-loop-version -ftree-vrp -funit-at-a-time -fverbose-asm
+  50              	@ -fzero-initialized-in-bss -mlittle-endian -msched-prolog
+  51              	
+  52              	@ Compiler executable checksum: de80e2dacb9f8abf918a9a189330559b
+  53              	
+  54              		.text
+  55              		.align	2
+  56              		.type	task_entry, %function
+  57              	task_entry:
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc6Dold8.s 			page 2
+
+
+  58              		@ args = 0, pretend = 0, frame = 0
+  59              		@ frame_needed = 0, uses_anonymous_args = 0
+  60 0000 0030A0E1 		mov	r3, r0	@ inTaskRoutine, inTaskRoutine
+  61 0004 04E02DE5 		str	lr, [sp, #-4]!	@,
+  62 0008 0100A0E1 		mov	r0, r1	@, inArgument1
+  63 000c 0210A0E1 		mov	r1, r2	@, inArgument2
+  64 0010 0FE0A0E1 		mov	lr, pc
+  65 0014 13FF2FE1 		bx	r3	@ inTaskRoutine
+  66 0018 04E09DE4 		ldr	lr, [sp], #4	@
+  67 001c FEFFFFEA 		b	usr_task_self_terminate	@
+  68              		.size	task_entry, .-task_entry
+  69              		.align	2
+  70              		.global	swi_create_task
+  71              		.type	swi_create_task, %function
+  72              	swi_create_task:
+  73              		@ args = 0, pretend = 0, frame = 0
+  74              		@ frame_needed = 0, uses_anonymous_args = 0
+  75              		@ link register save eliminated.
+  76 0020 60C09FE5 		ldr	ip, .L5	@ tmp159,
+  77 0024 30002DE9 		stmfd	sp!, {r4, r5}	@,
+  78 0028 703080E5 		str	r3, [r0, #112]	@ inStackBufferSize, inTaskDescriptor_1(D)->mStackBufferSize
+  79 002c 00409CE5 		ldr	r4, [ip, #0]	@ gLastTaskDescriptor.7, gLastTaskDescriptor
+  80 0030 743080E5 		str	r3, [r0, #116]	@ inStackBufferSize, inTaskDescriptor_1(D)->mFreeStackSize
+  81 0034 08309CE5 		ldr	r3, [ip, #8]	@ gTaskCount, gTaskCount
+  82 0038 0050A0E3 		mov	r5, #0	@ tmp143,
+  83 003c 050054E1 		cmp	r4, r5	@ gLastTaskDescriptor.7,
+  84 0040 013083E2 		add	r3, r3, #1	@ tmp158, gTaskCount,
+  85 0044 245080E5 		str	r5, [r0, #36]	@ tmp143, inTaskDescriptor_1(D)->mNextTaskDescriptor
+  86 0048 6C2080E5 		str	r2, [r0, #108]	@ inStackBufferAddress, inTaskDescriptor_1(D)->mStackBufferAddress
+  87 004c 005080E5 		str	r5, [r0, #0]	@ tmp143, inTaskDescriptor_1(D)->mState
+  88 0050 0410C0E5 		strb	r1, [r0, #4]	@ inPriority, inTaskDescriptor_1(D)->mPriority
+  89 0054 085080E5 		str	r5, [r0, #8]	@ tmp143, inTaskDescriptor_1(D)->mNextTaskInList
+  90 0058 0C5080E5 		str	r5, [r0, #12]	@ tmp143, inTaskDescriptor_1(D)->mPreviousTaskInList
+  91 005c 105080E5 		str	r5, [r0, #16]	@ tmp143, inTaskDescriptor_1(D)->mMyTaskList
+  92 0060 145080E5 		str	r5, [r0, #20]	@ tmp143, inTaskDescriptor_1(D)->mNextTaskInListByDate
+  93 0064 185080E5 		str	r5, [r0, #24]	@ tmp143, inTaskDescriptor_1(D)->mPreviousTaskInListByDate
+  94 0068 1C5080E5 		str	r5, [r0, #28]	@ tmp143, inTaskDescriptor_1(D)->mMyTaskListByDate
+  95 006c 204080E5 		str	r4, [r0, #32]	@ gLastTaskDescriptor.7, inTaskDescriptor_1(D)->mPreviousTaskDescriptor
+  96 0070 04008C05 		streq	r0, [ip, #4]	@ inTaskDescriptor, gFirstTaskDescriptor
+  97 0074 24008415 		strne	r0, [r4, #36]	@ inTaskDescriptor, gLastTaskDescriptor.7_6->mNextTaskDescriptor
+  98 0078 00008CE5 		str	r0, [ip, #0]	@ inTaskDescriptor, gLastTaskDescriptor
+  99 007c 08308CE5 		str	r3, [ip, #8]	@ tmp158, gTaskCount
+ 100 0080 3000BDE8 		ldmfd	sp!, {r4, r5}
+ 101 0084 1EFF2FE1 		bx	lr
+ 102              	.L6:
+ 103              		.align	2
+ 104              	.L5:
+ 105 0088 00000000 		.word	.LANCHOR0
+ 106              		.size	swi_create_task, .-swi_create_task
+ 107              		.align	2
+ 108              		.global	swi_task_self_terminate
+ 109              		.type	swi_task_self_terminate, %function
+ 110              	swi_task_self_terminate:
+ 111              		@ args = 0, pretend = 0, frame = 0
+ 112              		@ frame_needed = 0, uses_anonymous_args = 0
+ 113 008c 04E02DE5 		str	lr, [sp, #-4]!	@,
+ 114 0090 FEFFFFEB 		bl	kernel_runningTask	@
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc6Dold8.s 			page 3
+
+
+ 115 0094 0430A0E3 		mov	r3, #4	@ tmp135,
+ 116 0098 003080E5 		str	r3, [r0, #0]	@ tmp135, rt_1->mState
+ 117 009c 04E09DE4 		ldr	lr, [sp], #4	@
+ 118 00a0 FEFFFFEA 		b	kernel_makeNoTaskRunning	@
+ 119              		.size	swi_task_self_terminate, .-swi_task_self_terminate
+ 120              		.align	2
+ 121              		.global	swi_start_task
+ 122              		.type	swi_start_task, %function
+ 123              	swi_start_task:
+ 124              		@ args = 0, pretend = 0, frame = 0
+ 125              		@ frame_needed = 0, uses_anonymous_args = 0
+ 126              		@ link register save eliminated.
+ 127 00a4 30002DE9 		stmfd	sp!, {r4, r5}	@,
+ 128 00a8 004090E5 		ldr	r4, [r0, #0]	@ D.2112, inTaskDescriptor_1(D)->mState
+ 129 00ac 000054E3 		cmp	r4, #0	@ D.2112,
+ 130 00b0 04005413 		cmpne	r4, #4	@, D.2112,
+ 131 00b4 0100000A 		beq	.L11	@,
+ 132 00b8 3000BDE8 		ldmfd	sp!, {r4, r5}
+ 133 00bc 1EFF2FE1 		bx	lr
+ 134              	.L11:
+ 135 00c0 6C5080E2 		add	r5, r0, #108	@, inTaskDescriptor,
+ 136 00c4 300095E8 		ldmia	r5, {r4, r5}	@, spInitialValue,
+ 137 00c8 054084E0 		add	r4, r4, r5	@, spInitialValue, spInitialValue,
+ 138 00cc 20509FE5 		ldr	r5, .L12	@ tmp157,
+ 139 00d0 3C3080E5 		str	r3, [r0, #60]	@ inArgument2, MEM[(struct task_context *)inTaskDescriptor_1(D) + 40B].mR2
+ 140 00d4 1030A0E3 		mov	r3, #16	@ tmp158,
+ 141 00d8 685080E5 		str	r5, [r0, #104]	@ tmp157, MEM[(struct task_context *)inTaskDescriptor_1(D) + 40B].mPC_USR
+ 142 00dc 341080E5 		str	r1, [r0, #52]	@ inTaskRoutine, MEM[(struct task_context *)inTaskDescriptor_1(D) + 40B].mR0
+ 143 00e0 382080E5 		str	r2, [r0, #56]	@ inArgument1, MEM[(struct task_context *)inTaskDescriptor_1(D) + 40B].mR1
+ 144 00e4 2C4080E5 		str	r4, [r0, #44]	@ spInitialValue, MEM[(struct task_context *)inTaskDescriptor_1(D) + 40B].mSP_US
+ 145 00e8 283080E5 		str	r3, [r0, #40]	@ tmp158, MEM[(struct task_context *)inTaskDescriptor_1(D) + 40B].mCPSR
+ 146 00ec 3000BDE8 		ldmfd	sp!, {r4, r5}
+ 147 00f0 FEFFFFEA 		b	kernel_makeTaskReady	@
+ 148              	.L13:
+ 149              		.align	2
+ 150              	.L12:
+ 151 00f4 00000000 		.word	task_entry
+ 152              		.size	swi_start_task, .-swi_start_task
+ 153              		.align	2
+ 154              		.global	swi_close_task
+ 155              		.type	swi_close_task, %function
+ 156              	swi_close_task:
+ 157              		@ args = 0, pretend = 0, frame = 0
+ 158              		@ frame_needed = 0, uses_anonymous_args = 0
+ 159              		@ link register save eliminated.
+ 160 00f8 243090E5 		ldr	r3, [r0, #36]	@ gFirstTaskDescriptor.1, inTaskDescriptor_1(D)->mNextTaskDescriptor
+ 161 00fc 000053E3 		cmp	r3, #0	@ gFirstTaskDescriptor.1,
+ 162 0100 20209015 		ldrne	r2, [r0, #32]	@ gLastTaskDescriptor.0, inTaskDescriptor_1(D)->mPreviousTaskDescriptor
+ 163 0104 20208315 		strne	r2, [r3, #32]	@ gLastTaskDescriptor.0, gFirstTaskDescriptor.1_2->mPreviousTaskDescriptor
+ 164 0108 20109005 		ldreq	r1, [r0, #32]	@ prephitmp.21, inTaskDescriptor_1(D)->mPreviousTaskDescriptor
+ 165 010c 30209F05 		ldreq	r2, .L19	@ tmp148,
+ 166 0110 20109015 		ldrne	r1, [r0, #32]	@ prephitmp.21, inTaskDescriptor_1(D)->mPreviousTaskDescriptor
+ 167 0114 28209F15 		ldrne	r2, .L19	@ tmp148,
+ 168 0118 00108205 		streq	r1, [r2, #0]	@ prephitmp.21, gLastTaskDescriptor
+ 169 011c 000051E3 		cmp	r1, #0	@ prephitmp.21,
+ 170 0120 24308115 		strne	r3, [r1, #36]	@ gFirstTaskDescriptor.1, prephitmp.21_7->mNextTaskDescriptor
+ 171 0124 081092E5 		ldr	r1, [r2, #8]	@ gTaskCount, gTaskCount
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc6Dold8.s 			page 4
+
+
+ 172 0128 04308205 		streq	r3, [r2, #4]	@ gFirstTaskDescriptor.1, gFirstTaskDescriptor
+ 173 012c 011041E2 		sub	r1, r1, #1	@ tmp145, gTaskCount,
+ 174 0130 0030A0E3 		mov	r3, #0	@ tmp146,
+ 175 0134 081082E5 		str	r1, [r2, #8]	@ tmp145, gTaskCount
+ 176 0138 243080E5 		str	r3, [r0, #36]	@ tmp146, inTaskDescriptor_1(D)->mNextTaskDescriptor
+ 177 013c 203080E5 		str	r3, [r0, #32]	@ tmp146, inTaskDescriptor_1(D)->mPreviousTaskDescriptor
+ 178 0140 1EFF2FE1 		bx	lr	@
+ 179              	.L20:
+ 180              		.align	2
+ 181              	.L19:
+ 182 0144 00000000 		.word	.LANCHOR0
+ 183              		.size	swi_close_task, .-swi_close_task
+ 184              		.align	2
+ 185              		.global	current_task_count
+ 186              		.type	current_task_count, %function
+ 187              	current_task_count:
+ 188              		@ args = 0, pretend = 0, frame = 0
+ 189              		@ frame_needed = 0, uses_anonymous_args = 0
+ 190              		@ link register save eliminated.
+ 191 0148 04309FE5 		ldr	r3, .L22	@ tmp137,
+ 192 014c 080093E5 		ldr	r0, [r3, #8]	@, gTaskCount
+ 193 0150 1EFF2FE1 		bx	lr	@
+ 194              	.L23:
+ 195              		.align	2
+ 196              	.L22:
+ 197 0154 00000000 		.word	.LANCHOR0
+ 198              		.size	current_task_count, .-current_task_count
+ 199              		.align	2
+ 200              		.global	swi_preempt
+ 201              		.type	swi_preempt, %function
+ 202              	swi_preempt:
+ 203              		@ args = 0, pretend = 0, frame = 0
+ 204              		@ frame_needed = 0, uses_anonymous_args = 0
+ 205 0158 04E02DE5 		str	lr, [sp, #-4]!	@,
+ 206 015c FEFFFFEB 		bl	kernel_runningTask	@
+ 207 0160 000050E3 		cmp	r0, #0	@,
+ 208 0164 04F09D04 		ldreq	pc, [sp], #4	@
+ 209 0168 FEFFFFEB 		bl	kernel_makeTaskReady	@
+ 210 016c 04E09DE4 		ldr	lr, [sp], #4	@
+ 211 0170 FEFFFFEA 		b	kernel_makeNoTaskRunning	@
+ 212              		.size	swi_preempt, .-swi_preempt
+ 213              		.bss
+ 214              		.align	2
+ 215              		.set	.LANCHOR0,. + 0
+ 216              		.type	gLastTaskDescriptor, %object
+ 217              		.size	gLastTaskDescriptor, 4
+ 218              	gLastTaskDescriptor:
+ 219 0000 00000000 		.space	4
+ 220              		.type	gFirstTaskDescriptor, %object
+ 221              		.size	gFirstTaskDescriptor, 4
+ 222              	gFirstTaskDescriptor:
+ 223 0004 00000000 		.space	4
+ 224              		.type	gTaskCount, %object
+ 225              		.size	gTaskCount, 4
+ 226              	gTaskCount:
+ 227 0008 00000000 		.space	4
+ 228              		.ident	"GCC: (GNU) 4.6.1"
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc6Dold8.s 			page 5
+
+
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc6Dold8.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 task-descriptor.c
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc6Dold8.s:55     .text:00000000 $a
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc6Dold8.s:57     .text:00000000 task_entry
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc6Dold8.s:72     .text:00000020 swi_create_task
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc6Dold8.s:105    .text:00000088 $d
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc6Dold8.s:107    .text:0000008c $a
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc6Dold8.s:110    .text:0000008c swi_task_self_terminate
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc6Dold8.s:123    .text:000000a4 swi_start_task
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc6Dold8.s:151    .text:000000f4 $d
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc6Dold8.s:153    .text:000000f8 $a
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc6Dold8.s:156    .text:000000f8 swi_close_task
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc6Dold8.s:182    .text:00000144 $d
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc6Dold8.s:184    .text:00000148 $a
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc6Dold8.s:187    .text:00000148 current_task_count
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc6Dold8.s:197    .text:00000154 $d
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc6Dold8.s:199    .text:00000158 $a
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc6Dold8.s:202    .text:00000158 swi_preempt
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc6Dold8.s:214    .bss:00000000 $d
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc6Dold8.s:218    .bss:00000000 gLastTaskDescriptor
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc6Dold8.s:222    .bss:00000004 gFirstTaskDescriptor
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc6Dold8.s:226    .bss:00000008 gTaskCount
+
+UNDEFINED SYMBOLS
+usr_task_self_terminate
+kernel_runningTask
+kernel_makeNoTaskRunning
+kernel_makeTaskReady

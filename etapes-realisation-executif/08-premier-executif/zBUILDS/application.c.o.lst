@@ -1,0 +1,177 @@
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccwrRQ1p.s 			page 1
+
+
+   1              		.file	"application.c"
+   2              	@ GNU C (GCC) version 4.6.1 (arm-elf)
+   3              	@	compiled by GNU C version 4.0.1 (Apple Inc. build 5494), GMP version 5.0.2, MPFR version 3.0.1, M
+   4              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+   5              	@ options passed:  -I sources -I /usr/local/dev-arm/arm-dev-files/sources
+   6              	@ -I ../sources-communs
+   7              	@ -iprefix /usr/local/dev-arm/i386-Darwin-arm-gcc-4.6.1/bin/../lib/gcc/arm-elf/4.6.1/
+   8              	@ -MD zBUILDS/application.c.d -MF zBUILDS/application.c.o.dep -MP
+   9              	@ -MQ zBUILDS/application.c.o -D__USES_INITFINI__ -D XTR_CLASS=0
+  10              	@ -D LPC22XX_CRYSTAL_FREQUENCY=14745600
+  11              	@ -D LPC22XX_PLL_FREQUENCY_MULTIPLIER=4 -D LPC22XX_APB_DIVIDER=1
+  12              	@ sources/application.c -mcpu=arm7tdmi-s -mcpu=arm7tdmi-s
+  13              	@ -auxbase-strip zBUILDS/application.c.o -O2 -Wall -Werror -Wreturn-type
+  14              	@ -Wformat -Wsign-compare -Wpointer-arith -Wparentheses -Wcast-align
+  15              	@ -Wcast-qual -Wwrite-strings -Wswitch -Wstrict-prototypes
+  16              	@ -Wbad-function-cast -Wmissing-declarations
+  17              	@ -Wimplicit-function-declaration -Wno-int-to-pointer-cast
+  18              	@ -Wno-pointer-to-int-cast -fverbose-asm -fomit-frame-pointer
+  19              	@ -foptimize-register-move
+  20              	@ options enabled:  -fauto-inc-dec -fbranch-count-reg -fcaller-saves
+  21              	@ -fcombine-stack-adjustments -fcommon -fcompare-elim -fcprop-registers
+  22              	@ -fcrossjumping -fcse-follow-jumps -fdefer-pop
+  23              	@ -fdelete-null-pointer-checks -fdevirtualize -fdwarf2-cfi-asm
+  24              	@ -fearly-inlining -feliminate-unused-debug-types -fexpensive-optimizations
+  25              	@ -fforward-propagate -ffunction-cse -fgcse -fgcse-lm
+  26              	@ -fguess-branch-probability -fident -fif-conversion -fif-conversion2
+  27              	@ -findirect-inlining -finline -finline-functions-called-once
+  28              	@ -finline-small-functions -fipa-cp -fipa-profile -fipa-pure-const
+  29              	@ -fipa-reference -fipa-sra -fira-share-save-slots -fira-share-spill-slots
+  30              	@ -fivopts -fkeep-static-consts -fleading-underscore -fmath-errno
+  31              	@ -fmerge-constants -fmerge-debug-strings -fmove-loop-invariants
+  32              	@ -fomit-frame-pointer -foptimize-register-move -foptimize-sibling-calls
+  33              	@ -fpartial-inlining -fpeephole -fpeephole2 -fprefetch-loop-arrays
+  34              	@ -freg-struct-return -fregmove -freorder-blocks -freorder-functions
+  35              	@ -frerun-cse-after-loop -fsched-critical-path-heuristic
+  36              	@ -fsched-dep-count-heuristic -fsched-group-heuristic -fsched-interblock
+  37              	@ -fsched-last-insn-heuristic -fsched-rank-heuristic -fsched-spec
+  38              	@ -fsched-spec-insn-heuristic -fsched-stalled-insns-dep -fschedule-insns
+  39              	@ -fschedule-insns2 -fsection-anchors -fshow-column -fsigned-zeros
+  40              	@ -fsplit-ivs-in-unroller -fsplit-wide-types -fstrict-aliasing
+  41              	@ -fstrict-overflow -fstrict-volatile-bitfields -fthread-jumps
+  42              	@ -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp -ftree-builtin-call-dce
+  43              	@ -ftree-ccp -ftree-ch -ftree-copy-prop -ftree-copyrename -ftree-cselim
+  44              	@ -ftree-dce -ftree-dominator-opts -ftree-dse -ftree-forwprop -ftree-fre
+  45              	@ -ftree-loop-if-convert -ftree-loop-im -ftree-loop-ivcanon
+  46              	@ -ftree-loop-optimize -ftree-parallelize-loops= -ftree-phiprop -ftree-pre
+  47              	@ -ftree-pta -ftree-reassoc -ftree-scev-cprop -ftree-sink
+  48              	@ -ftree-slp-vectorize -ftree-sra -ftree-switch-conversion -ftree-ter
+  49              	@ -ftree-vect-loop-version -ftree-vrp -funit-at-a-time -fverbose-asm
+  50              	@ -fzero-initialized-in-bss -mlittle-endian -msched-prolog
+  51              	
+  52              	@ Compiler executable checksum: de80e2dacb9f8abf918a9a189330559b
+  53              	
+  54              		.text
+  55              		.align	2
+  56              		.type	tache, %function
+  57              	tache:
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccwrRQ1p.s 			page 2
+
+
+  58              		@ args = 0, pretend = 0, frame = 4
+  59              		@ frame_needed = 0, uses_anonymous_args = 0
+  60 0000 70402DE9 		stmfd	sp!, {r4, r5, r6, lr}	@,
+  61 0004 70309FE5 		ldr	r3, .L10	@ tmp144,
+  62 0008 181093E5 		ldr	r1, [r3, #24]	@ D.2112, MEM[(volatile uint32 *)-536707048B]
+  63 000c 0225A0E3 		mov	r2, #8388608	@ tmp147,
+  64 0010 021081E1 		orr	r1, r1, r2	@ D.2113, D.2112,
+  65 0014 181083E5 		str	r1, [r3, #24]	@ D.2113, MEM[(volatile uint32 *)-536707048B]
+  66 0018 04D04DE2 		sub	sp, sp, #4	@,,
+  67 001c 142083E5 		str	r2, [r3, #20]	@ tmp147, MEM[(volatile uint32 *)-536707052B]
+  68 0020 1C2083E5 		str	r2, [r3, #28]	@ tmp147, MEM[(volatile uint32 *)-536707044B]
+  69 0024 FEFFFFEB 		bl	initialiser_sorties_s0_s3	@
+  70 0028 50409FE5 		ldr	r4, .L10+4	@ tmp155,
+  71 002c 0150A0E3 		mov	r5, #1	@ i,
+  72 0030 0060A0E3 		mov	r6, #0	@ tmp154,
+  73              	.L6:
+  74 0034 0F00A0E3 		mov	r0, #15	@,
+  75 0038 FEFFFFEB 		bl	eteindre_sorties_s0_s3	@
+  76 003c 0500A0E1 		mov	r0, r5	@, i
+  77 0040 FEFFFFEB 		bl	allumer_sorties_s0_s3	@
+  78 0044 00608DE5 		str	r6, [sp, #0]	@ tmp154, j
+  79 0048 00309DE5 		ldr	r3, [sp, #0]	@ j.3, j
+  80 004c 040053E1 		cmp	r3, r4	@ j.3, tmp155
+  81 0050 050000CA 		bgt	.L3	@,
+  82              	.L7:
+  83 0054 00309DE5 		ldr	r3, [sp, #0]	@ j.1, j
+  84 0058 013083E2 		add	r3, r3, #1	@ j.2, j.1,
+  85 005c 00308DE5 		str	r3, [sp, #0]	@ j.2, j
+  86 0060 00309DE5 		ldr	r3, [sp, #0]	@ j.3, j
+  87 0064 040053E1 		cmp	r3, r4	@ j.3, tmp155
+  88 0068 F9FFFFDA 		ble	.L7	@,
+  89              	.L3:
+  90 006c 8550A0E1 		mov	r5, r5, asl #1	@ i, i,
+  91 0070 080055E3 		cmp	r5, #8	@ i,
+  92 0074 0150A0C3 		movgt	r5, #1	@ i,
+  93 0078 EDFFFFEA 		b	.L6	@
+  94              	.L11:
+  95              		.align	2
+  96              	.L10:
+  97 007c 008002E0 		.word	-536707072
+  98 0080 1FA10700 		.word	499999
+  99              		.size	tache, .-tache
+ 100              		.align	2
+ 101              		.global	initialiser_application
+ 102              		.type	initialiser_application, %function
+ 103              	initialiser_application:
+ 104              		@ args = 0, pretend = 0, frame = 0
+ 105              		@ frame_needed = 0, uses_anonymous_args = 0
+ 106 0084 10402DE9 		stmfd	sp!, {r4, lr}	@,
+ 107 0088 30409FE5 		ldr	r4, .L13	@ tmp134,
+ 108 008c FEFFFFEB 		bl	initialiser_sorties_s0_s3	@
+ 109 0090 FEFFFFEB 		bl	programmer_uart1	@
+ 110 0094 782084E2 		add	r2, r4, #120	@, tmp134,
+ 111 0098 0400A0E1 		mov	r0, r4	@, tmp134
+ 112 009c 0010A0E3 		mov	r1, #0	@,
+ 113 00a0 013CA0E3 		mov	r3, #256	@,
+ 114 00a4 FEFFFFEB 		bl	swi_create_task	@
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccwrRQ1p.s 			page 3
+
+
+ 115 00a8 0020A0E3 		mov	r2, #0	@,
+ 116 00ac 10109FE5 		ldr	r1, .L13+4	@,
+ 117 00b0 0400A0E1 		mov	r0, r4	@, tmp134
+ 118 00b4 0230A0E1 		mov	r3, r2	@,
+ 119 00b8 1040BDE8 		ldmfd	sp!, {r4, lr}	@
+ 120 00bc FEFFFFEA 		b	swi_start_task	@
+ 121              	.L14:
+ 122              		.align	2
+ 123              	.L13:
+ 124 00c0 00000000 		.word	.LANCHOR0
+ 125 00c4 00000000 		.word	tache
+ 126              		.size	initialiser_application, .-initialiser_application
+ 127              		.bss
+ 128              		.align	2
+ 129              		.set	.LANCHOR0,. + 0
+ 130              		.type	descripteurTache, %object
+ 131              		.size	descripteurTache, 120
+ 132              	descripteurTache:
+ 133 0000 00000000 		.space	120
+ 133      00000000 
+ 133      00000000 
+ 133      00000000 
+ 133      00000000 
+ 134              		.type	gPileTache, %object
+ 135              		.size	gPileTache, 256
+ 136              	gPileTache:
+ 137 0078 00000000 		.space	256
+ 137      00000000 
+ 137      00000000 
+ 137      00000000 
+ 137      00000000 
+ 138              		.ident	"GCC: (GNU) 4.6.1"
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccwrRQ1p.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 application.c
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccwrRQ1p.s:55     .text:00000000 $a
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccwrRQ1p.s:57     .text:00000000 tache
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccwrRQ1p.s:97     .text:0000007c $d
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccwrRQ1p.s:100    .text:00000084 $a
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccwrRQ1p.s:103    .text:00000084 initialiser_application
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccwrRQ1p.s:124    .text:000000c0 $d
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccwrRQ1p.s:128    .bss:00000000 $d
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccwrRQ1p.s:132    .bss:00000000 descripteurTache
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccwrRQ1p.s:136    .bss:00000078 gPileTache
+
+UNDEFINED SYMBOLS
+initialiser_sorties_s0_s3
+eteindre_sorties_s0_s3
+allumer_sorties_s0_s3
+programmer_uart1
+swi_create_task
+swi_start_task

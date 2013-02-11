@@ -1,4 +1,4 @@
-ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccY4aUQz.s 			page 1
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccQVba8V.s 			page 1
 
 
    1              		.file	"main.c"
@@ -58,7 +58,7 @@ ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccY4aUQz.s 			page 1
   55              	main:
   56              		@ args = 0, pretend = 0, frame = 4
   57              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccY4aUQz.s 			page 2
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccQVba8V.s 			page 2
 
 
   58 0000 04E02DE5 		str	lr, [sp, #-4]!	@,
@@ -108,13 +108,13 @@ ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccY4aUQz.s 			page 1
  102 0094 7F841E00 		.word	1999999
  103              		.size	main, .-main
  104              		.ident	"GCC: (GNU) 4.6.1"
-ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccY4aUQz.s 			page 3
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccQVba8V.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccY4aUQz.s:52     .text.startup:00000000 $a
-/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccY4aUQz.s:55     .text.startup:00000000 main
-/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccY4aUQz.s:100    .text.startup:0000008c $d
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccQVba8V.s:52     .text.startup:00000000 $a
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccQVba8V.s:55     .text.startup:00000000 main
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccQVba8V.s:100    .text.startup:0000008c $d
 
 NO UNDEFINED SYMBOLS

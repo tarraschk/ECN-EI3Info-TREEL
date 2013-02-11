@@ -1,0 +1,24 @@
+zBUILDS/lists-management.c.o: ../sources-communs/lists-management.c \
+ ../sources-communs/lists-management.h \
+ ../sources-communs/task-descriptor.h \
+ /usr/local/dev-arm/arm-dev-files/sources/processor-defines.h \
+ ../sources-communs/task-context.h \
+ /usr/local/dev-arm/i386-Darwin-arm-gcc-4.6.1/bin/../lib/gcc/arm-elf/4.6.1/include/stddef.h \
+ ../sources-communs/task-list.h ../sources-communs/services.h \
+ ../sources-communs/task-list-by-date.h
+
+../sources-communs/lists-management.h:
+
+../sources-communs/task-descriptor.h:
+
+/usr/local/dev-arm/arm-dev-files/sources/processor-defines.h:
+
+../sources-communs/task-context.h:
+
+/usr/local/dev-arm/i386-Darwin-arm-gcc-4.6.1/bin/../lib/gcc/arm-elf/4.6.1/include/stddef.h:
+
+../sources-communs/task-list.h:
+
+../sources-communs/services.h:
+
+../sources-communs/task-list-by-date.h:

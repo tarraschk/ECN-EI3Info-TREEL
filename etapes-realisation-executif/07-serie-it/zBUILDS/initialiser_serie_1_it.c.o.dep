@@ -1,0 +1,17 @@
+zBUILDS/initialiser_serie_1_it.c.o: \
+ ../sources-communs/initialiser_serie_1_it.c \
+ ../sources-communs/initialiser_serie_1_it.h \
+ /usr/local/dev-arm/arm-dev-files/sources/processor-defines.h \
+ /usr/local/dev-arm/arm-dev-files/sources/check-lpc2200-timing-settings.h \
+ /usr/local/dev-arm/arm-dev-files/sources/lpc22xx.h \
+ /usr/local/dev-arm/arm-dev-files/sources/processor-defines.h
+
+../sources-communs/initialiser_serie_1_it.h:
+
+/usr/local/dev-arm/arm-dev-files/sources/processor-defines.h:
+
+/usr/local/dev-arm/arm-dev-files/sources/check-lpc2200-timing-settings.h:
+
+/usr/local/dev-arm/arm-dev-files/sources/lpc22xx.h:
+
+/usr/local/dev-arm/arm-dev-files/sources/processor-defines.h:

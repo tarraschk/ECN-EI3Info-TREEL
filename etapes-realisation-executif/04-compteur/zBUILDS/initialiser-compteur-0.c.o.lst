@@ -1,0 +1,99 @@
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccFAX8tZ.s 			page 1
+
+
+   1              		.file	"initialiser-compteur-0.c"
+   2              	@ GNU C (GCC) version 4.6.1 (arm-elf)
+   3              	@	compiled by GNU C version 4.0.1 (Apple Inc. build 5494), GMP version 5.0.2, MPFR version 3.0.1, M
+   4              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+   5              	@ options passed:  -I sources -I /usr/local/dev-arm/arm-dev-files/sources
+   6              	@ -I ../sources-communs
+   7              	@ -iprefix /usr/local/dev-arm/i386-Darwin-arm-gcc-4.6.1/bin/../lib/gcc/arm-elf/4.6.1/
+   8              	@ -MD zBUILDS/initialiser-compteur-0.c.d
+   9              	@ -MF zBUILDS/initialiser-compteur-0.c.o.dep -MP
+  10              	@ -MQ zBUILDS/initialiser-compteur-0.c.o -D__USES_INITFINI__ -D XTR_CLASS=0
+  11              	@ -D LPC22XX_CRYSTAL_FREQUENCY=14745600
+  12              	@ -D LPC22XX_PLL_FREQUENCY_MULTIPLIER=4 -D LPC22XX_APB_DIVIDER=1
+  13              	@ ../sources-communs/initialiser-compteur-0.c -mcpu=arm7tdmi-s
+  14              	@ -mcpu=arm7tdmi-s -auxbase-strip zBUILDS/initialiser-compteur-0.c.o -O2
+  15              	@ -Wall -Werror -Wreturn-type -Wformat -Wsign-compare -Wpointer-arith
+  16              	@ -Wparentheses -Wcast-align -Wcast-qual -Wwrite-strings -Wswitch
+  17              	@ -Wstrict-prototypes -Wbad-function-cast -Wmissing-declarations
+  18              	@ -Wimplicit-function-declaration -Wno-int-to-pointer-cast
+  19              	@ -Wno-pointer-to-int-cast -fverbose-asm -fomit-frame-pointer
+  20              	@ -foptimize-register-move
+  21              	@ options enabled:  -fauto-inc-dec -fbranch-count-reg -fcaller-saves
+  22              	@ -fcombine-stack-adjustments -fcommon -fcompare-elim -fcprop-registers
+  23              	@ -fcrossjumping -fcse-follow-jumps -fdefer-pop
+  24              	@ -fdelete-null-pointer-checks -fdevirtualize -fdwarf2-cfi-asm
+  25              	@ -fearly-inlining -feliminate-unused-debug-types -fexpensive-optimizations
+  26              	@ -fforward-propagate -ffunction-cse -fgcse -fgcse-lm
+  27              	@ -fguess-branch-probability -fident -fif-conversion -fif-conversion2
+  28              	@ -findirect-inlining -finline -finline-functions-called-once
+  29              	@ -finline-small-functions -fipa-cp -fipa-profile -fipa-pure-const
+  30              	@ -fipa-reference -fipa-sra -fira-share-save-slots -fira-share-spill-slots
+  31              	@ -fivopts -fkeep-static-consts -fleading-underscore -fmath-errno
+  32              	@ -fmerge-constants -fmerge-debug-strings -fmove-loop-invariants
+  33              	@ -fomit-frame-pointer -foptimize-register-move -foptimize-sibling-calls
+  34              	@ -fpartial-inlining -fpeephole -fpeephole2 -fprefetch-loop-arrays
+  35              	@ -freg-struct-return -fregmove -freorder-blocks -freorder-functions
+  36              	@ -frerun-cse-after-loop -fsched-critical-path-heuristic
+  37              	@ -fsched-dep-count-heuristic -fsched-group-heuristic -fsched-interblock
+  38              	@ -fsched-last-insn-heuristic -fsched-rank-heuristic -fsched-spec
+  39              	@ -fsched-spec-insn-heuristic -fsched-stalled-insns-dep -fschedule-insns
+  40              	@ -fschedule-insns2 -fsection-anchors -fshow-column -fsigned-zeros
+  41              	@ -fsplit-ivs-in-unroller -fsplit-wide-types -fstrict-aliasing
+  42              	@ -fstrict-overflow -fstrict-volatile-bitfields -fthread-jumps
+  43              	@ -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp -ftree-builtin-call-dce
+  44              	@ -ftree-ccp -ftree-ch -ftree-copy-prop -ftree-copyrename -ftree-cselim
+  45              	@ -ftree-dce -ftree-dominator-opts -ftree-dse -ftree-forwprop -ftree-fre
+  46              	@ -ftree-loop-if-convert -ftree-loop-im -ftree-loop-ivcanon
+  47              	@ -ftree-loop-optimize -ftree-parallelize-loops= -ftree-phiprop -ftree-pre
+  48              	@ -ftree-pta -ftree-reassoc -ftree-scev-cprop -ftree-sink
+  49              	@ -ftree-slp-vectorize -ftree-sra -ftree-switch-conversion -ftree-ter
+  50              	@ -ftree-vect-loop-version -ftree-vrp -funit-at-a-time -fverbose-asm
+  51              	@ -fzero-initialized-in-bss -mlittle-endian -msched-prolog
+  52              	
+  53              	@ Compiler executable checksum: de80e2dacb9f8abf918a9a189330559b
+  54              	
+  55              		.text
+  56              		.align	2
+  57              		.global	initialiser_compteur_0
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccFAX8tZ.s 			page 2
+
+
+  58              		.type	initialiser_compteur_0, %function
+  59              	initialiser_compteur_0:
+  60              		@ args = 0, pretend = 0, frame = 0
+  61              		@ frame_needed = 0, uses_anonymous_args = 0
+  62              		@ link register save eliminated.
+  63 0000 30309FE5 		ldr	r3, .L2	@ tmp134,
+  64 0004 0220A0E3 		mov	r2, #2	@ tmp135,
+  65 0008 042083E5 		str	r2, [r3, #4]	@ tmp135, MEM[(volatile uint32 *)-536854524B]
+  66 000c 28209FE5 		ldr	r2, .L2+4	@ tmp137,
+  67 0010 0C2083E5 		str	r2, [r3, #12]	@ tmp137, MEM[(volatile uint32 *)-536854516B]
+  68 0014 0920A0E3 		mov	r2, #9	@ tmp139,
+  69 0018 182083E5 		str	r2, [r3, #24]	@ tmp139, MEM[(volatile uint32 *)-536854504B]
+  70 001c 0020A0E3 		mov	r2, #0	@ tmp141,
+  71 0020 282083E5 		str	r2, [r3, #40]	@ tmp141, MEM[(volatile uint32 *)-536854488B]
+  72 0024 0320A0E3 		mov	r2, #3	@ tmp143,
+  73 0028 142083E5 		str	r2, [r3, #20]	@ tmp143, MEM[(volatile uint32 *)-536854508B]
+  74 002c 0120A0E3 		mov	r2, #1	@ tmp145,
+  75 0030 042083E5 		str	r2, [r3, #4]	@ tmp145, MEM[(volatile uint32 *)-536854524B]
+  76 0034 1EFF2FE1 		bx	lr	@
+  77              	.L3:
+  78              		.align	2
+  79              	.L2:
+  80 0038 004000E0 		.word	-536854528
+  81 003c 09170000 		.word	5897
+  82              		.size	initialiser_compteur_0, .-initialiser_compteur_0
+  83              		.ident	"GCC: (GNU) 4.6.1"
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccFAX8tZ.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 initialiser-compteur-0.c
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccFAX8tZ.s:56     .text:00000000 $a
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccFAX8tZ.s:59     .text:00000000 initialiser_compteur_0
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccFAX8tZ.s:80     .text:00000038 $d
+
+NO UNDEFINED SYMBOLS

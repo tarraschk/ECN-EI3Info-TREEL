@@ -1,0 +1,408 @@
+
+Allocating common symbols
+Common symbol       size              file
+
+gRunningTaskContextSaveAddress
+                    0x4               zBUILDS/scheduler-no-priority.c.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+internal_ram     0x40000000         0x00004000
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD zBUILDS/crt0-pour-executif.s.o
+LOAD zBUILDS/handler-stub-for-DAbort.s.o
+LOAD zBUILDS/handler-stub-for-FIRQ.s.o
+LOAD zBUILDS/handler-stub-for-PAbort.s.o
+LOAD zBUILDS/handler-stub-for-undef.s.o
+LOAD zBUILDS/initialize-lpc2200-pll.c.o
+LOAD zBUILDS/initialiser-compteur-0-it.c.o
+LOAD zBUILDS/sorties_s0_s3.c.o
+LOAD zBUILDS/afficheur_lcd.c.o
+LOAD zBUILDS/arm-context.s.o
+LOAD zBUILDS/task-descriptor.c.o
+LOAD zBUILDS/scheduler-no-priority.c.o
+LOAD zBUILDS/task-list.c.o
+LOAD zBUILDS/services.s.o
+LOAD zBUILDS/application.c.o
+LOAD zBUILDS/task-list-by-date.c.o
+LOAD zBUILDS/lists-management.c.o
+LOAD zBUILDS/assembleur.s.o
+LOAD /usr/local/dev-arm/i386-Darwin-arm-gcc-4.6.1/arm-elf/lib/libc.a
+LOAD /usr/local/dev-arm/i386-Darwin-arm-gcc-4.6.1/lib/gcc/arm-elf/4.6.1/libgcc.a
+                0x00000100                FIQ_STACK_SIZE = 0x100
+                0x00000100                IRQ_STACK_SIZE = 0x100
+                0x00000100                ABT_STACK_SIZE = 0x100
+                0x00000100                UND_STACK_SIZE = 0x100
+                0x00000100                USR_STACK_SIZE = 0x100
+                0x00000400                SVC_STACK_SIZE = 0x400
+
+.text           0x40000000     0x10d4
+ *(.vectors)
+ .vectors       0x40000000       0x40 zBUILDS/crt0-pour-executif.s.o
+                0x40000040                . = ALIGN (0x4)
+ *(.init)
+ .init          0x40000040       0xb4 zBUILDS/crt0-pour-executif.s.o
+                0x40000040                ResetHandler
+                0x400000f4                . = ALIGN (0x4)
+ *(.text)
+ .text          0x400000f4        0x0 zBUILDS/crt0-pour-executif.s.o
+ .text          0x400000f4        0x4 zBUILDS/handler-stub-for-DAbort.s.o
+                0x400000f4                DAbortHandler
+ .text          0x400000f8        0x4 zBUILDS/handler-stub-for-FIRQ.s.o
+                0x400000f8                FIQHandler
+ .text          0x400000fc        0x4 zBUILDS/handler-stub-for-PAbort.s.o
+                0x400000fc                PAbortHandler
+ .text          0x40000100        0x4 zBUILDS/handler-stub-for-undef.s.o
+                0x40000100                UndefHandler
+ .text          0x40000104       0x78 zBUILDS/initialize-lpc2200-pll.c.o
+                0x40000104                initialize_lpc2200_pll
+ .text          0x4000017c       0x68 zBUILDS/initialiser-compteur-0-it.c.o
+                0x4000017c                initialiser_compteur_0_it
+ .text          0x400001e4       0x80 zBUILDS/sorties_s0_s3.c.o
+                0x400001e4                initialiser_sorties_s0_s3
+                0x40000204                allumer_sorties_s0_s3
+                0x40000234                eteindre_sorties_s0_s3
+ .text          0x40000264      0x42c zBUILDS/afficheur_lcd.c.o
+                0x40000264                lcd_goto_line_column
+                0x400002a8                lcd_backlight
+                0x400002d0                lcd_print_char
+                0x400002f4                lcd_print_string
+                0x40000328                lcd_init
+                0x40000368                lcd_print_hex1
+                0x400003b8                lcd_print_unsigned
+                0x40000434                lcd_print_unsigned_with_leading_spaces
+                0x400004a0                lcd_print_signed
+                0x400004d0                lcd_print_signed_with_leading_spaces
+                0x40000548                lcd_print_hex2
+                0x40000564                lcd_print_hex4
+                0x40000584                lcd_print_hex8
+                0x400005a4                lcd_print_spaces
+                0x400005d4                programmer_uart1
+                0x4000062c                recevoir_caractere_serie1
+                0x4000064c                attente_caractere_serie1
+                0x4000066c                envoyer_caractere_serie1
+ .text          0x40000690      0x16c zBUILDS/arm-context.s.o
+                0x40000690                SWIHandler
+                0x40000730                IRQHandler
+                0x400007c4                __entry_point
+ .text          0x400007fc      0x174 zBUILDS/task-descriptor.c.o
+                0x4000081c                swi_create_task
+                0x40000888                swi_task_self_terminate
+                0x400008a0                swi_start_task
+                0x400008f4                swi_close_task
+                0x40000944                current_task_count
+                0x40000954                swi_preempt
+ .text          0x40000970       0x8c zBUILDS/scheduler-no-priority.c.o
+                0x40000970                kernel_runningTask
+                0x40000980                kernel_makeTaskReady
+                0x4000099c                kernel_makeNoTaskRunning
+                0x400009bc                kernel_selectTaskToRun
+ .text          0x400009fc      0x178 zBUILDS/task-list.c.o
+                0x400009fc                initTaskList
+                0x40000a0c                insertTaskAtTail
+                0x40000a44                insertTaskFollowingPriority
+                0x40000ad8                taskAtHead
+                0x40000ae0                removeTaskAtHead
+                0x40000b28                removeFromCurrentTaskList
+ .text          0x40000b74       0x24 zBUILDS/services.s.o
+                0x40000b74                __swi_dispatcher_table
+                0x40000b80                usr_create_task
+                0x40000b88                usr_task_self_terminate
+                0x40000b90                usr_preempt
+ .text          0x40000b98      0x168 zBUILDS/application.c.o
+                0x40000c0c                swi_attente_echeance
+                0x40000c1c                initialiser_application
+ .text          0x40000d00      0x140 zBUILDS/task-list-by-date.c.o
+                0x40000d00                initTaskListByDate
+                0x40000d10                insertTaskWithDate
+                0x40000da4                removeTaskIfDateReached
+                0x40000df4                removeFromCurrentTaskListByDate
+ .text          0x40000e40      0x154 zBUILDS/lists-management.c.o
+                0x40000e40                kernel_runningTaskWaitsOnFIFOList
+                0x40000e74                kernel_runningTaskWaitsOnListOrderedByPriority
+                0x40000ea8                kernel_runningTaskWaitsOnLists
+                0x40000f08                kernel_firstWaitingTaskBecomesReady
+                0x40000f40                kernel_tasksWithEarlierDateBecomeReady
+ .text          0x40000f94        0xc zBUILDS/assembleur.s.o
+                0x40000f94                usr_attente_echeance
+                0x40000fa0                . = ALIGN (0x4)
+ *(.rodata)
+                0x40000fa0                . = ALIGN (0x4)
+ *(.rodata*)
+                0x40000fa0                . = ALIGN (0x4)
+ *(.glue_7t)
+ .glue_7t       0x00000000        0x0 linker stubs
+                0x40000fa0                . = ALIGN (0x4)
+ *(.glue_7)
+ .glue_7        0x00000000        0x0 linker stubs
+                0x40000fa0                . = ALIGN (0x4)
+ *(.comment)
+ .comment       0x40000fa0       0x11 zBUILDS/initialize-lpc2200-pll.c.o
+                                 0x12 (size before relaxing)
+ .comment       0x00000000       0x12 zBUILDS/initialiser-compteur-0-it.c.o
+ .comment       0x00000000       0x12 zBUILDS/sorties_s0_s3.c.o
+ .comment       0x00000000       0x12 zBUILDS/afficheur_lcd.c.o
+ .comment       0x00000000       0x12 zBUILDS/task-descriptor.c.o
+ .comment       0x00000000       0x12 zBUILDS/scheduler-no-priority.c.o
+ .comment       0x00000000       0x12 zBUILDS/task-list.c.o
+ .comment       0x00000000       0x12 zBUILDS/application.c.o
+ .comment       0x00000000       0x12 zBUILDS/task-list-by-date.c.o
+ .comment       0x00000000       0x12 zBUILDS/lists-management.c.o
+                0x40000fb4                . = ALIGN (0x4)
+ *fill*         0x40000fb1        0x3 00
+ *(.ARM.*)
+ .ARM.attributes
+                0x40000fb4       0x10 zBUILDS/crt0-pour-executif.s.o
+ .ARM.attributes
+                0x40000fc4       0x10 zBUILDS/handler-stub-for-DAbort.s.o
+ .ARM.attributes
+                0x40000fd4       0x10 zBUILDS/handler-stub-for-FIRQ.s.o
+ .ARM.attributes
+                0x40000fe4       0x10 zBUILDS/handler-stub-for-PAbort.s.o
+ .ARM.attributes
+                0x40000ff4       0x10 zBUILDS/handler-stub-for-undef.s.o
+ .ARM.attributes
+                0x40001004       0x10 zBUILDS/initialize-lpc2200-pll.c.o
+ .ARM.attributes
+                0x40001014       0x10 zBUILDS/initialiser-compteur-0-it.c.o
+ .ARM.attributes
+                0x40001024       0x10 zBUILDS/sorties_s0_s3.c.o
+ .ARM.attributes
+                0x40001034       0x10 zBUILDS/afficheur_lcd.c.o
+ .ARM.attributes
+                0x40001044       0x10 zBUILDS/arm-context.s.o
+ .ARM.attributes
+                0x40001054       0x10 zBUILDS/task-descriptor.c.o
+ .ARM.attributes
+                0x40001064       0x10 zBUILDS/scheduler-no-priority.c.o
+ .ARM.attributes
+                0x40001074       0x10 zBUILDS/task-list.c.o
+ .ARM.attributes
+                0x40001084       0x10 zBUILDS/services.s.o
+ .ARM.attributes
+                0x40001094       0x10 zBUILDS/application.c.o
+ .ARM.attributes
+                0x400010a4       0x10 zBUILDS/task-list-by-date.c.o
+ .ARM.attributes
+                0x400010b4       0x10 zBUILDS/lists-management.c.o
+ .ARM.attributes
+                0x400010c4       0x10 zBUILDS/assembleur.s.o
+                0x400010d4                . = ALIGN (0x4)
+                0x400010d4                etext = .
+
+.vfp11_veneer   0x400010d4        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x400010d4        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.data           0x400010d4        0x0
+                0x400010d4                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x400010d4        0x0 zBUILDS/crt0-pour-executif.s.o
+ .data          0x400010d4        0x0 zBUILDS/handler-stub-for-DAbort.s.o
+ .data          0x400010d4        0x0 zBUILDS/handler-stub-for-FIRQ.s.o
+ .data          0x400010d4        0x0 zBUILDS/handler-stub-for-PAbort.s.o
+ .data          0x400010d4        0x0 zBUILDS/handler-stub-for-undef.s.o
+ .data          0x400010d4        0x0 zBUILDS/initialize-lpc2200-pll.c.o
+ .data          0x400010d4        0x0 zBUILDS/initialiser-compteur-0-it.c.o
+ .data          0x400010d4        0x0 zBUILDS/sorties_s0_s3.c.o
+ .data          0x400010d4        0x0 zBUILDS/afficheur_lcd.c.o
+ .data          0x400010d4        0x0 zBUILDS/arm-context.s.o
+ .data          0x400010d4        0x0 zBUILDS/task-descriptor.c.o
+ .data          0x400010d4        0x0 zBUILDS/scheduler-no-priority.c.o
+ .data          0x400010d4        0x0 zBUILDS/task-list.c.o
+ .data          0x400010d4        0x0 zBUILDS/services.s.o
+ .data          0x400010d4        0x0 zBUILDS/application.c.o
+ .data          0x400010d4        0x0 zBUILDS/task-list-by-date.c.o
+ .data          0x400010d4        0x0 zBUILDS/lists-management.c.o
+ .data          0x400010d4        0x0 zBUILDS/assembleur.s.o
+                0x400010d4                . = ALIGN (0x4)
+                0x400010d4                edata = .
+                0x400010d4                _edata = .
+                0x400010d4                PROVIDE (__data_end, .)
+
+.bss            0x400010d4      0xc2c
+                0x400010d4                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x400010d4        0x0 zBUILDS/crt0-pour-executif.s.o
+ .bss           0x400010d4        0x0 zBUILDS/handler-stub-for-DAbort.s.o
+ .bss           0x400010d4        0x0 zBUILDS/handler-stub-for-FIRQ.s.o
+ .bss           0x400010d4        0x0 zBUILDS/handler-stub-for-PAbort.s.o
+ .bss           0x400010d4        0x0 zBUILDS/handler-stub-for-undef.s.o
+ .bss           0x400010d4        0x0 zBUILDS/initialize-lpc2200-pll.c.o
+ .bss           0x400010d4        0x0 zBUILDS/initialiser-compteur-0-it.c.o
+ .bss           0x400010d4        0x0 zBUILDS/sorties_s0_s3.c.o
+ .bss           0x400010d4        0x0 zBUILDS/afficheur_lcd.c.o
+ .bss           0x400010d4        0x0 zBUILDS/arm-context.s.o
+ .bss           0x400010d4        0xc zBUILDS/task-descriptor.c.o
+ .bss           0x400010e0        0xc zBUILDS/scheduler-no-priority.c.o
+ .bss           0x400010ec        0x0 zBUILDS/task-list.c.o
+ .bss           0x400010ec        0x0 zBUILDS/services.s.o
+ .bss           0x400010ec      0x2e4 zBUILDS/application.c.o
+ .bss           0x400013d0        0x0 zBUILDS/task-list-by-date.c.o
+ .bss           0x400013d0        0x8 zBUILDS/lists-management.c.o
+ .bss           0x400013d8        0x0 zBUILDS/assembleur.s.o
+ *(COMMON)
+ COMMON         0x400013d8        0x4 zBUILDS/scheduler-no-priority.c.o
+                0x400013d8                gRunningTaskContextSaveAddress
+                0x400013dc                . = ALIGN (0x4)
+                0x400013dc                PROVIDE (__bss_end, .)
+                0x40001400                . = ALIGN (0x100)
+ *fill*         0x400013dc       0x24 00
+                0x40001400                PROVIDE (__stack_start, .)
+                0x40001400                PROVIDE (__stack_fiq_start, .)
+                0x40001500                . = (. + FIQ_STACK_SIZE)
+ *fill*         0x40001400      0x100 00
+                0x40001500                . = ALIGN (0x4)
+                0x40001500                PROVIDE (__stack_fiq_end, .)
+                0x40001500                PROVIDE (__stack_irq_start, .)
+                0x40001600                . = (. + IRQ_STACK_SIZE)
+ *fill*         0x40001500      0x100 00
+                0x40001600                . = ALIGN (0x4)
+                0x40001600                PROVIDE (__stack_irq_end, .)
+                0x40001600                PROVIDE (__stack_abt_start, .)
+                0x40001700                . = (. + ABT_STACK_SIZE)
+ *fill*         0x40001600      0x100 00
+                0x40001700                . = ALIGN (0x4)
+                0x40001700                PROVIDE (__stack_abt_end, .)
+                0x40001700                PROVIDE (__stack_und_start, .)
+                0x40001800                . = (. + UND_STACK_SIZE)
+ *fill*         0x40001700      0x100 00
+                0x40001800                . = ALIGN (0x4)
+                0x40001800                PROVIDE (__stack_und_end, .)
+                0x40001800                PROVIDE (__stack_svc_start, .)
+                0x40001c00                . = (. + SVC_STACK_SIZE)
+ *fill*         0x40001800      0x400 00
+                0x40001c00                . = ALIGN (0x4)
+                0x40001c00                PROVIDE (__stack_svc_end, .)
+                0x40001c00                PROVIDE (__stack_usr_start, .)
+                0x40001d00                . = (. + USR_STACK_SIZE)
+ *fill*         0x40001c00      0x100 00
+                0x40001d00                . = ALIGN (0x4)
+                0x40001d00                PROVIDE (__stack_usr_end, .)
+                0x40001d00                PROVIDE (__stack_end, .)
+                0x40001d00                PROVIDE (__heap_start, .)
+OUTPUT(zPRODUCTS/test-internal-ram.elf elf32-littlearm)
+
+Cross Reference Table
+
+Symbol                                            File
+DAbortHandler                                     zBUILDS/handler-stub-for-DAbort.s.o
+                                                  zBUILDS/crt0-pour-executif.s.o
+FIQHandler                                        zBUILDS/handler-stub-for-FIRQ.s.o
+                                                  zBUILDS/crt0-pour-executif.s.o
+IRQHandler                                        zBUILDS/arm-context.s.o
+                                                  zBUILDS/crt0-pour-executif.s.o
+PAbortHandler                                     zBUILDS/handler-stub-for-PAbort.s.o
+                                                  zBUILDS/crt0-pour-executif.s.o
+ResetHandler                                      zBUILDS/crt0-pour-executif.s.o
+SWIHandler                                        zBUILDS/arm-context.s.o
+                                                  zBUILDS/crt0-pour-executif.s.o
+UndefHandler                                      zBUILDS/handler-stub-for-undef.s.o
+                                                  zBUILDS/crt0-pour-executif.s.o
+__bss_end                                         zBUILDS/crt0-pour-executif.s.o
+__bss_start                                       zBUILDS/crt0-pour-executif.s.o
+__entry_point                                     zBUILDS/arm-context.s.o
+                                                  zBUILDS/crt0-pour-executif.s.o
+__stack_abt_end                                   zBUILDS/crt0-pour-executif.s.o
+__stack_fiq_end                                   zBUILDS/crt0-pour-executif.s.o
+__stack_irq_end                                   zBUILDS/crt0-pour-executif.s.o
+__stack_svc_end                                   zBUILDS/crt0-pour-executif.s.o
+__stack_und_end                                   zBUILDS/crt0-pour-executif.s.o
+__swi_dispatcher_table                            zBUILDS/services.s.o
+                                                  zBUILDS/arm-context.s.o
+allumer_sorties_s0_s3                             zBUILDS/sorties_s0_s3.c.o
+                                                  zBUILDS/application.c.o
+attente_caractere_serie1                          zBUILDS/afficheur_lcd.c.o
+current_task_count                                zBUILDS/task-descriptor.c.o
+envoyer_caractere_serie1                          zBUILDS/afficheur_lcd.c.o
+eteindre_sorties_s0_s3                            zBUILDS/sorties_s0_s3.c.o
+                                                  zBUILDS/application.c.o
+gRunningTaskContextSaveAddress                    zBUILDS/scheduler-no-priority.c.o
+                                                  zBUILDS/arm-context.s.o
+initTaskList                                      zBUILDS/task-list.c.o
+initTaskListByDate                                zBUILDS/task-list-by-date.c.o
+initialiser_application                           zBUILDS/application.c.o
+                                                  zBUILDS/crt0-pour-executif.s.o
+initialiser_compteur_0_it                         zBUILDS/initialiser-compteur-0-it.c.o
+                                                  zBUILDS/application.c.o
+initialiser_sorties_s0_s3                         zBUILDS/sorties_s0_s3.c.o
+                                                  zBUILDS/application.c.o
+initialize_lpc2200_pll                            zBUILDS/initialize-lpc2200-pll.c.o
+                                                  zBUILDS/crt0-pour-executif.s.o
+insertTaskAtTail                                  zBUILDS/task-list.c.o
+                                                  zBUILDS/lists-management.c.o
+                                                  zBUILDS/scheduler-no-priority.c.o
+insertTaskFollowingPriority                       zBUILDS/task-list.c.o
+                                                  zBUILDS/lists-management.c.o
+insertTaskWithDate                                zBUILDS/task-list-by-date.c.o
+                                                  zBUILDS/lists-management.c.o
+kernel_firstWaitingTaskBecomesReady               zBUILDS/lists-management.c.o
+kernel_makeNoTaskRunning                          zBUILDS/scheduler-no-priority.c.o
+                                                  zBUILDS/lists-management.c.o
+                                                  zBUILDS/task-descriptor.c.o
+kernel_makeTaskReady                              zBUILDS/scheduler-no-priority.c.o
+                                                  zBUILDS/lists-management.c.o
+                                                  zBUILDS/task-descriptor.c.o
+kernel_runningTask                                zBUILDS/scheduler-no-priority.c.o
+                                                  zBUILDS/lists-management.c.o
+                                                  zBUILDS/task-descriptor.c.o
+kernel_runningTaskWaitsOnFIFOList                 zBUILDS/lists-management.c.o
+kernel_runningTaskWaitsOnListOrderedByPriority    zBUILDS/lists-management.c.o
+kernel_runningTaskWaitsOnLists                    zBUILDS/lists-management.c.o
+                                                  zBUILDS/application.c.o
+kernel_selectTaskToRun                            zBUILDS/scheduler-no-priority.c.o
+                                                  zBUILDS/arm-context.s.o
+kernel_set_return_code                            zBUILDS/lists-management.c.o
+kernel_tasksWithEarlierDateBecomeReady            zBUILDS/lists-management.c.o
+                                                  zBUILDS/application.c.o
+lcd_backlight                                     zBUILDS/afficheur_lcd.c.o
+lcd_goto_line_column                              zBUILDS/afficheur_lcd.c.o
+lcd_init                                          zBUILDS/afficheur_lcd.c.o
+lcd_print_char                                    zBUILDS/afficheur_lcd.c.o
+lcd_print_hex1                                    zBUILDS/afficheur_lcd.c.o
+lcd_print_hex2                                    zBUILDS/afficheur_lcd.c.o
+lcd_print_hex4                                    zBUILDS/afficheur_lcd.c.o
+lcd_print_hex8                                    zBUILDS/afficheur_lcd.c.o
+lcd_print_signed                                  zBUILDS/afficheur_lcd.c.o
+lcd_print_signed_with_leading_spaces              zBUILDS/afficheur_lcd.c.o
+lcd_print_spaces                                  zBUILDS/afficheur_lcd.c.o
+lcd_print_string                                  zBUILDS/afficheur_lcd.c.o
+lcd_print_unsigned                                zBUILDS/afficheur_lcd.c.o
+lcd_print_unsigned_with_leading_spaces            zBUILDS/afficheur_lcd.c.o
+programmer_uart1                                  zBUILDS/afficheur_lcd.c.o
+                                                  zBUILDS/application.c.o
+recevoir_caractere_serie1                         zBUILDS/afficheur_lcd.c.o
+removeFromCurrentTaskList                         zBUILDS/task-list.c.o
+                                                  zBUILDS/lists-management.c.o
+removeFromCurrentTaskListByDate                   zBUILDS/task-list-by-date.c.o
+                                                  zBUILDS/lists-management.c.o
+removeTaskAtHead                                  zBUILDS/task-list.c.o
+                                                  zBUILDS/lists-management.c.o
+                                                  zBUILDS/scheduler-no-priority.c.o
+removeTaskIfDateReached                           zBUILDS/task-list-by-date.c.o
+                                                  zBUILDS/lists-management.c.o
+swi_attente_echeance                              zBUILDS/application.c.o
+                                                  zBUILDS/assembleur.s.o
+swi_close_task                                    zBUILDS/task-descriptor.c.o
+swi_create_task                                   zBUILDS/task-descriptor.c.o
+                                                  zBUILDS/application.c.o
+                                                  zBUILDS/services.s.o
+swi_preempt                                       zBUILDS/task-descriptor.c.o
+                                                  zBUILDS/services.s.o
+swi_start_task                                    zBUILDS/task-descriptor.c.o
+                                                  zBUILDS/application.c.o
+swi_task_self_terminate                           zBUILDS/task-descriptor.c.o
+                                                  zBUILDS/services.s.o
+taskAtHead                                        zBUILDS/task-list.c.o
+usr_attente_echeance                              zBUILDS/assembleur.s.o
+                                                  zBUILDS/application.c.o
+usr_create_task                                   zBUILDS/services.s.o
+usr_preempt                                       zBUILDS/services.s.o
+usr_task_self_terminate                           zBUILDS/services.s.o
+                                                  zBUILDS/task-descriptor.c.o

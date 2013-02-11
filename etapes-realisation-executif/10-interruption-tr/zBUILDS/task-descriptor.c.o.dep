@@ -1,0 +1,18 @@
+zBUILDS/task-descriptor.c.o: ../sources-communs/task-descriptor.c \
+ ../sources-communs/task-descriptor.h \
+ /usr/local/dev-arm/arm-dev-files/sources/processor-defines.h \
+ ../sources-communs/task-context.h \
+ /usr/local/dev-arm/i386-Darwin-arm-gcc-4.6.1/bin/../lib/gcc/arm-elf/4.6.1/include/stddef.h \
+ ../sources-communs/services.h ../sources-communs/task-list.h
+
+../sources-communs/task-descriptor.h:
+
+/usr/local/dev-arm/arm-dev-files/sources/processor-defines.h:
+
+../sources-communs/task-context.h:
+
+/usr/local/dev-arm/i386-Darwin-arm-gcc-4.6.1/bin/../lib/gcc/arm-elf/4.6.1/include/stddef.h:
+
+../sources-communs/services.h:
+
+../sources-communs/task-list.h:

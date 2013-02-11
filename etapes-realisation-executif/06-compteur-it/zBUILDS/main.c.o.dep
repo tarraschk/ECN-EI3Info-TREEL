@@ -1,0 +1,10 @@
+zBUILDS/main.c.o: sources/main.c \
+ /usr/local/dev-arm/arm-dev-files/sources/lpc22xx.h \
+ /usr/local/dev-arm/arm-dev-files/sources/processor-defines.h \
+ ../sources-communs/initialiser-compteur-0-it.h
+
+/usr/local/dev-arm/arm-dev-files/sources/lpc22xx.h:
+
+/usr/local/dev-arm/arm-dev-files/sources/processor-defines.h:
+
+../sources-communs/initialiser-compteur-0-it.h:

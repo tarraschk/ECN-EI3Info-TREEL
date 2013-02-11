@@ -1,0 +1,2 @@
+zBUILDS/crt0-pour-executif.s.o: \
+ ../sources-communs/crt0-pour-executif.s

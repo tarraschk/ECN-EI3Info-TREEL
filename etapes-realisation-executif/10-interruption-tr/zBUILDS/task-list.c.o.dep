@@ -1,0 +1,15 @@
+zBUILDS/task-list.c.o: ../sources-communs/task-list.c \
+ ../sources-communs/task-list.h \
+ /usr/local/dev-arm/arm-dev-files/sources/processor-defines.h \
+ ../sources-communs/task-descriptor.h ../sources-communs/task-context.h \
+ /usr/local/dev-arm/i386-Darwin-arm-gcc-4.6.1/bin/../lib/gcc/arm-elf/4.6.1/include/stddef.h
+
+../sources-communs/task-list.h:
+
+/usr/local/dev-arm/arm-dev-files/sources/processor-defines.h:
+
+../sources-communs/task-descriptor.h:
+
+../sources-communs/task-context.h:
+
+/usr/local/dev-arm/i386-Darwin-arm-gcc-4.6.1/bin/../lib/gcc/arm-elf/4.6.1/include/stddef.h:

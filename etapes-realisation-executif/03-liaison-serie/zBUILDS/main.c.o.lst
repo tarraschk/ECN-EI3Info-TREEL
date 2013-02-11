@@ -1,4 +1,4 @@
-ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc2bJXue.s 			page 1
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccLynJoe.s 			page 1
 
 
    1              		.file	"main.c"
@@ -58,7 +58,7 @@ ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc2bJXue.s 			page 1
   55              		.type	main, %function
   56              	main:
   57              		@ args = 0, pretend = 0, frame = 4
-ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc2bJXue.s 			page 2
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccLynJoe.s 			page 2
 
 
   58              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -118,7 +118,7 @@ ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc2bJXue.s 			page 1
  112 00c4 00308DE5 		str	r3, [sp, #0]	@ tmp160, j
  113 00c8 00309DE5 		ldr	r3, [sp, #0]	@ j.3, j
  114 00cc 040053E1 		cmp	r3, r4	@ j.3, tmp169
-ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc2bJXue.s 			page 3
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccLynJoe.s 			page 3
 
 
  115 00d0 050000CA 		bgt	.L7	@,
@@ -178,21 +178,21 @@ ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc2bJXue.s 			page 1
  165      6D616765 
  165      204C4544 
  165      203A2000 
-ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc2bJXue.s 			page 4
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccLynJoe.s 			page 4
 
 
  166              	.LC2:
  167 0020 2000     		.ascii	" \000"
  168 0022 0000     		.ident	"GCC: (GNU) 4.6.1"
-ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc2bJXue.s 			page 5
+ARM GAS  /var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccLynJoe.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc2bJXue.s:53     .text.startup:00000000 $a
-/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc2bJXue.s:56     .text.startup:00000000 main
-/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc2bJXue.s:153    .text.startup:00000148 $d
-/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//cc2bJXue.s:160    .rodata.str1.4:00000000 $d
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccLynJoe.s:53     .text.startup:00000000 $a
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccLynJoe.s:56     .text.startup:00000000 main
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccLynJoe.s:153    .text.startup:00000148 $d
+/var/folders/kw/_ttbspv15096pc01cxzg7nyh0000gn/T//ccLynJoe.s:160    .rodata.str1.4:00000000 $d
 
 UNDEFINED SYMBOLS
 initialiser_sorties_s0_s3
